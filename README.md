@@ -84,11 +84,76 @@ We can compare the PDB identifiers in the corpus with the actual PDB identifiers
 ```
 SELECT COUNT(citation.id) FROM citation 
 INNER JOIN identifier 
-ON citation.subjId = identifier.id
+ON UPPER(citation.subjId) = identifier.id
 WHERE repositoryId = '87646104-e5ef-494b-b2f3-a46c9572e003' AND identifier.namespace = 'pdb';
 ```
 
-This finds 842,451 PDB identifiers, which is 49% of the total in the corpus. Hence just over half the putative PDB citations are erroneous.
+This finds 1,233,993 PDB identifiers, which is 71% of the total in the corpus. Hence a little under a third of the PDB citations appear to be erroneous.
+
+We can look at some mistaken identifiers:
+
+```
+SELECT citation.id, UPPER(citation.subjId), identifier.id 
+FROM citation 
+LEFT JOIN identifier ON UPPER(citation.subjId) = identifier.id 
+WHERE repositoryId = '87646104-e5ef-494b-b2f3-a46c9572e003' 
+AND citation.subjId LIKE "1%"
+AND identifier.id IS NULL
+LIMIT 100;
+```
+
+## Repository identifiers 
+
+## Sources
+
+|Label | Methodology | http://identifiers.org |
+|--|--|--|
+|arrayexpress | https://identifiers.org/arrayexpress:dataset | Y|
+|biomodels | https://identifiers.org/biomodels.db:dataset | Y|
+|bioproject | https://identifiers.org/bioproject:dataset | Y|
+|biosample | https://identifiers.org/biosample:dataset | Y|
+|biostudies | https://identifiers.org/biostudies:dataset | Y|
+|cath | https://identifiers.org/cath:dataset | Y|
+|chebi | https://identifiers.org/chebi:dataset[6:] | Y|
+|chembl | https://identifiers.org/chembl:dataset | Y|
+|complexportal | https://identifiers.org/complexportal:dataset | Y|
+|dbgap | https://identifiers.org/dbgap:dataset | Y|
+|doi | https://dx.doi.org/:dataset | sometimes|
+|ebisc | https://cells.ebisc.org/dataset | N|
+|efo | https://identifiers.org/efo:dataset | Y|
+|ega | https://identifiers.org/ega.dataset:dataset | Y|
+|emdb | https://identifiers.org/emdb:dataset | Y|
+|empiar | https://identifiers.org/empiar:dataset | Y|
+|ensembl | https://identifiers.org/ensembl:dataset  | Y|
+|gca | https://identifiers.org/insdc.gca:dataset | Y|
+|gen | https://identifiers.org/ena.embl:dataset | Y|
+|geo | https://identifiers.org/geo:dataset | Y|
+|gisaid | http://gisaid.org/EPI/dataset | N|
+|go | https://identifiers.org/go:dataset | Y|
+|hgnc | https://identifiers.org/hgnc:dataset | Y|
+|hipsci | http://www.hipsci.org/lines/#/lines/dataset | N|
+|hpa | https://identifiers.org/hpa:dataset | Y|
+|igsr | https://identifiers.org/coriell:dataset | Y|
+|intact | https://identifiers.org/intact:dataset | Y|
+|interpro | https://identifiers.org/interpro:dataset | Y|
+|metabolights | https://identifiers.org/metabolights:dataset | Y|
+|metagenomics | https://identifiers.org/mgnify.samp:dataset | Y|
+|mint | https://identifiers.org/mint:dataset | Y|
+|omim | https://identifiers.org/mim:dataset | Y|
+|orphadata | https://identifiers.org/orphanet:dataset | Y|
+|pdb | https://identifiers.org/pdb:dataset | Y|
+|pfam | https://identifiers.org/pfam:dataset | Y|
+|pxd | https://identifiers.org/pride:dataset | Y|
+|reactome | https://identifiers.org/reactome:dataset | Y|
+|refseq | https://identifiers.org/refseq:dataset | Y|
+|refsnp | https://identifiers.org/dbsnp:dataset | Y|
+|rfam | https://identifiers.org/rfam:dataset | Y|
+|rnacentral | https://identifiers.org/rnacentral:dataset | Y|
+|rrid | https://identifiers.org/rrid:dataset | Y|
+|treefam | https://identifiers.org/treefam:dataset | Y|
+|uniparc | https://identifiers.org/uniparc:dataset | Y|
+|uniprot | https://identifiers.org/uniprot:dataset | Y|
+
 
 
 

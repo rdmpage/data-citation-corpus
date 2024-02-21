@@ -1,3 +1,7 @@
 
 .DS_Store
 pdb/current_file_holdings.json
+data-dump.json
+corpus.db
+corpus.db-shm
+corpus.db-wal
