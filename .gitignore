@@ -5,3 +5,4 @@ data-dump.json
 corpus.db
 corpus.db-shm
 corpus.db-wal
+env.php
