@@ -8,6 +8,13 @@ The data is available [by request](https://makedatacount.org/data-citation/#firs
 
 Release announcement [DataCite launches first release of the Data Citation Corpus](https://makedatacount.org/first-release-of-the-open-global-data-citation-corpus/) doi:10.60804/r14z-mw10.
 
+### Update
+
+There is a simplified version (v1.1) of the data available on Zenodo, see [Data Citation Corpus first release Documentation](https://makedatacount.org/data-citation-corpus-documentation/#appendix).
+
+I’m exploring adding this to CouchDB.
+
+> DataCite, & Make Data Count. (2024). Data Citation Corpus Data File (v1.1) [Data set]. DataCite. [10.5281/zenodo.11216814](https://doi.org/10.5281/zenodo.11216814)
 
 
 ## Data extraction
