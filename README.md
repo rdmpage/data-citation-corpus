@@ -6,6 +6,8 @@ Exploring the [Data Citation Corpus](https://makedatacount.org/data-citation).
 
 The data is available [by request](https://makedatacount.org/data-citation/#first-release), this repository documents my explorations of the data. 
 
+Release announcement [DataCite launches first release of the Data Citation Corpus](https://makedatacount.org/first-release-of-the-open-global-data-citation-corpus/) doi:10.60804/r14z-mw10.
+
 
 
 ## Data extraction
@@ -29,6 +31,7 @@ The data repositories that are cited are identified by local UUIDs, so it is non
 | GenBank | 00363b65-f3ef-4fa9-8255-23ab269f4930| 3755354 |
 | PDB | 87646104-e5ef-494b-b2f3-a46c9572e003| 1729783 |
 | SNP | 6087b2e9-ecbf-4898-8047-5f484f1bce2f| 890431 |
+| RefSeq | 1edec4bf-cfee-4296-8893-d1b0ca528f92 | 259548 | 
 
 ### Publishers
 
@@ -102,6 +105,18 @@ AND identifier.id IS NULL
 LIMIT 100;
 ```
 
+## GenBank
+
+```
+select distinct subjId  from citation  WHERE repositoryId = '00363b65-f3ef-4fa9-8255-23ab269f4930' limit 1000;
+```
+
+Run script `genbank.php` to test for occurrence in NCBI using `esummary` query.
+
+## RefSeq
+
+1edec4bf-cfee-4296-8893-d1b0ca528f92, note that 7616 citations are to Creative Commons URLs(!)
+
 ## Repository identifiers 
 
 ## Sources
@@ -155,6 +170,15 @@ LIMIT 100;
 |uniprot | https://identifiers.org/uniprot:dataset | Y|
 
 
+## Gotchas
+
+### Search fails to find identifier in article, even thought it is there
+
+The citation 10.1038/s42255-020-0213-x,SAMN11157311 seemed problematic as a simple search in the online text https://www.nature.com/articles/s42255-020-0213-x found no hits. Googling `SAMN11157311` turned up the PMC version of the paper [PMC7739959](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7739959/) and `SAMN11157311` is in Table 1. This table is not displayed in the article by default, instead it’s a clickable link https://www.nature.com/articles/s42255-020-0213-x/tables/1.
+
+### Specimen codes become accession numbers, figure captions become PDB records
+
+See https://doi.org/10.3897%2FBDJ.4.e8032 for 126 citations that are all incorrect.
 
 
 
