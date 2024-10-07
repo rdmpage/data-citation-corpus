@@ -24,7 +24,7 @@ if (file_exists(dirname(__FILE__) . '/env.php'))
 
 // CouchDB--------------------------------------------------------------------------------	
 $config['couchdb_options'] = array(
-	'database' 	=> 'data-citation-corpus',
+	'database' 	=> 'data-citation-corpus-v2',
 	'host' 		=> getenv('COUCHDB_USERNAME') . ':' . getenv('COUCHDB_PASSWORD') . '@' . getenv('COUCHDB_HOST'),
 	'port' 		=> getenv('COUCHDB_PORT'),
 	'prefix' 	=> getenv('COUCHDB_PROTOCOL'),		

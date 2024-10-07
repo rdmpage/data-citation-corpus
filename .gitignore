@@ -1,8 +1,11 @@
 
 .DS_Store
 pdb/current_file_holdings.json
-data-dump.json
+v1/data-dump.json
+v1/data-dump.json.zip
 corpus.db
 corpus.db-shm
 corpus.db-wal
 env.php
+
+2024-08-23-data-citation-corpus-v2

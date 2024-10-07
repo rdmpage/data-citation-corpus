@@ -8,18 +8,38 @@ The data is available [by request](https://makedatacount.org/data-citation/#firs
 
 Release announcement [DataCite launches first release of the Data Citation Corpus](https://makedatacount.org/first-release-of-the-open-global-data-citation-corpus/) doi:10.60804/r14z-mw10.
 
-### Update
+## Blog post
 
+I wrote about the problems with the first release on iPhylo:
+
+> Page, R. (2024). Problems with the DataCite Data Citation Corpus [https://doi.org/10.59350/t80g1-xys37](https://doi.org/10.59350/t80g1-xys37)
+
+### Update(s)
+
+
+#### Verison 1.1
 There is a simplified version (v1.1) of the data available on Zenodo, see [Data Citation Corpus first release Documentation](https://makedatacount.org/data-citation-corpus-documentation/#appendix).
 
 I’m exploring adding this to CouchDB.
 
 > DataCite, & Make Data Count. (2024). Data Citation Corpus Data File (v1.1) [Data set]. DataCite. [10.5281/zenodo.11216814](https://doi.org/10.5281/zenodo.11216814)
 
+#### Version 2.0
 
-## Data extraction
+Version 2.0 was released August 23, 2024 by Datacite [doi:10.5281/zenodo.13376773](https://doi.org/10.5281/zenodo.13376773)
 
-`to_sql.php` parses the JSON data and outputs SQL statements so we can construct a simple SQL database to explore the data. 
+> Data file for the second release of the Data Citation Corpus, produced by DataCite and Make Data Count as part of an ongoing grant project funded by the Wellcome Trust. Read more about the project.
+
+> The data file includes 5,256,114 data citation records in JSON and CSV formats. The JSON file is the version of record.
+
+## CouchDB (version 2)
+
+
+## SQL version (first release of the data)
+
+### Data extraction
+
+`to_sql.php` parses the JSON data and outputs SQL statements to construct a simple SQL database to explore the data. 
 
 ### Sources
 
@@ -31,7 +51,7 @@ SELECT COUNT(id), sourceId FROM citation GROUP BY sourceId;
 
 ### Repositories 
 
-The data repositories that are cited are identified by local UUIDs, so it is non-trivial to figure out which repository is which. Here is a list so far:
+The data repositories cited are identified by local UUIDs, so it is non-trivial to figure out which repository is which. Here is a list so far:
 
 | Repository | id | citation count |
 |--|--|--|
@@ -42,7 +62,7 @@ The data repositories that are cited are identified by local UUIDs, so it is non
 
 ### Publishers
 
-Publishers of the journals in which citations were found are also identified using UUIDs, the top twenty of these are listed below, and names can be determined by comparing to the chart on the [corpus dashboard](http://corpus.datacite.org/dashboard).
+Publishers of the journals in which citations were found are also identified using UUIDs, the top twenty of these are listed below, and names can be determined by comparing with the chart on the [corpus dashboard](http://corpus.datacite.org/dashboard).
 
 
 |name | citation count | publisherId|
@@ -70,7 +90,7 @@ Publishers of the journals in which citations were found are also identified usi
 | | 60503 | d2c56596-551e-4f1e-81e6-d7bafe1670f8|
 
 
-## Protein Data Bank
+#### Protein Data Bank
 
 The [Protein Data Bank](https://www.wwpdb.org) (PDB) has 1,729,783 citations in the corpus. There are 177,220 distinct PDB identifiers cited. 
 
@@ -112,21 +132,21 @@ AND identifier.id IS NULL
 LIMIT 100;
 ```
 
-## GenBank
+#### GenBank
 
 ```
-select distinct subjId  from citation  WHERE repositoryId = '00363b65-f3ef-4fa9-8255-23ab269f4930' limit 1000;
+select distinct subjId from citation WHERE repositoryId = '00363b65-f3ef-4fa9-8255-23ab269f4930' limit 1000;
 ```
 
 Run script `genbank.php` to test for occurrence in NCBI using `esummary` query.
 
-## RefSeq
+#### RefSeq
 
 1edec4bf-cfee-4296-8893-d1b0ca528f92, note that 7616 citations are to Creative Commons URLs(!)
 
-## Repository identifiers 
+### Repository identifiers 
 
-## Sources
+#### Sources
 
 |Label | Methodology | http://identifiers.org |
 |--|--|--|
@@ -177,13 +197,15 @@ Run script `genbank.php` to test for occurrence in NCBI using `esummary` query.
 |uniprot | https://identifiers.org/uniprot:dataset | Y|
 
 
-## Gotchas
+### Gotchas
 
-### Search fails to find identifier in article, even thought it is there
+Examples of problematic identifiers.
 
-The citation 10.1038/s42255-020-0213-x,SAMN11157311 seemed problematic as a simple search in the online text https://www.nature.com/articles/s42255-020-0213-x found no hits. Googling `SAMN11157311` turned up the PMC version of the paper [PMC7739959](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7739959/) and `SAMN11157311` is in Table 1. This table is not displayed in the article by default, instead it’s a clickable link https://www.nature.com/articles/s42255-020-0213-x/tables/1.
+#### Text search fails to find identifier in article, even though it is there
 
-### Specimen codes become accession numbers, figure captions become PDB records
+The citation 10.1038/s42255-020-0213-x, SAMN11157311 seemed problematic as a simple search in the online text https://www.nature.com/articles/s42255-020-0213-x found no hits. Googling `SAMN11157311` turned up the PMC version of the paper [PMC7739959](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7739959/) and `SAMN11157311` is in Table 1. This table is not displayed in the article by default, instead it’s a clickable link https://www.nature.com/articles/s42255-020-0213-x/tables/1.
+
+#### Specimen codes become accession numbers, figure captions become PDB records
 
 See https://doi.org/10.3897%2FBDJ.4.e8032 for 126 citations that are all incorrect.
 
