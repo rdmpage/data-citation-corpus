@@ -28,7 +28,6 @@ $file_handle = fopen($filename, "r");
 while (!feof($file_handle)) 
 {
 	$json = trim(fgets($file_handle));
-	$json = trim(fgets($file_handle));
 	$json = preg_replace('/^\[/', '', $json);
 	$json = preg_replace('/,$/', '', $json);
 	$json = preg_replace('/\]$/', '', $json);

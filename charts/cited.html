@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Embedding Vega-Lite</title>
+    <script src="vega@5.js"></script>
+    <script src="vega-lite@5.js"></script>
+    <script src="vega-embed@6.js"></script>
+  </head>
+  <body>
+    <div id="vis"></div>
+
+    <script type="text/javascript">
+      var yourVlSpec = {
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "A bar graph showing the scores of the top 5 students. This shows an example of the window transform, for how the top K (5) can be filtered, and also how a rank can be computed for each student.",
+  "data": {
+
+   "values": [
+        {
+            "cited": 1,
+            "count": 2978297
+        },
+        {
+            "cited": 2,
+            "count": 243268
+        },
+        {
+            "cited": 3,
+            "count": 77497
+        },
+        {
+            "cited": 4,
+            "count": 36113
+        },
+        {
+            "cited": 5,
+            "count": 20875
+        },
+        {
+            "cited": 6,
+            "count": 14035
+        },
+        {
+            "cited": 7,
+            "count": 9536
+        },
+        {
+            "cited": 8,
+            "count": 6912
+        },
+        {
+            "cited": 9,
+            "count": 5192
+        },
+        {
+            "cited": 10,
+            "count": 4205
+        },
+        {
+            "cited": "> 10",
+            "count": 28628
+        }
+    ]
+
+ 
+  },
+  "mark": "bar",
+  "encoding": {
+    "x": {
+        "field": "count",
+        "type": "quantitative"
+    },
+    "y": {
+        "field": "cited",
+        "type": "nominal"
+    }
+  }
+}
+;
+      vegaEmbed('#vis', yourVlSpec);
+    </script>
+  </body>
+</html>
