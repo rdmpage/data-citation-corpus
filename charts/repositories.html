@@ -1,0 +1,6817 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Embedding Vega-Lite</title>
+    <script src="vega@5.js"></script>
+    <script src="vega-lite@5.js"></script>
+    <script src="vega-embed@6.js"></script>
+  </head>
+  <body>
+    <div id="vis"></div>
+
+    <script type="text/javascript">
+      var yourVlSpec = {
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "A bar graph showing the scores of the top 5 students. This shows an example of the window transform, for how the top K (5) can be filtered, and also how a rank can be computed for each student.",
+  "data": {
+
+  "values": [
+    {
+      "key": " Data Repository for the University of Minnesota (DRUM)",
+      "value": 1
+    },
+    {
+      "key": ":unas",
+      "value": 1
+    },
+    {
+      "key": "(:unav)",
+      "value": 4
+    },
+    {
+      "key": "© Georg Thieme Verlag",
+      "value": 81
+    },
+    {
+      "key": "0000-0002-9173-4602, SEAD (http://sead-data.net)",
+      "value": 2
+    },
+    {
+      "key": "4TU.Centre for Research Data",
+      "value": 72
+    },
+    {
+      "key": "4TU.ResearchData",
+      "value": 1451
+    },
+    {
+      "key": "A.N. Severtsov Institute of Ecology and Evolution, RUSSIAN ACADEMY OF SCIENCES",
+      "value": 1
+    },
+    {
+      "key": "Aachen",
+      "value": 2
+    },
+    {
+      "key": "Aalborg University Press",
+      "value": 3
+    },
+    {
+      "key": "AC SAF",
+      "value": 4
+    },
+    {
+      "key": "Academy of Natural Sciences",
+      "value": 1
+    },
+    {
+      "key": "ACS Applied Materials and Interfaces",
+      "value": 1
+    },
+    {
+      "key": "ACS Nano",
+      "value": 1
+    },
+    {
+      "key": "ADA Dataverse",
+      "value": 15
+    },
+    {
+      "key": "Adis Journals",
+      "value": 9
+    },
+    {
+      "key": "ADLRO",
+      "value": 31
+    },
+    {
+      "key": "Advanced Materials",
+      "value": 1
+    },
+    {
+      "key": "Aeris",
+      "value": 8
+    },
+    {
+      "key": "AERIS",
+      "value": 21
+    },
+    {
+      "key": "Africa Health Research Institute",
+      "value": 1
+    },
+    {
+      "key": "Africa Health Research Institute (AHRI)",
+      "value": 1
+    },
+    {
+      "key": "Ag Data Commons",
+      "value": 136
+    },
+    {
+      "key": "AGH University of Krakow",
+      "value": 1
+    },
+    {
+      "key": "AgResearch",
+      "value": 2
+    },
+    {
+      "key": "Agri-Environmental Research Data Repository (AERDR)",
+      "value": 1
+    },
+    {
+      "key": "Agricultural Research Council",
+      "value": 1
+    },
+    {
+      "key": "Agricultural Research Service",
+      "value": 2
+    },
+    {
+      "key": "AIDA",
+      "value": 5
+    },
+    {
+      "key": "AIP Publishing",
+      "value": 133
+    },
+    {
+      "key": "Alexander Thom",
+      "value": 1
+    },
+    {
+      "key": "Alma Mater Studiorum - Università di Bologna",
+      "value": 1
+    },
+    {
+      "key": "Altai State University",
+      "value": 2
+    },
+    {
+      "key": "American Chemical Society",
+      "value": 5
+    },
+    {
+      "key": "American University",
+      "value": 3
+    },
+    {
+      "key": "AmeriFlux; Argonne National Laboratory",
+      "value": 10
+    },
+    {
+      "key": "AmeriFlux; Carleton University; Ministry of Environment and Climate Change",
+      "value": 1
+    },
+    {
+      "key": "AmeriFlux; Harvard University",
+      "value": 1
+    },
+    {
+      "key": "AmeriFlux; Indiana University",
+      "value": 10
+    },
+    {
+      "key": "AmeriFlux; Indiana University; Montana State University; USDA Forest Service",
+      "value": 7
+    },
+    {
+      "key": "AmeriFlux; Kansas University",
+      "value": 7
+    },
+    {
+      "key": "AmeriFlux; Lawrence Berkeley National Laboratory",
+      "value": 4
+    },
+    {
+      "key": "AmeriFlux; Lawrence Livermore National Laboratory",
+      "value": 2
+    },
+    {
+      "key": "AmeriFlux; Marine Biological Laboratory; University of Alaska Fairbanks",
+      "value": 1
+    },
+    {
+      "key": "AmeriFlux; National Laboratory for Agriculture and the Environment; USDA",
+      "value": 5
+    },
+    {
+      "key": "AmeriFlux; NOAA/ARL",
+      "value": 13
+    },
+    {
+      "key": "AmeriFlux; Northern Arizona University",
+      "value": 2
+    },
+    {
+      "key": "AmeriFlux; Oak Ridge National Laboratory; University of Missouri",
+      "value": 7
+    },
+    {
+      "key": "AmeriFlux; Ohio State University; University of Michigan; Virginia Commonwealth University",
+      "value": 3
+    },
+    {
+      "key": "AmeriFlux; Ohio State University; Virginia Commonwealth University",
+      "value": 2
+    },
+    {
+      "key": "AmeriFlux; Osaka Prefecture Univeristy; Shinshu University",
+      "value": 1
+    },
+    {
+      "key": "AmeriFlux; Osaka Prefecture University; Shinshu University",
+      "value": 3
+    },
+    {
+      "key": "AmeriFlux; Texas A&M University",
+      "value": 4
+    },
+    {
+      "key": "AmeriFlux; The University of Alabama",
+      "value": 2
+    },
+    {
+      "key": "AmeriFlux; United States Department of Agriculture",
+      "value": 17
+    },
+    {
+      "key": "AmeriFlux; Universite de Montreal, Departement de geographie; Wilfrid-Laurier University",
+      "value": 2
+    },
+    {
+      "key": "AmeriFlux; University of Alaska Fairbanks, Institute of Arctic Biology",
+      "value": 1
+    },
+    {
+      "key": "AmeriFlux; University of British Columbia",
+      "value": 1
+    },
+    {
+      "key": "AmeriFlux; University of British Columbia, Vancouver",
+      "value": 1
+    },
+    {
+      "key": "AmeriFlux; University of California, Berkeley",
+      "value": 15
+    },
+    {
+      "key": "AmeriFlux; University of Colorado",
+      "value": 12
+    },
+    {
+      "key": "AmeriFlux; University of Minnesota; USDA-ARS",
+      "value": 6
+    },
+    {
+      "key": "AmeriFlux; University of Nebraska - Lincoln",
+      "value": 9
+    },
+    {
+      "key": "AmeriFlux; University of New Mexico",
+      "value": 7
+    },
+    {
+      "key": "AmeriFlux; University of Toledo / Michigan State University",
+      "value": 1
+    },
+    {
+      "key": "AmeriFlux; University of Wisconsin",
+      "value": 4
+    },
+    {
+      "key": "AmeriFlux; University of Wisconsin-Madison",
+      "value": 2
+    },
+    {
+      "key": "AmeriFlux; University of Wyoming",
+      "value": 2
+    },
+    {
+      "key": "AmeriFlux; USDA Forest Service",
+      "value": 4
+    },
+    {
+      "key": "AmeriFlux; USDA-ARS",
+      "value": 1
+    },
+    {
+      "key": "Andoh, Satoshi",
+      "value": 7
+    },
+    {
+      "key": "Anglia Ruskin University",
+      "value": 2
+    },
+    {
+      "key": "Apeiron",
+      "value": 7
+    },
+    {
+      "key": "Apollo - University of Cambridge Repository",
+      "value": 1826
+    },
+    {
+      "key": "Archaeology Data Service",
+      "value": 54
+    },
+    {
+      "key": "Archive2014",
+      "value": 16
+    },
+    {
+      "key": "Arctic Data archive System (ADS), Japan",
+      "value": 1
+    },
+    {
+      "key": "Arctic Data Center",
+      "value": 33
+    },
+    {
+      "key": "Argonne National Laboratory (ANL), Argonne, IL (United States)",
+      "value": 1
+    },
+    {
+      "key": "Argonne National Laboratory (ANL), Argonne, IL (United States); Argonne National Laboratory (ANL)",
+      "value": 1
+    },
+    {
+      "key": "ArrayExpress",
+      "value": 12307
+    },
+    {
+      "key": "Artefact Services",
+      "value": 2
+    },
+    {
+      "key": "ASEP repository",
+      "value": 1
+    },
+    {
+      "key": "ASHA journals",
+      "value": 189
+    },
+    {
+      "key": "Asociación Colombiana de Ornitología",
+      "value": 2
+    },
+    {
+      "key": "Aston University",
+      "value": 1
+    },
+    {
+      "key": "Atlas of Living Australia",
+      "value": 2
+    },
+    {
+      "key": "Atmosphere to Electrons (A2e) Data Archive and Portal, Pacific Northwest National Laboratory; PNNL",
+      "value": 5
+    },
+    {
+      "key": "Atmospheric Radiation Measurement (ARM) Archive, Oak Ridge National Laboratory (ORNL), Oak Ridge, TN (US)",
+      "value": 13
+    },
+    {
+      "key": "Atmospheric Radiation Measurement (ARM) Archive, Oak Ridge National Laboratory (ORNL), Oak Ridge, TN (US);",
+      "value": 73
+    },
+    {
+      "key": "Atmospheric Radiation Measurement (ARM) Archive, Oak Ridge National Laboratory (ORNL), Oak Ridge, TN (US); ARM Data Center, Oak Ridge National Laboratory (ORNL), Oak Ridge, TN (United States)",
+      "value": 62
+    },
+    {
+      "key": "Auburn University",
+      "value": 4
+    },
+    {
+      "key": "Auckland War Memorial Museum",
+      "value": 1
+    },
+    {
+      "key": "AusPass",
+      "value": 2
+    },
+    {
+      "key": "AUSSDA",
+      "value": 13
+    },
+    {
+      "key": "AUSSDA Dataverse",
+      "value": 2
+    },
+    {
+      "key": "Australia's Virtual Herbarium",
+      "value": 1
+    },
+    {
+      "key": "Australian Antarctic Data Centre",
+      "value": 14
+    },
+    {
+      "key": "Australian Antarctic Division",
+      "value": 1
+    },
+    {
+      "key": "Australian Bureau of Agricultural Resource Economics and Sciences (ABARES)",
+      "value": 4
+    },
+    {
+      "key": "Australian Bureau of Meteorology",
+      "value": 1
+    },
+    {
+      "key": "Australian Institute of Marine Science",
+      "value": 2
+    },
+    {
+      "key": "Australian Museum",
+      "value": 1
+    },
+    {
+      "key": "Australian Ocean Data Network",
+      "value": 2
+    },
+    {
+      "key": "Axiom Data Science",
+      "value": 3
+    },
+    {
+      "key": "Balearic Islands Coastal Observing and Forecasting System, SOCIB",
+      "value": 18
+    },
+    {
+      "key": "Baobab",
+      "value": 12
+    },
+    {
+      "key": "Barcode of Life Data Systems",
+      "value": 6
+    },
+    {
+      "key": "BathSPAdata",
+      "value": 2
+    },
+    {
+      "key": "Becaris",
+      "value": 206
+    },
+    {
+      "key": "Belgian Biodiversity Platform",
+      "value": 4
+    },
+    {
+      "key": "Bernice Pauahi Bishop Museum",
+      "value": 1
+    },
+    {
+      "key": "BGCF-DATA (Biogeochemistry (BGC) Feedbacks);",
+      "value": 1
+    },
+    {
+      "key": "BGI Shenzhen",
+      "value": 2
+    },
+    {
+      "key": "BGR , IAH, KIT, UNESCO",
+      "value": 1
+    },
+    {
+      "key": "BIBB - Federal Institute for Vocational Education and Training",
+      "value": 6
+    },
+    {
+      "key": "Bielefeld University",
+      "value": 153
+    },
+    {
+      "key": "Biodiversidata",
+      "value": 2
+    },
+    {
+      "key": "Biodiversity data bank of Generalitat Valenciana",
+      "value": 1
+    },
+    {
+      "key": "Biodiversity Data Journal",
+      "value": 5
+    },
+    {
+      "key": "Biological and Chemical Oceanography Data Management Office (BCO-DMO)",
+      "value": 581
+    },
+    {
+      "key": "Biological Magnetic Resonance Bank",
+      "value": 9
+    },
+    {
+      "key": "BioMed Central",
+      "value": 1
+    },
+    {
+      "key": "BioModels",
+      "value": 2
+    },
+    {
+      "key": "BioProject",
+      "value": 78677
+    },
+    {
+      "key": "BioRxiv",
+      "value": 2
+    },
+    {
+      "key": "BioStudies",
+      "value": 407
+    },
+    {
+      "key": "Birmensdorf, Eidgenössische Forschungsanstalt für Wald, Schnee und Landschaft. Bern, Bundesamt für Umwelt.",
+      "value": 4
+    },
+    {
+      "key": "BKG Federal Agency for Cartography and Geodesy",
+      "value": 2
+    },
+    {
+      "key": "Blekinge Institute of Technology",
+      "value": 2
+    },
+    {
+      "key": "Bolin Centre Database",
+      "value": 10
+    },
+    {
+      "key": "BonaRes Data Centre (Leibniz Centre for Agricultural Landscape Research (ZALF))",
+      "value": 5
+    },
+    {
+      "key": "Bond University",
+      "value": 2
+    },
+    {
+      "key": "BORDaR: Bournemouth Online Research Data Repository",
+      "value": 1
+    },
+    {
+      "key": "Borealis",
+      "value": 66
+    },
+    {
+      "key": "Botanic Garden and Botanical Museum Berlin",
+      "value": 3
+    },
+    {
+      "key": "Botanic Garden Meise",
+      "value": 2
+    },
+    {
+      "key": "Botanical Society of Denmark",
+      "value": 1
+    },
+    {
+      "key": "Brain Image Library",
+      "value": 1
+    },
+    {
+      "key": "Brill Online",
+      "value": 62
+    },
+    {
+      "key": "British Antarctic Survey",
+      "value": 2
+    },
+    {
+      "key": "British Ecological Society",
+      "value": 1
+    },
+    {
+      "key": "British Geological Survey",
+      "value": 5
+    },
+    {
+      "key": "British Library",
+      "value": 3
+    },
+    {
+      "key": "British Oceanographic Data Centre, National Oceanography Centre, NERC, UK",
+      "value": 44
+    },
+    {
+      "key": "British Oceanographic Data Centre, Natural Environment Research Council",
+      "value": 23
+    },
+    {
+      "key": "British Trust for Ornithology",
+      "value": 1
+    },
+    {
+      "key": "Broad Institute of MIT and Harvard",
+      "value": 16
+    },
+    {
+      "key": "Brown University",
+      "value": 5
+    },
+    {
+      "key": "Brunel University London",
+      "value": 20
+    },
+    {
+      "key": "Bundesanstalt für Geowissenschaften und Rohstoffe",
+      "value": 2
+    },
+    {
+      "key": "Bundesanstalt für Wasserbau",
+      "value": 1
+    },
+    {
+      "key": "Butterfly Conservation",
+      "value": 1
+    },
+    {
+      "key": "C. R. Ashbee",
+      "value": 1
+    },
+    {
+      "key": "CADC",
+      "value": 35
+    },
+    {
+      "key": "CAIDA UCSD",
+      "value": 1
+    },
+    {
+      "key": "California Academy of Sciences",
+      "value": 2
+    },
+    {
+      "key": "Caltech",
+      "value": 23
+    },
+    {
+      "key": "CaltechDATA",
+      "value": 1545
+    },
+    {
+      "key": "Cambridge Crystallographic Data Centre",
+      "value": 704516
+    },
+    {
+      "key": "Canada Energy Regulator",
+      "value": 4
+    },
+    {
+      "key": "Canadian Cryospheric Information Network",
+      "value": 4
+    },
+    {
+      "key": "CancerData",
+      "value": 2
+    },
+    {
+      "key": "Cape Peninsula University of Technology",
+      "value": 6
+    },
+    {
+      "key": "Carbon Dioxide Information Analysis Center (CDIAC)",
+      "value": 213
+    },
+    {
+      "key": "Cardiff Univeristy",
+      "value": 1
+    },
+    {
+      "key": "Cardiff University",
+      "value": 153
+    },
+    {
+      "key": "Carnegie Mellon University",
+      "value": 20
+    },
+    {
+      "key": "Cary Institute",
+      "value": 33
+    },
+    {
+      "key": "Catalogue of Life",
+      "value": 9
+    },
+    {
+      "key": "CATDS (CNES, IFREMER, CESBIO)",
+      "value": 2
+    },
+    {
+      "key": "CATH",
+      "value": 497
+    },
+    {
+      "key": "CBGP (UMR INRA, Cirad, IRD, Montpellier SupAgro)",
+      "value": 1
+    },
+    {
+      "key": "CCHDO: CLIVAR and Carbon Hydrographic Data Office",
+      "value": 2
+    },
+    {
+      "key": "Cefas",
+      "value": 1
+    },
+    {
+      "key": "Cefas Laboratory, UK",
+      "value": 1
+    },
+    {
+      "key": "Center for Macroecology, Evolution and Climate, University of Copenhagen",
+      "value": 1
+    },
+    {
+      "key": "Center for Nuclear Energy in Agriculture, University of São Paulo, Brazil; Princeton Institute for International and Regional Studies, USA.",
+      "value": 4
+    },
+    {
+      "key": "Center for Science and Technology Policy Research, Cooperative Institute for Research in Environmental Sciences, University of Colorado Boulder",
+      "value": 2
+    },
+    {
+      "key": "Center for Severe Weather Research",
+      "value": 1
+    },
+    {
+      "key": "Centre d'Accès Sécurisé aux Données (CASD)",
+      "value": 4
+    },
+    {
+      "key": "Centre de Donnees astronomique de Strasbourg (CDS)",
+      "value": 4
+    },
+    {
+      "key": "Centre de Donnees Strasbourg (CDS)",
+      "value": 12676
+    },
+    {
+      "key": "Centre de Formation et de Recherche sur les Environnements Méditerranéens (UMR 5110)",
+      "value": 2
+    },
+    {
+      "key": "Centre des Données astronomiques de Strasbourg",
+      "value": 7
+    },
+    {
+      "key": "Centre for Environmental Data Analysis (CEDA)",
+      "value": 53
+    },
+    {
+      "key": "Centre for Environmental Data Archival",
+      "value": 12
+    },
+    {
+      "key": "Centre for Reviews and Dissemination - CRD",
+      "value": 4
+    },
+    {
+      "key": "Centre for Speech Technology Research. University of Edinburgh",
+      "value": 1
+    },
+    {
+      "key": "Centre universitaire de médecine générale et santé publique, Lausanne",
+      "value": 1
+    },
+    {
+      "key": "Centro de Estudios Andaluces",
+      "value": 33
+    },
+    {
+      "key": "CERN Open Data Portal",
+      "value": 14
+    },
+    {
+      "key": "CERSAT",
+      "value": 1
+    },
+    {
+      "key": "Chalmers University of Technology",
+      "value": 74
+    },
+    {
+      "key": "Chandra X-ray Center/SAO",
+      "value": 69
+    },
+    {
+      "key": "ChecklistBank",
+      "value": 8
+    },
+    {
+      "key": "ChEMBL",
+      "value": 1585
+    },
+    {
+      "key": "Chemistry of Materials",
+      "value": 1
+    },
+    {
+      "key": "chemotion-repository",
+      "value": 2
+    },
+    {
+      "key": "chemotion.net",
+      "value": 138
+    },
+    {
+      "key": "Chen, Yi",
+      "value": 2
+    },
+    {
+      "key": "Chrysomelidae Recording Scheme",
+      "value": 1
+    },
+    {
+      "key": "CIBIO (Research Center in Biodiversity and Genetic Resources) Portugal",
+      "value": 3
+    },
+    {
+      "key": "Çiçek, Serhat Sezai",
+      "value": 1
+    },
+    {
+      "key": "CIESM / Ifremer",
+      "value": 2
+    },
+    {
+      "key": "CIL",
+      "value": 2
+    },
+    {
+      "key": "CIRAD Dataverse",
+      "value": 11
+    },
+    {
+      "key": "Citrine Informatics",
+      "value": 26
+    },
+    {
+      "key": "City, University of London",
+      "value": 1
+    },
+    {
+      "key": "Climate Hazards Center",
+      "value": 1
+    },
+    {
+      "key": "Climate Hazards Group",
+      "value": 1
+    },
+    {
+      "key": "Clinical Practice Research Datalink",
+      "value": 3
+    },
+    {
+      "key": "Cluster of Excellence MATH+",
+      "value": 4
+    },
+    {
+      "key": "CNES",
+      "value": 6
+    },
+    {
+      "key": "CNGB",
+      "value": 1
+    },
+    {
+      "key": "Cockerill, Timothy",
+      "value": 1
+    },
+    {
+      "key": "Coherent X-ray Imaging Data Bank (Lawrence Berkeley National Laboratory); Arizona State University, The Scripps \nResearch Institute, CFEL, SLAC, Uppsala University, Universidad Autónoma de Madrid, Max-Planck-Institut für \nmedizinische Forschung, University of Hamburg, Trinity College Dublin",
+      "value": 1
+    },
+    {
+      "key": "Coherent X-ray Imaging Data Bank (Lawrence Berkeley National Laboratory); Beijing Computational Science Research Center, Max-Planck-Institut für medizinische Forschung, The European XFEL, Arizona State University, SLAC, Paul Scherrer Institute",
+      "value": 1
+    },
+    {
+      "key": "Coherent X-ray Imaging Data Bank (Lawrence Berkeley National Laboratory); CFEL, University of Hamburg, Arizona State University, SLAC, University of Wisconsin",
+      "value": 1
+    },
+    {
+      "key": "Coherent X-ray Imaging Data Bank (Lawrence Berkeley National Laboratory); European XFEL, LBNL, Uppsala University, SLAC National Accelerator Laboratory, La Trobe University, Arizone State University, KTH, DESY, CFEL",
+      "value": 1
+    },
+    {
+      "key": "Coherent X-ray Imaging Data Bank (Lawrence Berkeley National Laboratory); Indiana University Bloomington",
+      "value": 2
+    },
+    {
+      "key": "Coherent X-ray Imaging Data Bank (Lawrence Berkeley National Laboratory); KEK High Energy Accelerator Research Organization, Japan Synchrotron Radiation Research Institute, Japan Science and Technology Agency, RIKEN SPring-8 Center, Kyoto University",
+      "value": 1
+    },
+    {
+      "key": "Coherent X-ray Imaging Data Bank (Lawrence Berkeley National Laboratory); Korea University",
+      "value": 2
+    },
+    {
+      "key": "Coherent X-ray Imaging Data Bank (Lawrence Berkeley National Laboratory); Kyoto University, University of Tokyo, The University of Pittsburgh, University of Tsukuba, RIKEN SPring-8 Center, The University of Texas Southwestern Medical Center",
+      "value": 1
+    },
+    {
+      "key": "Coherent X-ray Imaging Data Bank (Lawrence Berkeley National Laboratory); Max Planck Institute for Medical Research, European XFEL",
+      "value": 1
+    },
+    {
+      "key": "Coherent X-ray Imaging Data Bank (Lawrence Berkeley National Laboratory); The Scripps Research Institute, DESY, \nArizona State University, Trinity College, SLAC, Uppsala University, University of Hamburg",
+      "value": 1
+    },
+    {
+      "key": "Coherent X-ray Imaging Data Bank (Lawrence Berkeley National Laboratory); The Scripps Research Institute, Vrije \nUniversiteit Brussel, University of North Carolina Chapel Hill Medical School, University of Hamburg, CFEL, Arizona State \nUniversity, Clinical Research Institute of Montreal, SLAC",
+      "value": 1
+    },
+    {
+      "key": "Coherent X-ray Imaging Data Bank (Lawrence Berkeley National Laboratory); The University of Tokyo, RIKEN SPring-8 \nCenter, POSTECH, Osaka University, Kyoto University, Japan Synchrotron Radiation Research Institute, KEK High Energy \nAccelerator Research Organization",
+      "value": 4
+    },
+    {
+      "key": "Coherent X-ray Imaging Data Bank (Lawrence Berkeley National Laboratory); The University of Tokyo, RIKEN SPring-8 Center, POSTECH, Osaka University, Kyoto University, Japan Synchrotron Radiation Research Institute",
+      "value": 1
+    },
+    {
+      "key": "Coherent X-ray Imaging Data Bank (Lawrence Berkeley National Laboratory); University of Gothenburg, University of \nJyvaskyla, University of Helsinki, CFEL, The University of Tokyo, Arizona State University, La Trobe University, \nUniversity of Wisconsin, SLAC National Accelerator Laboratory, RIKEN SPring-8 Center, University of Chicago, Argonne \nNational Laboratory, Northeastern Illinois University",
+      "value": 1
+    },
+    {
+      "key": "Coherent X-ray Imaging Data Bank (Lawrence Berkeley National Laboratory); University of Southern California, \nCleveland \nClinic, Center for Free Electron Laser Science, Arizona State Universiy, University of California Los Angeles, SLAC \nNational \nAccelerator Laboratory, Harvard University, ShanghaiTech University",
+      "value": 1
+    },
+    {
+      "key": "Coherent X-ray Imaging Data Bank (Lawrence Berkeley National Laboratory); Uppsala University, CFEL, Arizona State University, La Trobe University, University of Wisconsin, SLAC National Accelerator Laboratory",
+      "value": 2
+    },
+    {
+      "key": "Coherent X-ray Imaging Data Bank (Lawrence Berkeley National Laboratory); Uppsala University, DESY, CFEL, SLAC",
+      "value": 1
+    },
+    {
+      "key": "Coherent X-ray Imaging Data Bank (Lawrence Berkeley National Laboratory); Uppsala University, SLAC National \nAccelerator Laboratory, ...",
+      "value": 2
+    },
+    {
+      "key": "Coherent X-ray Imaging Data Bank (Lawrence Berkeley National Laboratory); Uppsala University, SLAC National \nAccelerator Laboratory, CFEL, University of Hamburg, Arizona State University, University of Wisconsin, La Trobe \nUniversity",
+      "value": 1
+    },
+    {
+      "key": "Coherent X-ray Imaging Data Bank (Lawrence Berkeley National Laboratory); Uppsala University, SLAC National \nAccelerator Laboratory, Yale University, Diamond Light Source, Lawrence Berkeley National Laboratory",
+      "value": 1
+    },
+    {
+      "key": "Colchester, Essex: UK Data Archive",
+      "value": 59
+    },
+    {
+      "key": "College of William and Mary, Virginia Institute of Marine Science",
+      "value": 1
+    },
+    {
+      "key": "College Park, MD: University of Maryland and Minneapolis, MN: IPUMS",
+      "value": 6
+    },
+    {
+      "key": "College Park, MD: University of Maryland and Minneapolis, MN: University of Minnesota",
+      "value": 1
+    },
+    {
+      "key": "Columbia University",
+      "value": 3
+    },
+    {
+      "key": "Comisión nacional para el conocimiento y uso de la biodiversidad",
+      "value": 1
+    },
+    {
+      "key": "Commonwealth of Australia (Geoscience Australia)",
+      "value": 1
+    },
+    {
+      "key": "Community Resource for Archiving Wireless Data at Dartmouth (CRAWDAD)",
+      "value": 51
+    },
+    {
+      "key": "Compiled by NOAA Global Monitoring Division: Boulder, Colorado, U.S.A.",
+      "value": 4
+    },
+    {
+      "key": "Complex Portal (CP)",
+      "value": 546
+    },
+    {
+      "key": "CONACYT – Centro de Investigación y Desarrollo en Agrobiotecnología Alimentaria, Centro de Investigación y Desarrollo, A.C., Blvd. Sta. Catarina s/n, Col. Santiago Tlapacoya, 42110, San Agustín Tlaxiaca, Hidalgo, Mexico",
+      "value": 4
+    },
+    {
+      "key": "Consiglio Nazionale delle Ricerche, Istituto di Metodologie per l'Analisi Ambientale (CNR-IMAA)",
+      "value": 1
+    },
+    {
+      "key": "contact.engineering",
+      "value": 2
+    },
+    {
+      "key": "Copernicus Climate Change Service (C3S) Climate Data Store (CDS)",
+      "value": 144
+    },
+    {
+      "key": "Copernicus Marine Service (CMS)",
+      "value": 1
+    },
+    {
+      "key": "Copernicus Monitoring Environment Marine Service (CMEMS)",
+      "value": 24
+    },
+    {
+      "key": "CORA.Repositori de Dades de Recerca",
+      "value": 6
+    },
+    {
+      "key": "Cornell Center for Social Sciences",
+      "value": 10
+    },
+    {
+      "key": "Cornell Institute for Social and Economic Research",
+      "value": 1
+    },
+    {
+      "key": "Cornell Lab of Ornithology",
+      "value": 4
+    },
+    {
+      "key": "Cornell Univ., Ithaca, NY (United States)",
+      "value": 2
+    },
+    {
+      "key": "Cornell Univ., Ithaca, NY (United States);Department of Energy Systems Biology Knowledgebase; Lawrence Berkeley National Lab. (LBNL), Berkeley, CA (United States); Oak Ridge National Lab. (ORNL), Oak Ridge, TN (United States)",
+      "value": 35
+    },
+    {
+      "key": "Cornell University Library",
+      "value": 4
+    },
+    {
+      "key": "Cortisol Network (CORNET) Consortium",
+      "value": 1
+    },
+    {
+      "key": "Cortisol Network (CORNET) Consortium; University of Edinburgh",
+      "value": 1
+    },
+    {
+      "key": "CQUniversity",
+      "value": 33
+    },
+    {
+      "key": "Cranfield Online Research Data (CORD)",
+      "value": 305
+    },
+    {
+      "key": "CRC/TR32 Database (TR32DB)",
+      "value": 11
+    },
+    {
+      "key": "CRC1211 Database (CRC1211DB)",
+      "value": 1
+    },
+    {
+      "key": "CRC806-Database",
+      "value": 1
+    },
+    {
+      "key": "CRCNS.org",
+      "value": 36
+    },
+    {
+      "key": "CREAF - Centre de Recerca Ecol?gica i Aplicacions Forestals",
+      "value": 1
+    },
+    {
+      "key": "CRIS",
+      "value": 1
+    },
+    {
+      "key": "CSES - Comparative Study of Electoral Systems",
+      "value": 17
+    },
+    {
+      "key": "CSIC - Estación Biológica de Doñana (EBD)",
+      "value": 1
+    },
+    {
+      "key": "CSIC - Instituto de Cerámica y Vidrio (ICV)",
+      "value": 1
+    },
+    {
+      "key": "CSIC - Instituto de Ciencia de Materiales de Madrid (ICMM)",
+      "value": 1
+    },
+    {
+      "key": "CSIC - Instituto de Ciencias Marinas de Andalucía (ICMAN)",
+      "value": 2
+    },
+    {
+      "key": "CSIC-UIB - Instituto de Física Interdisciplinar y Sistemas Complejos (IFISC)",
+      "value": 5
+    },
+    {
+      "key": "CSIC-UIB - Instituto Mediterráneo de Estudios Avanzados (IMEDEA)",
+      "value": 3
+    },
+    {
+      "key": "CSIC-UPF - Instituto de Biología Evolutiva (IBE)",
+      "value": 2
+    },
+    {
+      "key": "CSIRO",
+      "value": 212
+    },
+    {
+      "key": "CSIRO National Collections and Marine Infrastructure (NCMI) Information and Data Centre (IDC)",
+      "value": 1
+    },
+    {
+      "key": "CTSNet, Inc",
+      "value": 1
+    },
+    {
+      "key": "Curtin University",
+      "value": 5
+    },
+    {
+      "key": "CVSSP",
+      "value": 2
+    },
+    {
+      "key": "CybelePress",
+      "value": 2
+    },
+    {
+      "key": "CyVerse Data Commons",
+      "value": 13
+    },
+    {
+      "key": "Dalton Transactions",
+      "value": 1
+    },
+    {
+      "key": "DANDI Archive",
+      "value": 7
+    },
+    {
+      "key": "Danish Data Archive",
+      "value": 2
+    },
+    {
+      "key": "DANS Data Station Archaeology",
+      "value": 11
+    },
+    {
+      "key": "DANS Data Station Life Sciences",
+      "value": 3
+    },
+    {
+      "key": "DANS Data Station Physical and Technical Sciences",
+      "value": 8
+    },
+    {
+      "key": "DANS Data Station Social Sciences and Humanities",
+      "value": 55
+    },
+    {
+      "key": "DaRUS",
+      "value": 16
+    },
+    {
+      "key": "Data Archiving and Networked Services (DANS)",
+      "value": 21
+    },
+    {
+      "key": "Data Integration and Analysis System  (DIAS)",
+      "value": 5
+    },
+    {
+      "key": "Data Repository for Power system Open models With Evolving Resources (DR POWER); National Renewable Energy Laboratory (NREL)",
+      "value": 1
+    },
+    {
+      "key": "Data Repository for Power system Open models With Evolving Resources (DR POWER); Pacific Northwest National Laboratory (PNNL)",
+      "value": 1
+    },
+    {
+      "key": "Data Repository for the University of Minnesota",
+      "value": 18
+    },
+    {
+      "key": "Data Repository for the University of Minnesota (DRUM)",
+      "value": 363
+    },
+    {
+      "key": "Data Repository for the University of Minnesta (DRUM)",
+      "value": 1
+    },
+    {
+      "key": "data.sciencespo",
+      "value": 5
+    },
+    {
+      "key": "Databrary",
+      "value": 19
+    },
+    {
+      "key": "DataFirst",
+      "value": 17
+    },
+    {
+      "key": "DataStream",
+      "value": 2
+    },
+    {
+      "key": "DataSuds",
+      "value": 5
+    },
+    {
+      "key": "dataUBFC - Atelier de la donnée de Bourgogne-Franche-Comté",
+      "value": 1
+    },
+    {
+      "key": "DataverseNL",
+      "value": 17
+    },
+    {
+      "key": "DataverseNO",
+      "value": 29
+    },
+    {
+      "key": "dbSNP Reference SNP",
+      "value": 233867
+    },
+    {
+      "key": "Deep-sea OBIS node",
+      "value": 1
+    },
+    {
+      "key": "Délégation Ifremer océan Indien",
+      "value": 3
+    },
+    {
+      "key": "Demographic Data Base (DDB), Centre for Demographic and Ageing Research (CEDAR), Umeå University (UmU)",
+      "value": 2
+    },
+    {
+      "key": "Department of Agriculture, Ministry of Agriculture and Cooperatives, Thailand",
+      "value": 1
+    },
+    {
+      "key": "Department of Aquatic resources, SLU",
+      "value": 1
+    },
+    {
+      "key": "Department of Environmental Conservation, University of Massachusetts - Amherst",
+      "value": 1
+    },
+    {
+      "key": "Department of Forestry, Fisheries and the Environment",
+      "value": 29
+    },
+    {
+      "key": "Department of Geology, Tallinn University of Technology",
+      "value": 1
+    },
+    {
+      "key": "Department of Microbiology, University of Tennessee, Knoxville, TN, USA",
+      "value": 8
+    },
+    {
+      "key": "Department of Psychology",
+      "value": 1
+    },
+    {
+      "key": "Department of Veterinary Medicine",
+      "value": 1
+    },
+    {
+      "key": "Dept. of Atmospheric Science, Univ. of Wyoming",
+      "value": 1
+    },
+    {
+      "key": "Designsafe-CI",
+      "value": 114
+    },
+    {
+      "key": "DesignSafe-CI",
+      "value": 5
+    },
+    {
+      "key": "Deutscher Wetterdienst (DWD)",
+      "value": 8
+    },
+    {
+      "key": "Deutscher Wetterdienst (DWD) Climate Data Center (CDC)",
+      "value": 1
+    },
+    {
+      "key": "Deutsches Elektronen-Synchrotron, DESY, Hamburg",
+      "value": 1
+    },
+    {
+      "key": "Deutsches GeoForschungsZentrum GFZ",
+      "value": 176
+    },
+    {
+      "key": "Deutsches Jugendinstitut",
+      "value": 1
+    },
+    {
+      "key": "Deutsches Zentrum für Altersfragen",
+      "value": 3
+    },
+    {
+      "key": "Digital Rocks Portal",
+      "value": 37
+    },
+    {
+      "key": "Digital Rocks Portal University of Texas at Austin",
+      "value": 38
+    },
+    {
+      "key": "Digital Rocks Portal, The University of Texas at Austin",
+      "value": 2
+    },
+    {
+      "key": "Digital.CSIC",
+      "value": 52
+    },
+    {
+      "key": "DIGITAL.CSIC",
+      "value": 6
+    },
+    {
+      "key": "DMPHub",
+      "value": 2
+    },
+    {
+      "key": "DOE Geothermal Data Repository; California State University Long Beach",
+      "value": 1
+    },
+    {
+      "key": "DOE Geothermal Data Repository; Energy and Geoscience Institute at the University of Utah",
+      "value": 1
+    },
+    {
+      "key": "DOE Geothermal Data Repository; Los Alamos National Laboratory",
+      "value": 1
+    },
+    {
+      "key": "DOE Geothermal Data Repository; National Renewable Energy Laboratory",
+      "value": 1
+    },
+    {
+      "key": "DOE Geothermal Data Repository; Sandia National Laboratories",
+      "value": 1
+    },
+    {
+      "key": "DOE Geothermal Data Repository; University of Wisconsin",
+      "value": 1
+    },
+    {
+      "key": "DOE Geothermal Data Repository; University of Wisconsin - Madison",
+      "value": 1
+    },
+    {
+      "key": "DOE Geothermal Data Repository; University of Wisconsin-Madison",
+      "value": 2
+    },
+    {
+      "key": "DOE Joint Genome Institute",
+      "value": 3
+    },
+    {
+      "key": "DOE Open Energy Data Initiative (OEDI); Lawrence Berkeley National Laboratory",
+      "value": 1
+    },
+    {
+      "key": "DOE Open Energy Data Initiative (OEDI); National Renewable Energy Laboratory",
+      "value": 4
+    },
+    {
+      "key": "DOE Open Energy Data Initiative (OEDI); National Renewable Energy Laboratory (NREL)",
+      "value": 3
+    },
+    {
+      "key": "DR-NTU (Data)",
+      "value": 6
+    },
+    {
+      "key": "Dryad",
+      "value": 44174
+    },
+    {
+      "key": "Dryad Digital Repository",
+      "value": 1184
+    },
+    {
+      "key": "DTU, Centre for Transport Analytics. Formerly DTU Transport",
+      "value": 2
+    },
+    {
+      "key": "Dublin Institute of Technology",
+      "value": 1
+    },
+    {
+      "key": "DuEPublico: Duisburg-Essen Publications online, University of Duisburg-Essen, Germany",
+      "value": 1
+    },
+    {
+      "key": "DuEPublico: Duisburg-Essen Publications Online, University of Duisburg-Essen, Germany",
+      "value": 1
+    },
+    {
+      "key": "Duke Digital Repository",
+      "value": 1
+    },
+    {
+      "key": "Duke Research Data Repository",
+      "value": 2
+    },
+    {
+      "key": "Durham University",
+      "value": 81
+    },
+    {
+      "key": "Duzce University",
+      "value": 1
+    },
+    {
+      "key": "DZA  The German Centre of Gerontology",
+      "value": 1
+    },
+    {
+      "key": "e-cienciaDatos",
+      "value": 8
+    },
+    {
+      "key": "e!DAL - Plant Genomics and Phenomics Research Data Repository (PGP), IPK Gatersleben, Seeland OT Gatersleben, Corrensstraße 3, 06466, Germany",
+      "value": 1
+    },
+    {
+      "key": "EARSeL eProceedings",
+      "value": 13
+    },
+    {
+      "key": "EARSeL Symposium Proceedings",
+      "value": 5
+    },
+    {
+      "key": "Earth Science Project Office, NASA Ames Research Center",
+      "value": 13
+    },
+    {
+      "key": "Earth System Grid Federation",
+      "value": 10611
+    },
+    {
+      "key": "Eawag: Swiss Federal Institute of Aquatic Science and\n  Technology",
+      "value": 2
+    },
+    {
+      "key": "Eawag: Swiss Federal Institute of Aquatic Science and Technology",
+      "value": 38
+    },
+    {
+      "key": "EBRAINS",
+      "value": 31
+    },
+    {
+      "key": "ECMWF",
+      "value": 48
+    },
+    {
+      "key": "EcoSIS",
+      "value": 1
+    },
+    {
+      "key": "eCrystals",
+      "value": 7
+    },
+    {
+      "key": "Edge Hill University",
+      "value": 9
+    },
+    {
+      "key": "Edinburgh Imaging, University of Edinburgh",
+      "value": 1
+    },
+    {
+      "key": "Edinburgh Medical School. Biomedical Sciences. University of Edinburgh",
+      "value": 1
+    },
+    {
+      "key": "Edinburgh Research Improvement Project",
+      "value": 1
+    },
+    {
+      "key": "Edith Cowan University",
+      "value": 2
+    },
+    {
+      "key": "Edition Topoi",
+      "value": 2
+    },
+    {
+      "key": "Editions des archives contemporaines (EAC)",
+      "value": 1
+    },
+    {
+      "key": "Edmond",
+      "value": 19
+    },
+    {
+      "key": "Eemeli Holopainen",
+      "value": 1
+    },
+    {
+      "key": "Eindhoven University of Technology",
+      "value": 70
+    },
+    {
+      "key": "Electron Microscopy Public Image Archive (EMPIAR)",
+      "value": 522
+    },
+    {
+      "key": "Electronic Rothamsted Archive, Rothamsted Research",
+      "value": 12
+    },
+    {
+      "key": "Elsevier",
+      "value": 5
+    },
+    {
+      "key": "Elsevier BV",
+      "value": 2
+    },
+    {
+      "key": "Elsevier Data Repository",
+      "value": 1
+    },
+    {
+      "key": "EMN-DURMAT (EMN-DuraMAT); National Renewable Energy Laboratory (NREL), Golden, CO (United States)",
+      "value": 1
+    },
+    {
+      "key": "EMODnet Bathymetry Consortium",
+      "value": 21
+    },
+    {
+      "key": "Ensembl",
+      "value": 34447
+    },
+    {
+      "key": "Entomological Laboratory, Faculty of Agriculture, Kyushu University",
+      "value": 2
+    },
+    {
+      "key": "EnviDat",
+      "value": 225
+    },
+    {
+      "key": "Environmental Data Initiative",
+      "value": 4489
+    },
+    {
+      "key": "Environmental System Science Data Infrastructure for a Virtual Ecosystem",
+      "value": 24
+    },
+    {
+      "key": "Environmental System Science Data Infrastructure for a Virtual Ecosystem; A Global, High-Resolution River Network Model for Improved Flood Risk Prediction",
+      "value": 1
+    },
+    {
+      "key": "Environmental System Science Data Infrastructure for a Virtual Ecosystem; Advanced Global Atmospheric Gases Experiment (AGAGE)",
+      "value": 1
+    },
+    {
+      "key": "Environmental System Science Data Infrastructure for a Virtual Ecosystem; Carbon Dioxide Information Analysis Center (CDIAC) Oak Ridge National Laboratory (ORNL), Oak Ridge, TN (United States)",
+      "value": 5
+    },
+    {
+      "key": "Environmental System Science Data Infrastructure for a Virtual Ecosystem; Carbon Dioxide Information Analysis Center (CDIAC), Oak Ridge National Laboratory (ORNL), Oak Ridge, Tennessee (USA)",
+      "value": 6
+    },
+    {
+      "key": "Environmental System Science Data Infrastructure for a Virtual Ecosystem; Carbon Dioxide Information Analysis Center (CDIAC), Oak Ridge National Laboratory (ORNL), Oak Ridge, TN (United \nStates)",
+      "value": 24
+    },
+    {
+      "key": "Environmental System Science Data Infrastructure for a Virtual Ecosystem; Carbon Dioxide Information Analysis Center (CDIAC), Oak Ridge National Laboratory (ORNL), Oak Ridge, TN (United States)",
+      "value": 433
+    },
+    {
+      "key": "Environmental System Science Data Infrastructure for a Virtual Ecosystem; Carbon Dioxide Information Analysis Center (CDIAC), Oak Ridge National Laboratory (ORNL), Oak Ridge, TN (United States); People's Republic of China, Chinese Academy of Sciences (CAS), Beijing, China;",
+      "value": 1
+    },
+    {
+      "key": "Environmental System Science Data Infrastructure for a Virtual Ecosystem; Carbon Dioxide Information Analysis Center (CDIAC), Oak Ridge National Laboratory (ORNL), Oak Ridge, TN (USA)",
+      "value": 88
+    },
+    {
+      "key": "Environmental System Science Data Infrastructure for a Virtual Ecosystem; Carbon Dioxide Information Analysis Center (CDIAC), Oak Ridge National Laboratory (ORNL), Oak Ridge, TN (USA); Intergovernmental Panel on Climate Change (Working Group 1); CSIRO Division of Atmospheric Research. Commonwealth Scientific and Industrial Research Organisation. (1988-2005)",
+      "value": 2
+    },
+    {
+      "key": "Environmental System Science Data Infrastructure for a Virtual Ecosystem; Carbon Dioxide Information Analysis Center (CDIAC), Oak Ridge National Laboratory, Oak Ridge, TN (USA)",
+      "value": 50
+    },
+    {
+      "key": "Environmental System Science Data Infrastructure for a Virtual Ecosystem; Carbon Dioxide Information Analysis Center (CDIAC); Oak Ridge National Laboratory (ORNL), Oak Ridge, TN (United States)",
+      "value": 58
+    },
+    {
+      "key": "Environmental System Science Data Infrastructure for a Virtual Ecosystem; Carbon Dioxide Information Analysis Center (CDIAC); Oak Ridge National Laboratory (ORNL), Oak Ridge, TN (United States); University of East Anglia, Norwich, United Kingdom",
+      "value": 2
+    },
+    {
+      "key": "Environmental System Science Data Infrastructure for a Virtual Ecosystem; Carbon Dioxide Information Analysis Center, Oak Ridge National Laboratory (ORNL), Oak Ridge, TN (United States)",
+      "value": 2
+    },
+    {
+      "key": "Environmental System Science Data Infrastructure for a Virtual Ecosystem; Carbon Dioxide Information Analysis Center, Oak Ridge National Laboratory, Oak Ridge, TN (USA); Climate Monitoring and Diagnostics Laboratory (CMDL), National Oceanic and Atmospheric Administration (NOAA)",
+      "value": 1
+    },
+    {
+      "key": "Environmental System Science Data Infrastructure for a Virtual Ecosystem; Carbon Dioxide Informational Analysis Center (CDIAC), Oak Ridge National Laboratory (ORNL), Oak Ridge, TN (United States)",
+      "value": 1
+    },
+    {
+      "key": "Environmental System Science Data Infrastructure for a Virtual Ecosystem; CDIAC-FF, Research Institute for Environment, Energy, and Economics, Appalachian State University",
+      "value": 1
+    },
+    {
+      "key": "Environmental System Science Data Infrastructure for a Virtual Ecosystem; ExaSheds",
+      "value": 1
+    },
+    {
+      "key": "Environmental System Science Data Infrastructure for a Virtual Ecosystem; Free Air CO2 Enrichment Model Data Synthesis (FACE-MDS)",
+      "value": 3
+    },
+    {
+      "key": "Environmental System Science Data Infrastructure for a Virtual Ecosystem; Functional-type modeling approach and data-driven parameterization of methane emissions in wetlands",
+      "value": 1
+    },
+    {
+      "key": "Environmental System Science Data Infrastructure for a Virtual Ecosystem; Incorporating the Hydrological Controls on Carbon Cycling in Floodplain Ecosystems into Earth System Models (ESMs)",
+      "value": 5
+    },
+    {
+      "key": "Environmental System Science Data Infrastructure for a Virtual Ecosystem; Interdisciplinary Research for Arctic Coastal Environments (InteRFACE)",
+      "value": 1
+    },
+    {
+      "key": "Environmental System Science Data Infrastructure for a Virtual Ecosystem; River Corridor and Watershed Biogeochemistry SFA",
+      "value": 5
+    },
+    {
+      "key": "Environmental System Science Data Infrastructure for a Virtual Ecosystem; Science Area 1: Standard Award: Model-Data Fusion to Examine Multiscale Dynamical Controls on Snow Cover and Critical Zone Moisture Inputs",
+      "value": 1
+    },
+    {
+      "key": "Environmental System Science Data Infrastructure for a Virtual Ecosystem; Seasonal controls on dynamic hyporheic zone redox biogeochemistry",
+      "value": 1
+    },
+    {
+      "key": "Environmental System Science Data Infrastructure for a Virtual Ecosystem; The Advanced Global Atmospheric Gases Experiment (AGAGE)",
+      "value": 1
+    },
+    {
+      "key": "Environmental System Science Data Infrastructure for a Virtual Ecosystem; Watershed Function SFA",
+      "value": 3
+    },
+    {
+      "key": "Environmental Systems Solutions",
+      "value": 1
+    },
+    {
+      "key": "EOST",
+      "value": 1
+    },
+    {
+      "key": "EPrints Repo",
+      "value": 1
+    },
+    {
+      "key": "Erasmus University Rotterdam (EUR)",
+      "value": 40
+    },
+    {
+      "key": "ESPRI/IPSL",
+      "value": 9
+    },
+    {
+      "key": "ETH Zürich",
+      "value": 4
+    },
+    {
+      "key": "ETH Zürich, IAC",
+      "value": 1
+    },
+    {
+      "key": "ETHZ, IPGP, JPL, ICL, ISAE-Supaero, MPS, Univ. Bristol",
+      "value": 2
+    },
+    {
+      "key": "ETHZ, IPGP, JPL, ICL, Univ. Bristol",
+      "value": 4
+    },
+    {
+      "key": "EUMETSAT",
+      "value": 5
+    },
+    {
+      "key": "EUMETSAT Satellite Application Facility on Climate Monitoring (CM SAF)",
+      "value": 3
+    },
+    {
+      "key": "European Center for Medium-range Weather Forecast",
+      "value": 2
+    },
+    {
+      "key": "European Commission JRC",
+      "value": 3
+    },
+    {
+      "key": "European Commission, Joint Research Centre (JRC)",
+      "value": 7
+    },
+    {
+      "key": "European Forest Institute",
+      "value": 1
+    },
+    {
+      "key": "European Journal of Social Psychology. Wiley Publishers.",
+      "value": 1
+    },
+    {
+      "key": "European Nucleotide Archive",
+      "value": 2276286
+    },
+    {
+      "key": "European Space Agency",
+      "value": 11
+    },
+    {
+      "key": "European Synchrotron Radiation Facility",
+      "value": 7
+    },
+    {
+      "key": "European X-Ray Free-Electron Laser Facility GmbH",
+      "value": 6
+    },
+    {
+      "key": "Eurostat",
+      "value": 2
+    },
+    {
+      "key": "Experimental Factor Ontology",
+      "value": 33
+    },
+    {
+      "key": "F1000 Research Limited",
+      "value": 376
+    },
+    {
+      "key": "F1000Research",
+      "value": 660
+    },
+    {
+      "key": "f1000research.com",
+      "value": 274
+    },
+    {
+      "key": "FaceBase (www.facebase.org)",
+      "value": 14
+    },
+    {
+      "key": "Faculty of engineering, Lund University",
+      "value": 8
+    },
+    {
+      "key": "FAIRsharing",
+      "value": 2
+    },
+    {
+      "key": "FDSN",
+      "value": 3
+    },
+    {
+      "key": "Federal Institute for Geosciences and Natural Resources (BGR, Germany)",
+      "value": 1
+    },
+    {
+      "key": "Federated Research Data Repository / dépôt fédéré de données de recherche",
+      "value": 13
+    },
+    {
+      "key": "Federation of Family History Societies",
+      "value": 2
+    },
+    {
+      "key": "Federation University Australia",
+      "value": 3
+    },
+    {
+      "key": "Field Museum",
+      "value": 1
+    },
+    {
+      "key": "figshare",
+      "value": 74594
+    },
+    {
+      "key": "Figshare",
+      "value": 39723
+    },
+    {
+      "key": "Figshare+",
+      "value": 114
+    },
+    {
+      "key": "Finnish Meteorological Institute",
+      "value": 4
+    },
+    {
+      "key": "FIZ Karlsruhe - Leibniz Institute for Information Infrastructure",
+      "value": 7711
+    },
+    {
+      "key": "FIZ Karlsruhe – Leibniz Institute for Information Infrastructure",
+      "value": 2064
+    },
+    {
+      "key": "Flinders University",
+      "value": 15
+    },
+    {
+      "key": "FluxNet",
+      "value": 1
+    },
+    {
+      "key": "FluxNet; Argonne National Laboratory",
+      "value": 2
+    },
+    {
+      "key": "FluxNet; California State University East Bay; Clifornia State University, East Bay",
+      "value": 1
+    },
+    {
+      "key": "FluxNet; Chinese Academy of Sciences; Institute of Geographic Sciences and Natural Resources Research",
+      "value": 2
+    },
+    {
+      "key": "FluxNet; Department of Forest Ecology and Management; Swedish University of Agricultural Sciences",
+      "value": 1
+    },
+    {
+      "key": "FluxNet; Edmund Mach Foundation",
+      "value": 2
+    },
+    {
+      "key": "FluxNet; ETH Zurich",
+      "value": 3
+    },
+    {
+      "key": "FluxNet; European Commission, Joint Research Centre (JRC), Ispra, Italy",
+      "value": 1
+    },
+    {
+      "key": "FluxNet; Finnish Meteorological Institute",
+      "value": 1
+    },
+    {
+      "key": "FluxNet; FRIM(Forest Research Institute of Malaysia); Kyoto University",
+      "value": 1
+    },
+    {
+      "key": "FluxNet; GFZ German Research Centre for Geosciences",
+      "value": 2
+    },
+    {
+      "key": "FluxNet; Hokkaido University; Kyoto University; University of Hyogo; University of Palangkaraya",
+      "value": 1
+    },
+    {
+      "key": "FluxNet; International Rice Research Institute",
+      "value": 1
+    },
+    {
+      "key": "FluxNet; Karlsruhe Institute of Technology, Institute of Meteorology and Climate Research (IMK-IFU)",
+      "value": 1
+    },
+    {
+      "key": "FluxNet; Landscape Ecology, University of Rostock",
+      "value": 1
+    },
+    {
+      "key": "FluxNet; Max Planck Institute for Biogeochemistry, Jena, Germany",
+      "value": 1
+    },
+    {
+      "key": "FluxNet; National Agriculture and Food Research Organization",
+      "value": 1
+    },
+    {
+      "key": "FluxNet; National Center for AgroMeteorology; Seoul National University",
+      "value": 1
+    },
+    {
+      "key": "FluxNet; Northern Arizona University; University of Northern Arizona",
+      "value": 1
+    },
+    {
+      "key": "FluxNet; Observatoire des Sciences de l'Univers en région Centre",
+      "value": 1
+    },
+    {
+      "key": "FluxNet; Old Woman Creek National Estuarine Research Reserve; The Ohio State University",
+      "value": 1
+    },
+    {
+      "key": "FluxNet; Osaka Prefecture University; Shinshu University",
+      "value": 1
+    },
+    {
+      "key": "FluxNet; Shanxi University",
+      "value": 1
+    },
+    {
+      "key": "FluxNet; Shinshu University",
+      "value": 1
+    },
+    {
+      "key": "FluxNet; Texas A&M University",
+      "value": 1
+    },
+    {
+      "key": "FluxNet; The Chinese University of Hong Kong",
+      "value": 1
+    },
+    {
+      "key": "FluxNet; The Ohio State University",
+      "value": 1
+    },
+    {
+      "key": "FluxNet; TU Dresden",
+      "value": 1
+    },
+    {
+      "key": "FluxNet; UK Centre for Ecology and Hydrology",
+      "value": 3
+    },
+    {
+      "key": "FluxNet; Université de Montréal; Wilfrid Laurier University",
+      "value": 1
+    },
+    {
+      "key": "FluxNet; University of Arizona",
+      "value": 1
+    },
+    {
+      "key": "FluxNet; University of Arkansas",
+      "value": 1
+    },
+    {
+      "key": "FluxNet; University of California - Irvine",
+      "value": 1
+    },
+    {
+      "key": "FluxNet; University of California, Berkeley",
+      "value": 7
+    },
+    {
+      "key": "FluxNet; University of Central Florida; University of Central Florida (UCF)",
+      "value": 1
+    },
+    {
+      "key": "FluxNet; University of Helsinki",
+      "value": 1
+    },
+    {
+      "key": "FluxNet; University of Liege - Gembloux Agro-Bio Tech; University catholic of Louvain-la-Neuve",
+      "value": 2
+    },
+    {
+      "key": "FluxNet; University of Technology Sydney",
+      "value": 1
+    },
+    {
+      "key": "FluxNet; University of Toledo / Michigan State University",
+      "value": 2
+    },
+    {
+      "key": "FluxNet; University of Waikato",
+      "value": 1
+    },
+    {
+      "key": "FluxNet; University of Western Australia; Monash University",
+      "value": 1
+    },
+    {
+      "key": "FluxNet; University of Wisconsin",
+      "value": 2
+    },
+    {
+      "key": "FluxNet; US Geological Survey, Wetland and Aquatic Research Center, Lafayette LA; USGS-Wetland and Aquatic Research Center",
+      "value": 1
+    },
+    {
+      "key": "FluxNet; US Geological Survey; USGS-Wetland and Aquatic Research Center",
+      "value": 1
+    },
+    {
+      "key": "FluxNet; USDA Forest Service",
+      "value": 1
+    },
+    {
+      "key": "FluxNet; USDA, ARS, DELTA WATER MANAGEMENT RESEARCH UNIT",
+      "value": 1
+    },
+    {
+      "key": "ForestPlots.net",
+      "value": 4
+    },
+    {
+      "key": "FORS",
+      "value": 1
+    },
+    {
+      "key": "FORS - Swiss Centre of Expertise in the Social Sciences",
+      "value": 11
+    },
+    {
+      "key": "FORS Datenservice",
+      "value": 1
+    },
+    {
+      "key": "Forschungsdatenzentrum der Bundesagentur für Arbeit (BA) im Institut für Arbeitsmarkt- und Berufsforschung (IAB)",
+      "value": 1
+    },
+    {
+      "key": "Franche-Comté Electronique Mécanique Thermique et Optique - Sciences et Technologies (UMR 6174)",
+      "value": 4
+    },
+    {
+      "key": "Fuel Cell Lab (UAR 2200)",
+      "value": 4
+    },
+    {
+      "key": "Fundación Ictiológica",
+      "value": 1
+    },
+    {
+      "key": "Future Science Group",
+      "value": 120
+    },
+    {
+      "key": "G-Node",
+      "value": 100
+    },
+    {
+      "key": "GAME/CNRM",
+      "value": 1
+    },
+    {
+      "key": "GBIF",
+      "value": 1
+    },
+    {
+      "key": "GBIF Benin",
+      "value": 3
+    },
+    {
+      "key": "GBIF New Zealand",
+      "value": 1
+    },
+    {
+      "key": "GBIF Secretariat",
+      "value": 91
+    },
+    {
+      "key": "Gdańsk University of Technology",
+      "value": 7
+    },
+    {
+      "key": "GEER Association (Report - 67)",
+      "value": 1
+    },
+    {
+      "key": "GEER Associtation (Report - 64)",
+      "value": 2
+    },
+    {
+      "key": "Gene Expression Omnibus (GEO)",
+      "value": 200819
+    },
+    {
+      "key": "Gene Ontology",
+      "value": 99
+    },
+    {
+      "key": "Genome assembly database",
+      "value": 11176
+    },
+    {
+      "key": "GeoForschungszentrum Potsdam (GFZ)",
+      "value": 2
+    },
+    {
+      "key": "Geographisches Institut, Eidgenössische Technische Hochschule Zürich (ETHZ)",
+      "value": 1
+    },
+    {
+      "key": "Geological Society of London",
+      "value": 161
+    },
+    {
+      "key": "Geological survey of Denmark and Greenland (GEUS)",
+      "value": 1
+    },
+    {
+      "key": "Geology",
+      "value": 1
+    },
+    {
+      "key": "Georg Thieme Verlag",
+      "value": 1
+    },
+    {
+      "key": "Georg Thieme Verlag, Stuttgart, New York",
+      "value": 26
+    },
+    {
+      "key": "Georgia Institute of Technology",
+      "value": 1
+    },
+    {
+      "key": "Geoscience Australia",
+      "value": 10
+    },
+    {
+      "key": "Geoscientific Data and Discovery Publishing",
+      "value": 3
+    },
+    {
+      "key": "German Aerospace Center (DLR)",
+      "value": 2
+    },
+    {
+      "key": "German Centre for Higher Education Research and Science Studies (DZHW)",
+      "value": 3
+    },
+    {
+      "key": "German Centre for Integrative Biodiversity Research (iDiv) Halle-Jena-Leipzig",
+      "value": 2
+    },
+    {
+      "key": "GESIS",
+      "value": 7
+    },
+    {
+      "key": "GESIS Data Archive",
+      "value": 608
+    },
+    {
+      "key": "GEUS",
+      "value": 3
+    },
+    {
+      "key": "GEUS Dataverse",
+      "value": 9
+    },
+    {
+      "key": "GFZ Data Services",
+      "value": 1186
+    },
+    {
+      "key": "GFZ German Research Center for Geosciences",
+      "value": 2
+    },
+    {
+      "key": "GFZ German Research Centre for Geosciences",
+      "value": 7
+    },
+    {
+      "key": "GigaScience",
+      "value": 58
+    },
+    {
+      "key": "GigaScience Database",
+      "value": 343
+    },
+    {
+      "key": "GISAID",
+      "value": 17
+    },
+    {
+      "key": "GitHub",
+      "value": 6
+    },
+    {
+      "key": "GLAMOS - Glacier Monitoring Switzerland; Laboratory of Hydraulics, Hydrology and Glaciology (VAW), ETH Zürich, Switzerland; Department of Geosciences, University of Fribourg, Switzerland; Department of Geography, University of Zürich, Switzerland",
+      "value": 1
+    },
+    {
+      "key": "Global Carbon Project",
+      "value": 12
+    },
+    {
+      "key": "Global Earthquake Model Foundation",
+      "value": 1
+    },
+    {
+      "key": "Global Precipitation Climatology Centre (GPCC, http://gpcc.dwd.de/) at Deutscher Wetterdienst ",
+      "value": 2
+    },
+    {
+      "key": "Global Precipitation Climatology Centre (GPCC)",
+      "value": 10
+    },
+    {
+      "key": "Global Precipitation Climatology Centre (GPCC) at Deutscher Wetterdienst",
+      "value": 148
+    },
+    {
+      "key": "Global Terrestrial Network for Glaciers (GTN-G)",
+      "value": 1
+    },
+    {
+      "key": "GMBA-EarthEnv",
+      "value": 1
+    },
+    {
+      "key": "GNS Science",
+      "value": 6
+    },
+    {
+      "key": "GNS Science,  GeoNet",
+      "value": 1
+    },
+    {
+      "key": "Goethe-Universität Frankfurt",
+      "value": 1
+    },
+    {
+      "key": "Göttingen Research Online",
+      "value": 1
+    },
+    {
+      "key": "Göttingen Research Online / Data",
+      "value": 7
+    },
+    {
+      "key": "Gouvernement du Canada",
+      "value": 3
+    },
+    {
+      "key": "Government of Canada",
+      "value": 70
+    },
+    {
+      "key": "Government of Canada ",
+      "value": 74
+    },
+    {
+      "key": "Government of Canada; Environment and Climate Change Canada; Science and Technology Branch/Climate Research Division",
+      "value": 1
+    },
+    {
+      "key": "Gravitational Wave Open Science Center",
+      "value": 5
+    },
+    {
+      "key": "Graz University of Technology",
+      "value": 6
+    },
+    {
+      "key": "Griffith University",
+      "value": 2
+    },
+    {
+      "key": "GRO.data",
+      "value": 7
+    },
+    {
+      "key": "Groningen Growth and Development Centre",
+      "value": 15
+    },
+    {
+      "key": "Groupe de Spectrométrie Moléculaire et Atmosphérique (UMR 7331)",
+      "value": 3
+    },
+    {
+      "key": "GRUAN Lead Centre (at Deutscher Wetterdienst)",
+      "value": 9
+    },
+    {
+      "key": "Grupo de Coleopterólogos de Colombia",
+      "value": 1
+    },
+    {
+      "key": "GSA Journals",
+      "value": 532
+    },
+    {
+      "key": "GUDMAP (www.gudmap.org)",
+      "value": 1
+    },
+    {
+      "key": "H SAF",
+      "value": 2
+    },
+    {
+      "key": "Hakai Institute",
+      "value": 6
+    },
+    {
+      "key": "HAL CCSD",
+      "value": 3
+    },
+    {
+      "key": "Halmstad University",
+      "value": 8
+    },
+    {
+      "key": "Handelshögskolan i Stockholm",
+      "value": 2
+    },
+    {
+      "key": "Harte Research Institute",
+      "value": 1197
+    },
+    {
+      "key": "Harvard Dataverse",
+      "value": 992
+    },
+    {
+      "key": "HathiTrust Research Center",
+      "value": 3
+    },
+    {
+      "key": "HAW Hamburg",
+      "value": 1
+    },
+    {
+      "key": "heiDATA",
+      "value": 4
+    },
+    {
+      "key": "Heidelberg Collaboratory for Image Processing (HCI)",
+      "value": 6
+    },
+    {
+      "key": "Hellenic Center for Marine Research",
+      "value": 1
+    },
+    {
+      "key": "Helmholtz-Zentrum für Umweltforschung",
+      "value": 3
+    },
+    {
+      "key": "HEPData",
+      "value": 64211
+    },
+    {
+      "key": "Heriot-Watt University",
+      "value": 10
+    },
+    {
+      "key": "Hikida, Hiroyuki",
+      "value": 2
+    },
+    {
+      "key": "HKU Data Repository",
+      "value": 64
+    },
+    {
+      "key": "HSRC - Human Science Research Council SA",
+      "value": 1
+    },
+    {
+      "key": "https://b2share.eudat.eu",
+      "value": 5
+    },
+    {
+      "key": "https://orcid.org/0000-0002-8008-8692, SEAD (http://sead-data.net)",
+      "value": 1
+    },
+    {
+      "key": "https://sead2.ncsa.illinois.edu/api/users/566aef07e4b06374fd3161fd, SEAD (http://sead-data.net)",
+      "value": 1
+    },
+    {
+      "key": "https://sead2.ncsa.illinois.edu/api/users/566aef09e4b06374fd31625e, SEAD (http://sead-data.net)",
+      "value": 1
+    },
+    {
+      "key": "Huddinge municipality",
+      "value": 7
+    },
+    {
+      "key": "Hugging Face",
+      "value": 1
+    },
+    {
+      "key": "HUGO Gene Nomenclature Committee",
+      "value": 775
+    },
+    {
+      "key": "Human Brain Project Neuroinformatics Platform",
+      "value": 13
+    },
+    {
+      "key": "Human induced pluripotent stem cell initiative",
+      "value": 1996
+    },
+    {
+      "key": "Humboldt-Universität zu Berlin",
+      "value": 1
+    },
+    {
+      "key": "HZB Data Service",
+      "value": 11
+    },
+    {
+      "key": "I. I. Schmalhausen Institute of Zoology",
+      "value": 1
+    },
+    {
+      "key": "IceCube Neutrino Observatory",
+      "value": 17
+    },
+    {
+      "key": "ICES",
+      "value": 1
+    },
+    {
+      "key": "ICIMOD",
+      "value": 9
+    },
+    {
+      "key": "ICO-Institut Catal? d'Ornitologia (Catalan Ornithological Institute)",
+      "value": 1
+    },
+    {
+      "key": "ICOS Carbon Portal",
+      "value": 3
+    },
+    {
+      "key": "ICPSR - Interuniversity Consortium for Political and Social Research",
+      "value": 8809
+    },
+    {
+      "key": "Idiap Research Institute",
+      "value": 1
+    },
+    {
+      "key": "IEEE Dataport",
+      "value": 10
+    },
+    {
+      "key": "IEEE DataPort",
+      "value": 135
+    },
+    {
+      "key": "IEEE Xplore",
+      "value": 1
+    },
+    {
+      "key": "Ifremer",
+      "value": 1
+    },
+    {
+      "key": "IFREMER",
+      "value": 1
+    },
+    {
+      "key": "IFREMER -  French Research Institute for Exploitation of the Sea",
+      "value": 1
+    },
+    {
+      "key": "Ifremer - Laboratoire Comportement des Structures en Mer",
+      "value": 1
+    },
+    {
+      "key": "IFREMER / IDM / SISMER - Scientific Information Systems for the SEA",
+      "value": 1
+    },
+    {
+      "key": "IFREMER / IDM/SISMER",
+      "value": 1
+    },
+    {
+      "key": "ihi - Ifakara Health Institute",
+      "value": 2
+    },
+    {
+      "key": "Illinois State Water Survey, Prairie Research Institute, University of Illinois at Urbana-Champaign",
+      "value": 1
+    },
+    {
+      "key": "Imagerie et Vision Artificielle (UR 7535)",
+      "value": 3
+    },
+    {
+      "key": "ImmPort",
+      "value": 1
+    },
+    {
+      "key": "IMPACT",
+      "value": 2
+    },
+    {
+      "key": "Imperial College London",
+      "value": 59
+    },
+    {
+      "key": "iNaturalist.org",
+      "value": 13
+    },
+    {
+      "key": "INDEPTH Network",
+      "value": 9
+    },
+    {
+      "key": "India Biodiversity Portal",
+      "value": 1
+    },
+    {
+      "key": "INDIGEO",
+      "value": 3
+    },
+    {
+      "key": "INFN Open Access Repository",
+      "value": 4
+    },
+    {
+      "key": "Information not available, contact SND for more information",
+      "value": 4
+    },
+    {
+      "key": "INPTDAT",
+      "value": 7
+    },
+    {
+      "key": "INRA",
+      "value": 1
+    },
+    {
+      "key": "INSPIRE",
+      "value": 3
+    },
+    {
+      "key": "Institut d'Astronomie de l'Académie des Sciences de Russie",
+      "value": 2
+    },
+    {
+      "key": "Institut de Recherche en Astrophysique et Planétologie (UMR 5277)",
+      "value": 1
+    },
+    {
+      "key": "Institut Laue-Langevin (ILL)",
+      "value": 65
+    },
+    {
+      "key": "Institut national de recherche pour l’agriculture, l’alimentation et l’environnement (INRAE)",
+      "value": 1
+    },
+    {
+      "key": "Institut UTINAM (UMR 6213)",
+      "value": 10
+    },
+    {
+      "key": "Institute for Future Studies",
+      "value": 11
+    },
+    {
+      "key": "Institute for Health Metrics and Evaluation (IHME)",
+      "value": 13
+    },
+    {
+      "key": "Institute for Marine and Antarctic Studies (IMAS), University of Tasmania (UTAS)",
+      "value": 3
+    },
+    {
+      "key": "Institute for Research on Innovation and Science (IRIS)",
+      "value": 1
+    },
+    {
+      "key": "Institute of Biodiversity, Animal Health and Comparative Medicine, College of Medical, Veterinary and Life Sciences, University of Glasgow",
+      "value": 3
+    },
+    {
+      "key": "Institute of Biology of Komi Scientific Centre of the Ural Branch of the Russian Academy of Sciences",
+      "value": 2
+    },
+    {
+      "key": "Institute of Electrical and Electronics Engineers",
+      "value": 1
+    },
+    {
+      "key": "Institute of Geology at Tallinn University of Technology",
+      "value": 2
+    },
+    {
+      "key": "Institute of Marine Research",
+      "value": 10
+    },
+    {
+      "key": "Institute of Meteorology and Climate Research, Atmospheric Trace Gases and Remote Sensing (IMK-ASF), Karlsruhe Institute of Technology (KIT)",
+      "value": 5
+    },
+    {
+      "key": "Institute of Space and Astronautical Science, Japan Aerospace Exploration Agency",
+      "value": 87
+    },
+    {
+      "key": "Institute of Tropical Medicine Antwerp",
+      "value": 2
+    },
+    {
+      "key": "Instituto de Ciencias del Mar (CSIC)",
+      "value": 1
+    },
+    {
+      "key": "Instituto de Ecología y Biodiversidad",
+      "value": 1
+    },
+    {
+      "key": "Instituto de Investigaciones Ambientales del Pacífico John Von Neumann - IIAP",
+      "value": 1
+    },
+    {
+      "key": "Instituto de Investigaciones Ambientales del Pacifico John Von Neumann (IIAP)",
+      "value": 1
+    },
+    {
+      "key": "Instituto de Pesquisas Jardim Botanico do Rio de Janeiro",
+      "value": 3
+    },
+    {
+      "key": "Instiute of Geology at Tallinn University of Technology",
+      "value": 1
+    },
+    {
+      "key": "IntAct",
+      "value": 63
+    },
+    {
+      "key": "Integrated Earth Data Applications (IEDA)",
+      "value": 14
+    },
+    {
+      "key": "Integrated Plate boundary Observatory Chile - IPOC",
+      "value": 2
+    },
+    {
+      "key": "Integrated Resource for Reproducibility in Macromolecular Crystallography",
+      "value": 9
+    },
+    {
+      "key": "Inter-University Consortium for Political and Social Research",
+      "value": 108
+    },
+    {
+      "key": "Interdisciplinary Earth Data Alliance (IEDA)",
+      "value": 1590
+    },
+    {
+      "key": "International Energy Agency (IEA)",
+      "value": 2
+    },
+    {
+      "key": "International Federation of Digital Seismograph Networks",
+      "value": 226
+    },
+    {
+      "key": "International Institute for Applied Systems Analysis (IIASA)",
+      "value": 3
+    },
+    {
+      "key": "International Institute of Refrigeration (IIR)",
+      "value": 38
+    },
+    {
+      "key": "International Institute of Tropical Agriculture (IITA)",
+      "value": 1
+    },
+    {
+      "key": "International Potato Center",
+      "value": 2
+    },
+    {
+      "key": "International Skin Imaging Collaboration",
+      "value": 1
+    },
+    {
+      "key": "International Soil Carbon Network (ISCN);",
+      "value": 6
+    },
+    {
+      "key": "International Union for Conservation of Nature",
+      "value": 1
+    },
+    {
+      "key": "International Union of Crystallography",
+      "value": 13
+    },
+    {
+      "key": "International VLBI Service for Geodesy and Astrometry, GFZ Data Services",
+      "value": 16
+    },
+    {
+      "key": "InterPro",
+      "value": 7177
+    },
+    {
+      "key": "INTERVALS",
+      "value": 1
+    },
+    {
+      "key": "Invasive Species Specialist Group ISSG",
+      "value": 11
+    },
+    {
+      "key": "Iowa State University",
+      "value": 95
+    },
+    {
+      "key": "IPAC",
+      "value": 6
+    },
+    {
+      "key": "IPC - RWTH Aachen University",
+      "value": 10
+    },
+    {
+      "key": "IPGP Research Collection",
+      "value": 1
+    },
+    {
+      "key": "IPGS-EOST",
+      "value": 1
+    },
+    {
+      "key": "IQB - Institute for Educational Quality Improvement",
+      "value": 13
+    },
+    {
+      "key": "IRCCS San Raffaele Scientific Institute",
+      "value": 1
+    },
+    {
+      "key": "IRD - Institute of Research for Development",
+      "value": 1
+    },
+    {
+      "key": "IRI Data Library",
+      "value": 2
+    },
+    {
+      "key": "Irstea",
+      "value": 6
+    },
+    {
+      "key": "ISEC Press",
+      "value": 13
+    },
+    {
+      "key": "ISEC PRESS",
+      "value": 21
+    },
+    {
+      "key": "ISIMIP Repository",
+      "value": 169
+    },
+    {
+      "key": "ISIS Facility",
+      "value": 30
+    },
+    {
+      "key": "ISRIC - World Soi Information (WDC-Soils)",
+      "value": 2
+    },
+    {
+      "key": "IST Austria",
+      "value": 1
+    },
+    {
+      "key": "ISTA",
+      "value": 1
+    },
+    {
+      "key": "Istituto Nazionale di Geofisica e Vulcanologia (INGV)",
+      "value": 199
+    },
+    {
+      "key": "IT'IS Foundation",
+      "value": 21
+    },
+    {
+      "key": "Jagiellonian University in Kraków",
+      "value": 1
+    },
+    {
+      "key": "James Cook University",
+      "value": 5
+    },
+    {
+      "key": "JAMSTEC",
+      "value": 37
+    },
+    {
+      "key": "Janelia Research Campus",
+      "value": 119
+    },
+    {
+      "key": "Jason J. Hayer and Julia Steinhoff-Wagner",
+      "value": 1
+    },
+    {
+      "key": "Johannes Gutenberg Universität Mainz, Mainz, Rheinland-Pfalz, DE",
+      "value": 30
+    },
+    {
+      "key": "John Wiley & Sons (United States)",
+      "value": 2
+    },
+    {
+      "key": "John Wiley & Sons Ltd.",
+      "value": 1
+    },
+    {
+      "key": "Johns Hopkins Research Data Repository",
+      "value": 4
+    },
+    {
+      "key": "Johns Hopkins Turbulence Databases",
+      "value": 3
+    },
+    {
+      "key": "Joint Centre for Longitudinal Research",
+      "value": 2
+    },
+    {
+      "key": "Jönköping University",
+      "value": 6
+    },
+    {
+      "key": "Journal of Geophysical Research: Solid Earth",
+      "value": 1
+    },
+    {
+      "key": "Jülich DATA",
+      "value": 8
+    },
+    {
+      "key": "Julius Kühn-Institut, Bundesinstitut für Kulturpflanzen",
+      "value": 1
+    },
+    {
+      "key": "Kaggle",
+      "value": 15
+    },
+    {
+      "key": "Kai Nordlund",
+      "value": 1
+    },
+    {
+      "key": "Karger Publishers",
+      "value": 3271
+    },
+    {
+      "key": "Karlsruhe",
+      "value": 4
+    },
+    {
+      "key": "Karlsruhe Institute of Technology",
+      "value": 1
+    },
+    {
+      "key": "Karlsruhe Institute of Technology (KIT)",
+      "value": 6
+    },
+    {
+      "key": "Karlsruhe Institute of Technology (KIT),Karlsruhe Institute of Technology - Institute of Meteorology and Climate Research - Atmospheric Environmental Research (IMK-IFU)",
+      "value": 6
+    },
+    {
+      "key": "Karlsruher Institut für Technologie (KIT)",
+      "value": 4
+    },
+    {
+      "key": "Karlstad University",
+      "value": 4
+    },
+    {
+      "key": "Karolinska institutet",
+      "value": 1
+    },
+    {
+      "key": "Karolinska Institutet",
+      "value": 105
+    },
+    {
+      "key": "KAUST Research Repository",
+      "value": 14
+    },
+    {
+      "key": "KEEN",
+      "value": 1
+    },
+    {
+      "key": "Kidney Precision Medicine Project",
+      "value": 1
+    },
+    {
+      "key": "King's College London",
+      "value": 88
+    },
+    {
+      "key": "KNB Data Repository",
+      "value": 39
+    },
+    {
+      "key": "KNMI",
+      "value": 2
+    },
+    {
+      "key": "Kristianstad University",
+      "value": 4
+    },
+    {
+      "key": "KU Leuven RDR",
+      "value": 3
+    },
+    {
+      "key": "Kyushu University",
+      "value": 5
+    },
+    {
+      "key": "La Trobe",
+      "value": 34
+    },
+    {
+      "key": "La Trobe University",
+      "value": 1
+    },
+    {
+      "key": "Laboratoire Ampère",
+      "value": 5
+    },
+    {
+      "key": "Laboratoire Biogéosciences (UMR 6282)",
+      "value": 11
+    },
+    {
+      "key": "Laboratoire Chrono-environnement (UMR 6249)",
+      "value": 82
+    },
+    {
+      "key": "Laboratoire d'Analyse des Signaux et des Processus Industriels",
+      "value": 4
+    },
+    {
+      "key": "Laboratoire de Recherches Intégratives en Neurosciences et Psychologie Cognitive",
+      "value": 1
+    },
+    {
+      "key": "Laboratoire Génie de production",
+      "value": 4
+    },
+    {
+      "key": "Laboratoire Interdisciplinaire Carnot de Bourgogne (UMR 6303)",
+      "value": 31
+    },
+    {
+      "key": "Laboratorio de Bioinformática y Biología de Sistemas Computacional - Universidad Nacional de Colombia",
+      "value": 1
+    },
+    {
+      "key": "Laboratory for Climatology and Remote Sensing (LCRS), University of Marburg",
+      "value": 1
+    },
+    {
+      "key": "Laboratory of Cryospheric Sciences, School of Architecture and Civil Engineering, École Polytechnique Fédérale de Lausanne, Lausanne, Switzerland",
+      "value": 1
+    },
+    {
+      "key": "Laine-Petäjäkangas, Anna",
+      "value": 1
+    },
+    {
+      "key": "Lancaster University",
+      "value": 7
+    },
+    {
+      "key": "Landcare Research",
+      "value": 6
+    },
+    {
+      "key": "Landcare Research NZ Ltd",
+      "value": 14
+    },
+    {
+      "key": "Lawrence Berkeley National Laboratory (LBNL), Berkeley, CA (United States)",
+      "value": 14
+    },
+    {
+      "key": "Lawrence Berkeley National Laboratory (LBNL), Berkeley, CA (United States). National Microbiome Data Collaborative (NMDC)",
+      "value": 1
+    },
+    {
+      "key": "Lawrence Livermore National Laboratory (LLNL), Livermore, CA (United States); The Ohio State University; U.S. Department of Energy Systems Biology Knowledgebase; Lawrence Berkeley National Laboratory (LBNL), Berkeley, CA (United States); Oak Ridge National Laboratory (ORNL), Oak Ridge, TN (United States)",
+      "value": 4
+    },
+    {
+      "key": "LBNL Materials Project; Lawrence Berkeley National Laboratory (LBNL), Berkeley, CA (United States)",
+      "value": 149
+    },
+    {
+      "key": "Leibniz Centre for Agricultural Landscape Research (ZALF)",
+      "value": 1
+    },
+    {
+      "key": "Leibniz Centre for Agricultural Landscape Research (ZALF) e.V.",
+      "value": 1
+    },
+    {
+      "key": "Leibniz Centre for Agricultural Landscape Research (ZALF), Muencheberg (Germany)",
+      "value": 2
+    },
+    {
+      "key": "Leibniz Centre for Agricultural Landscape Research (ZALF), Müncheberg (Germany)",
+      "value": 2
+    },
+    {
+      "key": "Leibniz Institut für Astrophysik Potsdam (AIP)",
+      "value": 7
+    },
+    {
+      "key": "Leibniz Institute for Baltic Sea Research (IOW)",
+      "value": 2
+    },
+    {
+      "key": "Leibniz Institute for Baltic Sea Research Warnemünde (IOW)",
+      "value": 4
+    },
+    {
+      "key": "Leibniz Institute for Farm Animal Biology (FBN)",
+      "value": 1
+    },
+    {
+      "key": "Leibniz Institute for Farm Animal Biology (FBN), Wilhelm-Stahl-Allee 2, 18196 Dummerstorf, Germany",
+      "value": 7
+    },
+    {
+      "key": "Leibniz Institute of Atmospheric Physics at the University of Rostock",
+      "value": 15
+    },
+    {
+      "key": "Leibniz Institute of Plant Biochemistry (IPB), Halle (Saale), Germany",
+      "value": 1
+    },
+    {
+      "key": "Leibniz Institute of Plant Biochemistry (IPB), Weinberg 3, 06120 Halle (Saale), Germany",
+      "value": 2
+    },
+    {
+      "key": "Leibniz Institute of Plant Biochemistry, Halle, Germany",
+      "value": 2
+    },
+    {
+      "key": "Leibniz Institute of Plant Genetics and Crop Plant Research (IPK)",
+      "value": 1
+    },
+    {
+      "key": "Leibniz-Institut für Pflanzenbiochemie",
+      "value": 2
+    },
+    {
+      "key": "Leibniz-Zentrum für Agrarlandschaftsforschung (ZALF) e.V.",
+      "value": 8
+    },
+    {
+      "key": "Leiden University",
+      "value": 3
+    },
+    {
+      "key": "Lidsen Publish Inc.",
+      "value": 2
+    },
+    {
+      "key": "LIfBi Leibniz Institute for Educational Trajectories",
+      "value": 7
+    },
+    {
+      "key": "Linguistic Data Consortium",
+      "value": 8
+    },
+    {
+      "key": "Linköping University",
+      "value": 9
+    },
+    {
+      "key": "Linnaeus University",
+      "value": 10
+    },
+    {
+      "key": "LMU Munich, Faculty of Physics",
+      "value": 2
+    },
+    {
+      "key": "LMU-ifo Economics & Business Data Center (EBDC)",
+      "value": 4
+    },
+    {
+      "key": "Lomonosov Moscow State University",
+      "value": 4
+    },
+    {
+      "key": "London School of Hygiene & Tropical Medicine",
+      "value": 5
+    },
+    {
+      "key": "Loughborough University",
+      "value": 163
+    },
+    {
+      "key": "LTT - RWTH Aachen University",
+      "value": 3
+    },
+    {
+      "key": "LUIS",
+      "value": 10
+    },
+    {
+      "key": "Luleå University of Technology",
+      "value": 81
+    },
+    {
+      "key": "Lund University",
+      "value": 48
+    },
+    {
+      "key": "LWBIN Data Hub",
+      "value": 1
+    },
+    {
+      "key": "Macquarie University",
+      "value": 3
+    },
+    {
+      "key": "Mahboob Elahi",
+      "value": 2
+    },
+    {
+      "key": "Manaaki Whenua Landcare Research",
+      "value": 1
+    },
+    {
+      "key": "Manifesto Project",
+      "value": 25
+    },
+    {
+      "key": "Mannheim University Library",
+      "value": 3
+    },
+    {
+      "key": "Marine Biological Association",
+      "value": 1
+    },
+    {
+      "key": "Marine Data Archive",
+      "value": 19
+    },
+    {
+      "key": "Marine Data Archive (MDA)",
+      "value": 1
+    },
+    {
+      "key": "Marine Geoscience Data System (MGDS)",
+      "value": 8
+    },
+    {
+      "key": "MASER/PADC",
+      "value": 2
+    },
+    {
+      "key": "MassIVE",
+      "value": 11
+    },
+    {
+      "key": "Materials Cloud",
+      "value": 29
+    },
+    {
+      "key": "Materials Commons",
+      "value": 1
+    },
+    {
+      "key": "Materials Data Facility",
+      "value": 71
+    },
+    {
+      "key": "Matlab Central",
+      "value": 1
+    },
+    {
+      "key": "Max Planck Institute for Biogeochemistry, Jena",
+      "value": 4
+    },
+    {
+      "key": "Max Planck Institute for Biogeochmemistry, Jena",
+      "value": 1
+    },
+    {
+      "key": "MDA",
+      "value": 3
+    },
+    {
+      "key": "MDPI Plants",
+      "value": 1
+    },
+    {
+      "key": "mdw",
+      "value": 1
+    },
+    {
+      "key": "Medien- und Informationszentrum, Leuphana Universität Lüneburg",
+      "value": 4
+    },
+    {
+      "key": "Meise Botanic Garden",
+      "value": 1
+    },
+    {
+      "key": "Mendeley",
+      "value": 17089
+    },
+    {
+      "key": "Mendeley Data",
+      "value": 181
+    },
+    {
+      "key": "Mercator Ocean International",
+      "value": 43
+    },
+    {
+      "key": "Mercator Ocean International ",
+      "value": 1
+    },
+    {
+      "key": "MetaboLights",
+      "value": 1365
+    },
+    {
+      "key": "MGnify",
+      "value": 4075
+    },
+    {
+      "key": "Microbiology Society",
+      "value": 56
+    },
+    {
+      "key": "Mid Sweden University",
+      "value": 10
+    },
+    {
+      "key": "Middlebury",
+      "value": 1
+    },
+    {
+      "key": "Milena Hugenschmidt",
+      "value": 2
+    },
+    {
+      "key": "Ministerio de Ambiente y Desarrollo Sostenible",
+      "value": 1
+    },
+    {
+      "key": "Ministerio del Ambiente, Agua y Transición Ecológica de Ecuador - MAATE",
+      "value": 1
+    },
+    {
+      "key": "Minneapolis, MN: IPUMS",
+      "value": 137
+    },
+    {
+      "key": "Minneapolis, MN: IPUMS and ICF",
+      "value": 8
+    },
+    {
+      "key": "Minneapolis, MN: University of Minnesota",
+      "value": 46
+    },
+    {
+      "key": "Mistrals",
+      "value": 16
+    },
+    {
+      "key": "MNHN - Museum national d'Histoire naturelle",
+      "value": 1
+    },
+    {
+      "key": "Mohonk Preserve",
+      "value": 1
+    },
+    {
+      "key": "Monash University",
+      "value": 38
+    },
+    {
+      "key": "MorphoBank",
+      "value": 12
+    },
+    {
+      "key": "Moscow Pedagogical State University (MPSU).",
+      "value": 1
+    },
+    {
+      "key": "Mountain Scholar",
+      "value": 1
+    },
+    {
+      "key": "Movebank Data Repository",
+      "value": 590
+    },
+    {
+      "key": "MRC Human Genetics Unit IGMM. University of Edinburgh",
+      "value": 1
+    },
+    {
+      "key": "MRC Human Genetics Unit. Institute of Genetics and Molecular Medicine. University of Edinburgh",
+      "value": 1
+    },
+    {
+      "key": "MRC Unit for Lifelong Health and Ageing at UCL",
+      "value": 2
+    },
+    {
+      "key": "MSpace University of Manitoba Institutional Repository",
+      "value": 1
+    },
+    {
+      "key": "Multidisciplinary Digital Publishing Institute",
+      "value": 7
+    },
+    {
+      "key": "MultiSector Dynamics - Living, Intuitive, Value-adding, Environment",
+      "value": 3
+    },
+    {
+      "key": "Munoz-Gama, J. (Jorge)",
+      "value": 1
+    },
+    {
+      "key": "Munster Technological University",
+      "value": 1
+    },
+    {
+      "key": "MURI/AUSMURI Project: Rationalization of Interphase Instabilities during Thermo-Mechanical Gyrations Typical",
+      "value": 2
+    },
+    {
+      "key": "Museum für Naturkunde Berlin (MfN) - Leibniz Institute for Evolution and Biodiversity Science",
+      "value": 3
+    },
+    {
+      "key": "Museum für Naturkunde Berlin (MfN) - Leibniz Institute for Research on Evolution and Biodiversity",
+      "value": 1
+    },
+    {
+      "key": "Museum of Comparative Zoology, Harvard University",
+      "value": 1
+    },
+    {
+      "key": "Museums Victoria",
+      "value": 1
+    },
+    {
+      "key": "MX-RDR",
+      "value": 16
+    },
+    {
+      "key": "My University",
+      "value": 1
+    },
+    {
+      "key": "MyGeoHUB",
+      "value": 6
+    },
+    {
+      "key": "N. I. Vavilov Institute of Plant Genetic Resources (VIR)",
+      "value": 2
+    },
+    {
+      "key": "Nano Letters",
+      "value": 2
+    },
+    {
+      "key": "Nansen Environmental and Remote Sensing Center",
+      "value": 1
+    },
+    {
+      "key": "NASA",
+      "value": 1
+    },
+    {
+      "key": "NASA Alaska Satellite Facility Distributed Active Archive Center",
+      "value": 11
+    },
+    {
+      "key": "NASA Center for Climate Simulation",
+      "value": 1
+    },
+    {
+      "key": "NASA Crustal Dynamics Data Information System",
+      "value": 4
+    },
+    {
+      "key": "NASA EOSDIS Land Processes Distributed Active Archive Center",
+      "value": 464
+    },
+    {
+      "key": "NASA GeneLab",
+      "value": 2
+    },
+    {
+      "key": "NASA Global Hydrometeorology Resource Center Distributed Active Archive Center",
+      "value": 30
+    },
+    {
+      "key": "NASA Goddard Earth Sciences Data and Information Services Center",
+      "value": 368
+    },
+    {
+      "key": "NASA LANCE AMSR2 at the GHRC Distributed Active Archive Center",
+      "value": 1
+    },
+    {
+      "key": "NASA LANCE MODIS at the MODAPS",
+      "value": 3
+    },
+    {
+      "key": "NASA Land Atmosphere Near real-time Capability for EOS Fire Information for Resource Management System",
+      "value": 8
+    },
+    {
+      "key": "NASA Langley Atmospheric Science Data Center Distributed Active Archive Center",
+      "value": 93
+    },
+    {
+      "key": "NASA Level 1 and Atmosphere Archive and Distribution System Distributed Active Archive Center",
+      "value": 66
+    },
+    {
+      "key": "NASA National Snow and Ice Data Center Distributed Active Archive Center",
+      "value": 389
+    },
+    {
+      "key": "NASA Ocean Biology Distributed Active Archive Center",
+      "value": 44
+    },
+    {
+      "key": "NASA Physical Oceanography Distributed Active Archive Center",
+      "value": 102
+    },
+    {
+      "key": "NASA Planetary Data System",
+      "value": 130
+    },
+    {
+      "key": "NASA Space Physics Data Facility",
+      "value": 12
+    },
+    {
+      "key": "National Agricultural Library - ARS - USDA",
+      "value": 3
+    },
+    {
+      "key": "National Air and Space Museum",
+      "value": 1
+    },
+    {
+      "key": "National Cancer Institute",
+      "value": 1
+    },
+    {
+      "key": "National Center for Biotechnology Information",
+      "value": 2
+    },
+    {
+      "key": "National Centre for Earth Observation and School of GeoSciences. University of Edinburgh",
+      "value": 2
+    },
+    {
+      "key": "National Centre for Earth Observation; School of GeoSciences. University of Edinburgh",
+      "value": 2
+    },
+    {
+      "key": "National Centre for Earth Observation; University of Edinburgh. School of GeoSciences",
+      "value": 1
+    },
+    {
+      "key": "National Computational Infrastructure",
+      "value": 1
+    },
+    {
+      "key": "National Data Archive on Child Abuse and Neglect",
+      "value": 4
+    },
+    {
+      "key": "National Ecological Observatory Network (NEON)",
+      "value": 9
+    },
+    {
+      "key": "National Ecosystem Data Bank",
+      "value": 2
+    },
+    {
+      "key": "National Energy Technology Laboratory - Energy Data eXchange; Clemson Univ., SC (United States)",
+      "value": 1
+    },
+    {
+      "key": "National Energy Technology Laboratory - Energy Data eXchange; NETL",
+      "value": 14
+    },
+    {
+      "key": "National Heart, Lung, and Blood Institute",
+      "value": 19
+    },
+    {
+      "key": "National Institute for Environmental Studies",
+      "value": 13
+    },
+    {
+      "key": "National Institute for Materials Science",
+      "value": 2
+    },
+    {
+      "key": "National Institute of Genetics, ROIS",
+      "value": 1
+    },
+    {
+      "key": "National Institute of Oceanography and Applied Geophysics",
+      "value": 7
+    },
+    {
+      "key": "National Institute of Standards and Technology",
+      "value": 690
+    },
+    {
+      "key": "National Institutes of Health (NIH)",
+      "value": 1
+    },
+    {
+      "key": "National Museum of Natural History",
+      "value": 1
+    },
+    {
+      "key": "National Museum of Natural History, Smithsonian Institution",
+      "value": 3
+    },
+    {
+      "key": "National Museum of Nature and Science, Japan",
+      "value": 5
+    },
+    {
+      "key": "National Oceanographic and Atmospheric Administration, Global Monitoring Division (NOAA GMD)",
+      "value": 3
+    },
+    {
+      "key": "National Renewable Energy Lab. (NREL), Golden, CO (United States)",
+      "value": 1
+    },
+    {
+      "key": "National Renewable Energy Laboratory - Data (NREL-DATA), Golden, CO (United States); National Renewable Energy \nLaboratory",
+      "value": 6
+    },
+    {
+      "key": "National Renewable Energy Laboratory - Data (NREL-DATA), Golden, CO (United States); National Renewable Energy Laboratory",
+      "value": 11
+    },
+    {
+      "key": "National Renewable Energy Laboratory - Data (NREL-DATA), Golden, CO (United States); National Renewable Energy Laboratory (NREL), Golden, CO (United States)",
+      "value": 2
+    },
+    {
+      "key": "National Renewable Energy Laboratory (NREL), Golden, CO (United States)",
+      "value": 2
+    },
+    {
+      "key": "National Research Counci of Canada",
+      "value": 1
+    },
+    {
+      "key": "National Research Council of Canada",
+      "value": 2
+    },
+    {
+      "key": "National Snow and Ice Data Center",
+      "value": 25
+    },
+    {
+      "key": "National University of Singapore",
+      "value": 4
+    },
+    {
+      "key": "National Zoo and Smithsonian Conservation Biology Institute",
+      "value": 3
+    },
+    {
+      "key": "Natural History Museum",
+      "value": 20
+    },
+    {
+      "key": "Natural History Museum of Denmark",
+      "value": 1
+    },
+    {
+      "key": "Natural History Museum Rotterdam",
+      "value": 1
+    },
+    {
+      "key": "Natural History Museum, Vienna",
+      "value": 1
+    },
+    {
+      "key": "Natural Resources Canada",
+      "value": 5
+    },
+    {
+      "key": "Naturalis Biodiversity Center",
+      "value": 3
+    },
+    {
+      "key": "Nature",
+      "value": 1
+    },
+    {
+      "key": "NatureScot",
+      "value": 1
+    },
+    {
+      "key": "naturgucker.de",
+      "value": 4
+    },
+    {
+      "key": "Natuurpunt",
+      "value": 1
+    },
+    {
+      "key": "NCBI dbGaP (DataBase of Genotypes And Phenotypesgenotypes and phenotypes)",
+      "value": 5197
+    },
+    {
+      "key": "NCBI Reference Sequence Database",
+      "value": 186321
+    },
+    {
+      "key": "NCBI/GenBank",
+      "value": 5
+    },
+    {
+      "key": "NCI Australia",
+      "value": 2
+    },
+    {
+      "key": "NCIP Hub",
+      "value": 4
+    },
+    {
+      "key": "NEEShub",
+      "value": 3
+    },
+    {
+      "key": "Neotoma Paleoecological Database",
+      "value": 15
+    },
+    {
+      "key": "NERC BADC",
+      "value": 1
+    },
+    {
+      "key": "NERC British Atmospheric Data Centre",
+      "value": 18
+    },
+    {
+      "key": "NERC Centre for Environmental Data Analysis",
+      "value": 2
+    },
+    {
+      "key": "NERC Centre for Environmental Data Analysis (CEDA)",
+      "value": 6
+    },
+    {
+      "key": "NERC EDS British Oceanographic Data Centre NOC",
+      "value": 46
+    },
+    {
+      "key": "NERC EDS Centre for Environmental Data Analysis",
+      "value": 22
+    },
+    {
+      "key": "NERC EDS Environmental Information Data Centre",
+      "value": 1116
+    },
+    {
+      "key": "NERC EDS National Geoscience Data Centre",
+      "value": 5
+    },
+    {
+      "key": "NERC EDS UK Polar Data Centre",
+      "value": 71
+    },
+    {
+      "key": "NERC Environmental Information Data Centre",
+      "value": 243
+    },
+    {
+      "key": "Network for Earthquake Engineering Simulation (NEES)",
+      "value": 46
+    },
+    {
+      "key": "New York University",
+      "value": 2
+    },
+    {
+      "key": "New York University. Center for Urban Science and Progress",
+      "value": 1
+    },
+    {
+      "key": "Newcastle University",
+      "value": 107
+    },
+    {
+      "key": "Next Generation Ecosystems Experiment - Arctic, Oak Ridge National Laboratory (ORNL), Oak Ridge, TN (US)",
+      "value": 10
+    },
+    {
+      "key": "Next Generation Ecosystems Experiment - Arctic, Oak Ridge National Laboratory (ORNL), Oak Ridge, TN (US); Next-Generation Ecosystem Experiments (NGEE) Arctic",
+      "value": 1
+    },
+    {
+      "key": "Next Generation Ecosystems Experiment - Arctic, Oak Ridge National Laboratory (ORNL), Oak Ridge, TN (US); NGEE Arctic, Oak Ridge National Laboratory (ORNL), Oak Ridge, TN (United States)",
+      "value": 19
+    },
+    {
+      "key": "Next-Generation Ecosystem Experiments Tropics; Brookhaven National Laboratory",
+      "value": 1
+    },
+    {
+      "key": "Next-Generation Ecosystem Experiments Tropics; Brookhaven National Laboratory; Los Alamos National Laboratory; STRI",
+      "value": 6
+    },
+    {
+      "key": "Next-Generation Ecosystem Experiments Tropics; Lawrence Berkeley National Lab; National Institute for Amazonian \nResearch (INPA)",
+      "value": 1
+    },
+    {
+      "key": "Next-Generation Ecosystem Experiments Tropics; Lawrence Berkeley National Laboratory (See acknowledgements below \nfor the source of the original raw data)",
+      "value": 1
+    },
+    {
+      "key": "Next-Generation Ecosystem Experiments Tropics; Lawrence Berkeley National Laboratory; Oak Ridge National Laboratory; University of New Hampshire; University of California, Berkeley.",
+      "value": 1
+    },
+    {
+      "key": "Next-Generation Ecosystem Experiments Tropics; STRI; LBNL",
+      "value": 2
+    },
+    {
+      "key": "Next-Generation Liquefaction Consortium",
+      "value": 3
+    },
+    {
+      "key": "NFDI4Chem",
+      "value": 4
+    },
+    {
+      "key": "NIHR Global Health Research Unit on Respiratory Health (RESPIRE). Usher Institute. The University of Edinburgh",
+      "value": 1
+    },
+    {
+      "key": "NIMH Data Archive",
+      "value": 4
+    },
+    {
+      "key": "NIMH Data Archives",
+      "value": 1
+    },
+    {
+      "key": "NIMH Data Repositories",
+      "value": 6
+    },
+    {
+      "key": "NITRC",
+      "value": 1
+    },
+    {
+      "key": "nmrXiv",
+      "value": 940
+    },
+    {
+      "key": "NOAA Earth System Research Laboratory, Global Monitoring Division",
+      "value": 8
+    },
+    {
+      "key": "NOAA Earth System Research Laboratory, Global Monitoring Laboratory",
+      "value": 2
+    },
+    {
+      "key": "NOAA ESRL GML CCGG Group",
+      "value": 18
+    },
+    {
+      "key": "NOAA Global Monitoring Laboratory",
+      "value": 4
+    },
+    {
+      "key": "NOAA GML",
+      "value": 5
+    },
+    {
+      "key": "NOAA National Centers for Environmental Information",
+      "value": 750
+    },
+    {
+      "key": "NOAA National Climatic Data Center",
+      "value": 21
+    },
+    {
+      "key": "NOAA/ESRL/GMD",
+      "value": 1
+    },
+    {
+      "key": "NooL - Integrating People & Solutions",
+      "value": 1
+    },
+    {
+      "key": "Nordicana D",
+      "value": 171
+    },
+    {
+      "key": "Norges teknisk-naturvitenskapelige universitet",
+      "value": 1
+    },
+    {
+      "key": "Norstore",
+      "value": 2
+    },
+    {
+      "key": "North Carolina State Univ., Raleigh, NC (United States)",
+      "value": 90
+    },
+    {
+      "key": "North Carolina State University",
+      "value": 27
+    },
+    {
+      "key": "Northern California Earthquake Data Center",
+      "value": 32
+    },
+    {
+      "key": "Northumbria University",
+      "value": 2
+    },
+    {
+      "key": "Northwest Knowledge Network",
+      "value": 1
+    },
+    {
+      "key": "Northwestern University",
+      "value": 1
+    },
+    {
+      "key": "Norwegian Meteorological Institute",
+      "value": 2
+    },
+    {
+      "key": "Norwegian Polar Institute",
+      "value": 8
+    },
+    {
+      "key": "Norwegian University of Life Sciences (NMBU)",
+      "value": 1
+    },
+    {
+      "key": "Norwegian University of Science and Technology",
+      "value": 4
+    },
+    {
+      "key": "Not Available",
+      "value": 28
+    },
+    {
+      "key": "NOVA School of Business & Economics",
+      "value": 11
+    },
+    {
+      "key": "npolar.no",
+      "value": 73
+    },
+    {
+      "key": "NSD - Norsk senter for forskningsdata AS",
+      "value": 1
+    },
+    {
+      "key": "NSD – Norwegian Centre for Research Data",
+      "value": 1
+    },
+    {
+      "key": "NSF Arctic Data Center",
+      "value": 55
+    },
+    {
+      "key": "NSIDC",
+      "value": 138
+    },
+    {
+      "key": "NSIDC Antarctic Glaciological Data Center",
+      "value": 3
+    },
+    {
+      "key": "Nutrient Data Laboratory, Beltsville Human Nutrition Research Center, ARS, USDA",
+      "value": 10
+    },
+    {
+      "key": "Oak Ridge Leadership Computing Facility; Oak Ridge National Laboratory (ORNL), Oak Ridge, TN (United States)",
+      "value": 2
+    },
+    {
+      "key": "Oak Ridge National Laboratory",
+      "value": 4
+    },
+    {
+      "key": "Oak Ridge National Laboratory (ORNL), Oak Ridge, TN (United States)",
+      "value": 38
+    },
+    {
+      "key": "Oak Ridge National Laboratory (ORNL), Oak Ridge, TN (United States); U.S. Department of Energy Systems Biology \nKnowledgebase",
+      "value": 20
+    },
+    {
+      "key": "Oak Ridge National Laboratory (ORNL), Oak Ridge, TN (United States); U.S. Department of Energy Systems Biology Knowledgebase",
+      "value": 10
+    },
+    {
+      "key": "Oak Ridge National Laboratory (ORNL), Oak Ridge, TN (United States). Oak Ridge Leadership Computing Facility (OLCF); Oak Ridge National Laboratory (ORNL), Oak Ridge, TN (United States)",
+      "value": 11
+    },
+    {
+      "key": "Oak Ridge National Laboratory (ORNL), Oak Ridge, TN (United States)U.S. Department of Energy Systems Biology Knowledgebase",
+      "value": 23
+    },
+    {
+      "key": "Observation.org",
+      "value": 4
+    },
+    {
+      "key": "Observatoire global du Saint-Laurent",
+      "value": 2
+    },
+    {
+      "key": "Observatoire Global du Saint-Laurent",
+      "value": 2
+    },
+    {
+      "key": "Observatoire Multidisciplinaire des Instabilités de Versant",
+      "value": 4
+    },
+    {
+      "key": "Ocean Biogeographic Information System",
+      "value": 1
+    },
+    {
+      "key": "Ocean Tracking Network (OTN)",
+      "value": 1
+    },
+    {
+      "key": "Odatis",
+      "value": 1
+    },
+    {
+      "key": "Office for National Statistics",
+      "value": 1
+    },
+    {
+      "key": "OGS - Istituto Nazionale di Oceanografia e Geofisica Sperimentale",
+      "value": 1
+    },
+    {
+      "key": "OGS (Istituto Nazionale di Oceanografia e di Geofisica Sperimentale), Division of Oceanography",
+      "value": 13
+    },
+    {
+      "key": "Open Agrar",
+      "value": 2
+    },
+    {
+      "key": "Open Agrar Repositorium",
+      "value": 1
+    },
+    {
+      "key": "Open Context",
+      "value": 23
+    },
+    {
+      "key": "Open Data Commons for Spinal Cord Injury (ODC-SCI)",
+      "value": 1
+    },
+    {
+      "key": "Open Data Commons for Traumatic Brain Injury (ODC-TBI)",
+      "value": 1
+    },
+    {
+      "key": "Open Power System Data",
+      "value": 3
+    },
+    {
+      "key": "Open Research Knowledge Graph",
+      "value": 1
+    },
+    {
+      "key": "Open Science Framework",
+      "value": 1
+    },
+    {
+      "key": "OpenHeritage3D",
+      "value": 1
+    },
+    {
+      "key": "Openneuro",
+      "value": 57
+    },
+    {
+      "key": "OpenProceedings.org",
+      "value": 96
+    },
+    {
+      "key": "OPGC, LMV",
+      "value": 1
+    },
+    {
+      "key": "Optica Publishing Group",
+      "value": 1314
+    },
+    {
+      "key": "Optical Society of America",
+      "value": 1
+    },
+    {
+      "key": "ORCID",
+      "value": 1
+    },
+    {
+      "key": "Örebro University",
+      "value": 4
+    },
+    {
+      "key": "Oregon State University",
+      "value": 7
+    },
+    {
+      "key": "ORNL (Oak Ridge National Laboratory (ORNL), Oak Ridge, TN (United States))",
+      "value": 3
+    },
+    {
+      "key": "ORNL Distributed Active Archive Center",
+      "value": 10
+    },
+    {
+      "key": "ORNL Distributed Active Archive Center for Biogeochemical Dynamics",
+      "value": 3
+    },
+    {
+      "key": "ORNLCIFSFA (Critical Interfaces Science Focus Area); Oak Ridge National Laboratory (ORNL), Oak Ridge, TN (United States)",
+      "value": 2
+    },
+    {
+      "key": "ORNLTESSFA (Oak Ridge National Lab's Terrestrial Ecosystem Science Scientific Focus Area (ORNL TES SFA))",
+      "value": 29
+    },
+    {
+      "key": "Orphadata",
+      "value": 2
+    },
+    {
+      "key": "OSF",
+      "value": 7
+    },
+    {
+      "key": "OSI SAF",
+      "value": 9
+    },
+    {
+      "key": "OSU OREME",
+      "value": 1
+    },
+    {
+      "key": "OSUG, Meteo France, CNRS, IRD, INRAE",
+      "value": 1
+    },
+    {
+      "key": "OTELO",
+      "value": 1
+    },
+    {
+      "key": "OWEY",
+      "value": 1
+    },
+    {
+      "key": "Oxford University Press (United Kingdom)",
+      "value": 1
+    },
+    {
+      "key": "Pacific Northwest National Laboratory (PNNL), Richland, WA (United States)",
+      "value": 1
+    },
+    {
+      "key": "Pacific Northwest National Laboratory (PNNL), Richland, WA (United States)University of Nebraska-Lincoln, Lincoln, NE (United States)",
+      "value": 1
+    },
+    {
+      "key": "Pacific Northwest National Laboratory 2",
+      "value": 2
+    },
+    {
+      "key": "Pacific Northwest National Laboratory 2; EMSL; PNNL",
+      "value": 1
+    },
+    {
+      "key": "Pacific Northwest National Laboratory 2; LBNL",
+      "value": 1
+    },
+    {
+      "key": "Pacific Northwest National Laboratory 2; PNNL",
+      "value": 1
+    },
+    {
+      "key": "Pacific Northwest National Laboratory 2; PNNL; NREL",
+      "value": 2
+    },
+    {
+      "key": "Pacific Northwest National Laboratory; PNNL",
+      "value": 3
+    },
+    {
+      "key": "PADC",
+      "value": 13
+    },
+    {
+      "key": "PADC/MASER",
+      "value": 2
+    },
+    {
+      "key": "Paleobiology Database",
+      "value": 2
+    },
+    {
+      "key": "Paleoceanography",
+      "value": 1
+    },
+    {
+      "key": "Palisades, NY:  Socioeconomic Data and Applications Center (SEDAC)",
+      "value": 21
+    },
+    {
+      "key": "Palisades, NY: NASA Socioeconomic Data and Applications Center (SEDAC)",
+      "value": 311
+    },
+    {
+      "key": "Pandora",
+      "value": 1
+    },
+    {
+      "key": "PANGAEA",
+      "value": 7229
+    },
+    {
+      "key": "Panorama Public",
+      "value": 1
+    },
+    {
+      "key": "PARADIM, an NSF Materials Innovation Platform",
+      "value": 6
+    },
+    {
+      "key": "Peking University Open Research Data Platform",
+      "value": 11
+    },
+    {
+      "key": "Penn State Data Commons",
+      "value": 5
+    },
+    {
+      "key": "Pennsieve Discover",
+      "value": 9
+    },
+    {
+      "key": "PerSciDo",
+      "value": 17
+    },
+    {
+      "key": "PerSCiDo",
+      "value": 1
+    },
+    {
+      "key": "PerSCiDO",
+      "value": 1
+    },
+    {
+      "key": "Pfam Protein Families",
+      "value": 20750
+    },
+    {
+      "key": "Physikalisch-Technische Bundesanstalt (PTB)",
+      "value": 13
+    },
+    {
+      "key": "PhysioNet",
+      "value": 61
+    },
+    {
+      "key": "physionet.org",
+      "value": 36
+    },
+    {
+      "key": "Plazi.org taxonomic treatments database",
+      "value": 17
+    },
+    {
+      "key": "PlutoF",
+      "value": 1
+    },
+    {
+      "key": "Polar Data Centre, Natural Environment Research Council, UK",
+      "value": 10
+    },
+    {
+      "key": "Polar Data Centre, Natural Environment Research Council, UK Research & Innovation",
+      "value": 1
+    },
+    {
+      "key": "Polar Data Centre, Natural Environment Research Council, UK Research & Innovation, UK",
+      "value": 2
+    },
+    {
+      "key": "Polar Data Centre; British Antarctic Survey, Natural Environment Research Council; Cambridge, CB3 0ET, UK.",
+      "value": 70
+    },
+    {
+      "key": "Portail Data Inra",
+      "value": 5
+    },
+    {
+      "key": "Portail Data Inra Dataverse",
+      "value": 1
+    },
+    {
+      "key": "Portail Data INRAE",
+      "value": 34
+    },
+    {
+      "key": "PRIDE Proteomics Identification Database",
+      "value": 14410
+    },
+    {
+      "key": "Princeton Plasma Physics Laboratory (PPPL), Princeton, NJ (United States)",
+      "value": 84
+    },
+    {
+      "key": "Princeton Plasma Physics Laboratory (PPPL), Princeton, NJ (United States); Oak Ridge National Laboratory (ORNL), Oak \nRidge, TN (United States)",
+      "value": 1
+    },
+    {
+      "key": "Princeton Plasma Physics Laboratory, Princeton University",
+      "value": 4
+    },
+    {
+      "key": "Princeton University",
+      "value": 11
+    },
+    {
+      "key": "Prism. Galter Health Sciences Library. Northwestern University",
+      "value": 3
+    },
+    {
+      "key": "PSI",
+      "value": 1
+    },
+    {
+      "key": "PSI LMU",
+      "value": 1
+    },
+    {
+      "key": "PsychArchives",
+      "value": 2
+    },
+    {
+      "key": "Psychological Research Data & Tools Repository",
+      "value": 4
+    },
+    {
+      "key": "PsychOpen GOLD",
+      "value": 8
+    },
+    {
+      "key": "Public Library of Science",
+      "value": 2
+    },
+    {
+      "key": "Purdue University Research Repository",
+      "value": 148
+    },
+    {
+      "key": "QDR Main Collection",
+      "value": 135
+    },
+    {
+      "key": "QsarDB repository (http://qsardb.org/)",
+      "value": 3
+    },
+    {
+      "key": "QsarDB repository (https://qsardb.org/)",
+      "value": 1
+    },
+    {
+      "key": "Queen Mary University of London",
+      "value": 1
+    },
+    {
+      "key": "Queen's University Belfast",
+      "value": 2
+    },
+    {
+      "key": "Queensland University of Technology",
+      "value": 1
+    },
+    {
+      "key": "Queensland University of Technology (QUT), Australia",
+      "value": 1
+    },
+    {
+      "key": "Questagame",
+      "value": 1
+    },
+    {
+      "key": "QuTech",
+      "value": 2
+    },
+    {
+      "key": "Rabobank Nederland",
+      "value": 1
+    },
+    {
+      "key": "RADAR4Chem",
+      "value": 1
+    },
+    {
+      "key": "Radboud University",
+      "value": 206
+    },
+    {
+      "key": "Radiant MLHub",
+      "value": 6
+    },
+    {
+      "key": "RANGSIT UNIVERSITY",
+      "value": 1
+    },
+    {
+      "key": "RDC of the Federal Statistical Office and the statistical offices of the Länder (RDC)",
+      "value": 2
+    },
+    {
+      "key": "Reactome",
+      "value": 2107
+    },
+    {
+      "key": "Recherche Data Gouv",
+      "value": 46
+    },
+    {
+      "key": "Redape",
+      "value": 1
+    },
+    {
+      "key": "Regional Euro-Asian Biological Invasions Center (REABIC)",
+      "value": 1
+    },
+    {
+      "key": "RepOD",
+      "value": 204
+    },
+    {
+      "key": "Repositório de Dados de Pesquisa da Unicamp",
+      "value": 2
+    },
+    {
+      "key": "Repozytorium Danych Społecznych",
+      "value": 1
+    },
+    {
+      "key": "Research Data Center for Business and Organizational Data at DIW (FDZ-BO)",
+      "value": 1
+    },
+    {
+      "key": "Research Institute for Nature and Forest (INBO)",
+      "value": 15
+    },
+    {
+      "key": "Research Resource Identifiers",
+      "value": 624
+    },
+    {
+      "key": "RESIF - Réseau Sismologique et géodésique Français",
+      "value": 49
+    },
+    {
+      "key": "Rfam",
+      "value": 5
+    },
+    {
+      "key": "Rice University",
+      "value": 1
+    },
+    {
+      "key": "Rijkswaterstaat",
+      "value": 1
+    },
+    {
+      "key": "RIKEN, Sugita Lab",
+      "value": 2
+    },
+    {
+      "key": "RISE Research Institutes of Sweden",
+      "value": 10
+    },
+    {
+      "key": "Ritsumeikan University",
+      "value": 1
+    },
+    {
+      "key": "RKI Robert Koch Institute",
+      "value": 14
+    },
+    {
+      "key": "RMIT University",
+      "value": 16
+    },
+    {
+      "key": "RNAcentral",
+      "value": 120
+    },
+    {
+      "key": "Rodare",
+      "value": 273
+    },
+    {
+      "key": "Rolling Deck to Repository (R2R) Program",
+      "value": 1
+    },
+    {
+      "key": "ROM SAF",
+      "value": 2
+    },
+    {
+      "key": "Root",
+      "value": 8
+    },
+    {
+      "key": "Rothamsted Experimental Station",
+      "value": 6
+    },
+    {
+      "key": "Rothamsted Research",
+      "value": 12
+    },
+    {
+      "key": "Royal Belgian Institute for Space Aeronomy",
+      "value": 22
+    },
+    {
+      "key": "Royal Belgian Institute for Space Aeronomy (BIRA-IASB)",
+      "value": 2
+    },
+    {
+      "key": "Royal Belgian Institute of Natural Sciences",
+      "value": 2
+    },
+    {
+      "key": "Royal Botanic Garden Edinburgh",
+      "value": 1
+    },
+    {
+      "key": "Royal Botanic Gardens, Kew",
+      "value": 2
+    },
+    {
+      "key": "Royal Holloway, University of London",
+      "value": 13
+    },
+    {
+      "key": "Royal Institute of Technology",
+      "value": 4
+    },
+    {
+      "key": "Royal Netherlands Meteorological Institute (KNMI)",
+      "value": 11
+    },
+    {
+      "key": "Royal Ontario Museum",
+      "value": 1
+    },
+    {
+      "key": "Royal Society of Chemistry",
+      "value": 15
+    },
+    {
+      "key": "Royal Society Publishing",
+      "value": 1
+    },
+    {
+      "key": "Rutgers University",
+      "value": 7
+    },
+    {
+      "key": "RWI – Leibniz Institute for Economic Research",
+      "value": 3
+    },
+    {
+      "key": "RWTH Aachen University",
+      "value": 26
+    },
+    {
+      "key": "RWTH Aachen University,Université de Toulouse,Fédération de Recherche FERMAT, CNRS, Toulouse",
+      "value": 3
+    },
+    {
+      "key": "SAGE Journals",
+      "value": 5115
+    },
+    {
+      "key": "SAHFOS",
+      "value": 1
+    },
+    {
+      "key": "SARV: Geoscience Data Repository",
+      "value": 1
+    },
+    {
+      "key": "Satellite Application Facility on Climate Monitoring (CM SAF)",
+      "value": 44
+    },
+    {
+      "key": "Satellite Application Facility on Climate Monitoring (CM SAF)",
+      "value": 1
+    },
+    {
+      "key": "SBGrid Data Bank",
+      "value": 450
+    },
+    {
+      "key": "SCAR - AntOBIS",
+      "value": 3
+    },
+    {
+      "key": "SCAR - Microbial Antarctic Resource System",
+      "value": 1
+    },
+    {
+      "key": "scholarsphere",
+      "value": 2
+    },
+    {
+      "key": "School of Biological Sciences",
+      "value": 1
+    },
+    {
+      "key": "School of Chemistry, University of Edinburgh",
+      "value": 1
+    },
+    {
+      "key": "School of Chemistry. University of Edinburgh",
+      "value": 2
+    },
+    {
+      "key": "School of Chemistry. University of Edinburgh.",
+      "value": 1
+    },
+    {
+      "key": "School of Engineering",
+      "value": 1
+    },
+    {
+      "key": "School of Engineering. University of Edinburgh",
+      "value": 6
+    },
+    {
+      "key": "School of GeoSciences, University of Edinburgh.",
+      "value": 1
+    },
+    {
+      "key": "School of GeoSciences. University of Edinburgh",
+      "value": 2
+    },
+    {
+      "key": "School of GeoSciences. University of Edinburgh.",
+      "value": 1
+    },
+    {
+      "key": "SciELO journals",
+      "value": 24687
+    },
+    {
+      "key": "Science and Technology Directorate",
+      "value": 1
+    },
+    {
+      "key": "Science and Technology Facilities Council",
+      "value": 1
+    },
+    {
+      "key": "Science Data Bank",
+      "value": 259
+    },
+    {
+      "key": "Science for Life Laboratory",
+      "value": 1
+    },
+    {
+      "key": "Scientific Reports",
+      "value": 1
+    },
+    {
+      "key": "SciLifeLab",
+      "value": 100
+    },
+    {
+      "key": "Scripps Institution of Oceanography",
+      "value": 1
+    },
+    {
+      "key": "Scripps Institution of Oceanography, Instrument Development Group",
+      "value": 5
+    },
+    {
+      "key": "Seanoe",
+      "value": 20
+    },
+    {
+      "key": "SEANOE",
+      "value": 8010
+    },
+    {
+      "key": "SED, Swiss Seismological Service at ETH Zürich",
+      "value": 1
+    },
+    {
+      "key": "SEDOO OMP",
+      "value": 6
+    },
+    {
+      "key": "Seismological Laboratory, California Institute of Technology",
+      "value": 1
+    },
+    {
+      "key": "Senckenberg",
+      "value": 3
+    },
+    {
+      "key": "Senckenberg - CeDAMar Provider",
+      "value": 1
+    },
+    {
+      "key": "SFB 882",
+      "value": 2
+    },
+    {
+      "key": "SHARE-ERIC",
+      "value": 17
+    },
+    {
+      "key": "SHARE–ERIC",
+      "value": 80
+    },
+    {
+      "key": "Sheffield Hallam University Repository for Data (SHURDA)",
+      "value": 1
+    },
+    {
+      "key": "Shintani, Masaru",
+      "value": 8
+    },
+    {
+      "key": "Shom",
+      "value": 6
+    },
+    {
+      "key": "SHOM",
+      "value": 2
+    },
+    {
+      "key": "SICAS Medical Image Repository",
+      "value": 2
+    },
+    {
+      "key": "Sikt - Norwegian Agency for Shared Services in Education and Research",
+      "value": 4
+    },
+    {
+      "key": "SimTK",
+      "value": 1
+    },
+    {
+      "key": "Sistema de Informação sobre a Biodiversidade Brasileira - SiBBr",
+      "value": 7
+    },
+    {
+      "key": "SLU Artdatabanken",
+      "value": 1
+    },
+    {
+      "key": "SMALTIS",
+      "value": 2
+    },
+    {
+      "key": "SMHI - Swedish Meteorological and Hydrological Institute",
+      "value": 2
+    },
+    {
+      "key": "Smithsonian Environmental Research Center",
+      "value": 14
+    },
+    {
+      "key": "Smithsonian National Air and Space Museum - Center for Earth and Planetary Studies",
+      "value": 1
+    },
+    {
+      "key": "Smithsonian Research Online",
+      "value": 3
+    },
+    {
+      "key": "Smithsonian Tropical Research Institute",
+      "value": 13
+    },
+    {
+      "key": "SMOS+Veg Study Team",
+      "value": 1
+    },
+    {
+      "key": "SMU Research Data Repository (RDR)",
+      "value": 66
+    },
+    {
+      "key": "SNO H+",
+      "value": 1
+    },
+    {
+      "key": "Sociedad Colombiana de Mastozoología",
+      "value": 3
+    },
+    {
+      "key": "Södertörns högskola",
+      "value": 52
+    },
+    {
+      "key": "SOEP Socio-Economic Panel Study",
+      "value": 54
+    },
+    {
+      "key": "South African Environmental Observation Network",
+      "value": 3
+    },
+    {
+      "key": "South African National Biodiversity Institute",
+      "value": 2
+    },
+    {
+      "key": "South Australian Museum",
+      "value": 1
+    },
+    {
+      "key": "Southern Cross University",
+      "value": 9
+    },
+    {
+      "key": "Southwestern Pacific Ocean Biogeographic Information System (OBIS) Node",
+      "value": 3
+    },
+    {
+      "key": "SPARC Consortium",
+      "value": 118
+    },
+    {
+      "key": "SRDA - Survey Research Data Archive Taiwan",
+      "value": 22
+    },
+    {
+      "key": "SSHADE/BANDLIST (OSUG Data Center)",
+      "value": 1
+    },
+    {
+      "key": "St George's, University of London",
+      "value": 2
+    },
+    {
+      "key": "Staatliche Naturwissenschaftliche Sammlungen Bayerns",
+      "value": 1
+    },
+    {
+      "key": "Staatliches Museum für Naturkunde Stuttgart",
+      "value": 1
+    },
+    {
+      "key": "Stanford Digital Repository",
+      "value": 6
+    },
+    {
+      "key": "Staten Island Museum",
+      "value": 1
+    },
+    {
+      "key": "Steiermärkisches Landesmuseum Joanneum - Herbarium GJO",
+      "value": 1
+    },
+    {
+      "key": "Stockholm University",
+      "value": 143
+    },
+    {
+      "key": "STScI/MAST",
+      "value": 5
+    },
+    {
+      "key": "SUNScholarData",
+      "value": 52
+    },
+    {
+      "key": "SUPA; School of Physics and Astronomy; and Centre for Science at Extreme Conditions, University of Edinburgh.",
+      "value": 2
+    },
+    {
+      "key": "SupraBank",
+      "value": 256
+    },
+    {
+      "key": "Suzuki, Kantaro",
+      "value": 2
+    },
+    {
+      "key": "Swedish Defence University",
+      "value": 4
+    },
+    {
+      "key": "Swedish Geotechnical Institute",
+      "value": 4
+    },
+    {
+      "key": "Swedish Institute of Space Physics",
+      "value": 9
+    },
+    {
+      "key": "Swedish Museum of Natural History",
+      "value": 1
+    },
+    {
+      "key": "Swedish Polar Research Secretariat",
+      "value": 18
+    },
+    {
+      "key": "Swedish University of Agricultural Sciences",
+      "value": 114
+    },
+    {
+      "key": "Swinburne University of Technology. Swinburne Institute for Social Research",
+      "value": 1
+    },
+    {
+      "key": "Swiss Federal Institute for Forest, Snow and Landscape Research WSL",
+      "value": 2
+    },
+    {
+      "key": "Swiss Federal Research Institute WSL",
+      "value": 3
+    },
+    {
+      "key": "Swiss National Biodiversity Data and Information Centres – infospecies.ch",
+      "value": 1
+    },
+    {
+      "key": "Swiss Permafrost Monitoring Network (PERMOS)",
+      "value": 7
+    },
+    {
+      "key": "Swiss Seismological Service",
+      "value": 27
+    },
+    {
+      "key": "Synapse",
+      "value": 7
+    },
+    {
+      "key": "SynthSys. School of Biological Sciences. University of Edinburgh",
+      "value": 2
+    },
+    {
+      "key": "SysTax",
+      "value": 3
+    },
+    {
+      "key": "Taiwan Biodiversity Information Facility (TaiBIF)",
+      "value": 1
+    },
+    {
+      "key": "TalkBank",
+      "value": 7
+    },
+    {
+      "key": "TalTech Data Repository",
+      "value": 2
+    },
+    {
+      "key": "Tasmanian Museum and Art Gallery",
+      "value": 2
+    },
+    {
+      "key": "Taylor & Francis",
+      "value": 34161
+    },
+    {
+      "key": "TCIA",
+      "value": 1
+    },
+    {
+      "key": "Technical University of Darmstadt",
+      "value": 25
+    },
+    {
+      "key": "Technical University of Denmark",
+      "value": 2006
+    },
+    {
+      "key": "Technical University of Munich",
+      "value": 6
+    },
+    {
+      "key": "Technische Universität Berlin",
+      "value": 1
+    },
+    {
+      "key": "Technische Universität Dresden",
+      "value": 1
+    },
+    {
+      "key": "TERN",
+      "value": 2
+    },
+    {
+      "key": "Terrestrial Ecosystem Research Network (TERN)",
+      "value": 3
+    },
+    {
+      "key": "Texas Advanced Computing Center",
+      "value": 1
+    },
+    {
+      "key": "Texas Data Repository",
+      "value": 14
+    },
+    {
+      "key": "Texas Data Repository Dataverse",
+      "value": 12
+    },
+    {
+      "key": "The Australian National University Data Commons",
+      "value": 1
+    },
+    {
+      "key": "The Bill & Melinda Gates Institute for Population and Reproductive Health at The Johns Hopkins Bloomberg School of Public Health",
+      "value": 4
+    },
+    {
+      "key": "The Cancer Imaging Archive",
+      "value": 2753
+    },
+    {
+      "key": "The Catalogue of Life Partnership",
+      "value": 2
+    },
+    {
+      "key": "The Data Repository for the University of Minnesota",
+      "value": 1
+    },
+    {
+      "key": "The Data Repository for the University of Minnesota (DRUM)",
+      "value": 2
+    },
+    {
+      "key": "The Electron Microscopy Data Bank (EMDB)",
+      "value": 9534
+    },
+    {
+      "key": "The European Genome-phenome Archive(EGA)",
+      "value": 1774
+    },
+    {
+      "key": "The Francis Crick Institute",
+      "value": 17
+    },
+    {
+      "key": "The Global Biodiversity Information Facility",
+      "value": 31562
+    },
+    {
+      "key": "The Hive: University of Utah Research Data Repository",
+      "value": 1
+    },
+    {
+      "key": "The Human Protein Atlas",
+      "value": 3
+    },
+    {
+      "key": "the Infectious Diseases Data Observatory",
+      "value": 225
+    },
+    {
+      "key": "The International Barcode of Life Consortium",
+      "value": 1
+    },
+    {
+      "key": "The International Genome Sample Resource",
+      "value": 35313
+    },
+    {
+      "key": "The International Plant Names Index Collaborators",
+      "value": 1
+    },
+    {
+      "key": "The Joint Institute for the Study of the Atmosphere and Ocean (JISAO)",
+      "value": 4
+    },
+    {
+      "key": "The Journal of Physical Chemistry Letters",
+      "value": 1
+    },
+    {
+      "key": "The National Institute of Water and Atmospheric Research (NIWA)",
+      "value": 6
+    },
+    {
+      "key": "The Network Data Exchange - NDEx",
+      "value": 3
+    },
+    {
+      "key": "The New York Botanical Garden",
+      "value": 1
+    },
+    {
+      "key": "The NIH Figshare Archive",
+      "value": 3
+    },
+    {
+      "key": "The Open University",
+      "value": 31
+    },
+    {
+      "key": "The Protein Data Bank",
+      "value": 403412
+    },
+    {
+      "key": "The Quality of Government Institute, University of Gothenburg",
+      "value": 3
+    },
+    {
+      "key": "The Roslin Institute and Royal (Dick) School of Veterinary Studies. University of Edinburgh",
+      "value": 1
+    },
+    {
+      "key": "The Roslin Institute. University of Edinburgh. School of Veterinary Studies",
+      "value": 1
+    },
+    {
+      "key": "The Royal Society",
+      "value": 2694
+    },
+    {
+      "key": "The Russian Journal «Problems of Veterinary Sanitation, Hygiene and Ecology»",
+      "value": 1
+    },
+    {
+      "key": "The ScanArray consortium",
+      "value": 1
+    },
+    {
+      "key": "The Smithsonian Institution",
+      "value": 12
+    },
+    {
+      "key": "The United States Environmental Protection Agency’s Center for Computational Toxicology and Exposure",
+      "value": 4
+    },
+    {
+      "key": "The University of Adelaide",
+      "value": 17
+    },
+    {
+      "key": "The University of Auckland",
+      "value": 31
+    },
+    {
+      "key": "The University of British Columbia",
+      "value": 1
+    },
+    {
+      "key": "The University of Edinburgh",
+      "value": 9
+    },
+    {
+      "key": "The University of Edinburgh School of Chemistry",
+      "value": 1
+    },
+    {
+      "key": "The University of Edinburgh. School of Engineering",
+      "value": 2
+    },
+    {
+      "key": "The University of Edinburgh. School of Engineering. Institute for Bioengineering",
+      "value": 1
+    },
+    {
+      "key": "The University of Edinburgh. School of Engineering. Institute for Energy Systems",
+      "value": 2
+    },
+    {
+      "key": "The University of Edinburgh. School of Engineering. Institute for Infrastructure and Environment",
+      "value": 1
+    },
+    {
+      "key": "The University of Edinburgh. School of Engineering. Institute of Integrated Micro and Nanosystems",
+      "value": 1
+    },
+    {
+      "key": "The University of Edinburgh. School of Geosciences. Institute of Geography",
+      "value": 1
+    },
+    {
+      "key": "The University of Edinburgh. School of Physics and Astronomy. Institute of Condensed Matter and Complex Systems",
+      "value": 1
+    },
+    {
+      "key": "The University of Edinburgh. The School of Engineering. Institute for Digital Communications",
+      "value": 1
+    },
+    {
+      "key": "The University of Edinburgh. The School of Engineering. Institute for Digital Communications.",
+      "value": 1
+    },
+    {
+      "key": "The University of Edinburgh. Usher Institute. Allergy & Respiratory Research Group",
+      "value": 2
+    },
+    {
+      "key": "The University of Melbourne",
+      "value": 7
+    },
+    {
+      "key": "The University of North Carolina at Chapel Hill University Libraries",
+      "value": 2
+    },
+    {
+      "key": "The University of Queensland",
+      "value": 8
+    },
+    {
+      "key": "The University of Sheffield",
+      "value": 505
+    },
+    {
+      "key": "The University of Sydney",
+      "value": 5
+    },
+    {
+      "key": "The University of Western Australia",
+      "value": 2
+    },
+    {
+      "key": "The World Bank",
+      "value": 1
+    },
+    {
+      "key": "Theoretical and Applied Ecology",
+      "value": 3
+    },
+    {
+      "key": "Théoriser et Modéliser pour Aménager (UMR 6049)",
+      "value": 6
+    },
+    {
+      "key": "Thomas Vogt",
+      "value": 2
+    },
+    {
+      "key": "TIB",
+      "value": 6
+    },
+    {
+      "key": "TNO",
+      "value": 4
+    },
+    {
+      "key": "Tokyo Metropolitan University",
+      "value": 2
+    },
+    {
+      "key": "Tomoyuki Mao, Hidetoshi Okutomi, Ken Umeno",
+      "value": 1
+    },
+    {
+      "key": "Toni Veikkolainen",
+      "value": 3
+    },
+    {
+      "key": "Townsend, P., University of Essex, Department of Sociology",
+      "value": 1
+    },
+    {
+      "key": "TreeFam",
+      "value": 615
+    },
+    {
+      "key": "TU Delft",
+      "value": 18
+    },
+    {
+      "key": "TU Wien",
+      "value": 11
+    },
+    {
+      "key": "TUHH Universitätsbibliothek",
+      "value": 28
+    },
+    {
+      "key": "Tyumen State University",
+      "value": 1
+    },
+    {
+      "key": "U.S. Antarctic Program (USAP) Data Center",
+      "value": 11
+    },
+    {
+      "key": "U.S. Antarctic Program Data Center (USAP-DC), via National Snow and Ice Data Center (NSIDC)",
+      "value": 11
+    },
+    {
+      "key": "U.S. Department of Agriculture, Agricultural Research Service",
+      "value": 1
+    },
+    {
+      "key": "U.S. Department of Energy Joint Genome Institute (JGI)U.S. Department of Energy Systems Biology Knowledgebase",
+      "value": 1
+    },
+    {
+      "key": "U.S. Department of Energy Systems Biology Knowledgebase",
+      "value": 86
+    },
+    {
+      "key": "U.S. Department of Energy Systems Biology Knowledgebase; Argonne National Laboratory (ANL), Argonne, IL (United States); US Department of Energy Systems Biology Knowledgebase",
+      "value": 10
+    },
+    {
+      "key": "U.S. Environmental Protection Agency",
+      "value": 72
+    },
+    {
+      "key": "U.S. EPA Office of Research and Development (ORD)",
+      "value": 1129
+    },
+    {
+      "key": "U.S. Fish and Wildlife Service",
+      "value": 3
+    },
+    {
+      "key": "U.S. Geological Survey",
+      "value": 5659
+    },
+    {
+      "key": "UC San Diego Library Digital Collections",
+      "value": 937
+    },
+    {
+      "key": "UCAR/NCAR",
+      "value": 25
+    },
+    {
+      "key": "UCAR/NCAR - Atmospheric Chemistry Observations and Modeling Laboratory",
+      "value": 1
+    },
+    {
+      "key": "UCAR/NCAR - CISL - ACADIS",
+      "value": 11
+    },
+    {
+      "key": "UCAR/NCAR - CISL - CDP",
+      "value": 1
+    },
+    {
+      "key": "UCAR/NCAR - COSMIC",
+      "value": 8
+    },
+    {
+      "key": "UCAR/NCAR - Earth Observing Laboratory",
+      "value": 122
+    },
+    {
+      "key": "UCAR/NCAR - GDEX",
+      "value": 16
+    },
+    {
+      "key": "UCAR/NCAR - Research Applications Laboratory",
+      "value": 1
+    },
+    {
+      "key": "UCAR/NCAR - Research Data Archive",
+      "value": 451
+    },
+    {
+      "key": "UCAR/NCAR Climate Data Gateway",
+      "value": 1
+    },
+    {
+      "key": "UCAR/NCAR Earth System Grid",
+      "value": 4
+    },
+    {
+      "key": "UCD Library, University College Dublin",
+      "value": 3
+    },
+    {
+      "key": "UCD School of Architecture Landscape & Civil Engineering",
+      "value": 1
+    },
+    {
+      "key": "UCI Machine Learning Repository",
+      "value": 11
+    },
+    {
+      "key": "UCL",
+      "value": 1
+    },
+    {
+      "key": "UCLA",
+      "value": 9
+    },
+    {
+      "key": "UCLA Dataverse",
+      "value": 4
+    },
+    {
+      "key": "Uganda Ministry of Health, AIDS Control Program",
+      "value": 2
+    },
+    {
+      "key": "UiT The Arctic University of Norway",
+      "value": 1
+    },
+    {
+      "key": "UK Data Service",
+      "value": 254
+    },
+    {
+      "key": "UK Dementia Research Institute at the University of Edinburgh",
+      "value": 1
+    },
+    {
+      "key": "UK Energy Research Centre",
+      "value": 1
+    },
+    {
+      "key": "UK Polar Data Centre, Natural Environment Research Council, UK Research & Innovation",
+      "value": 51
+    },
+    {
+      "key": "Ukrainian Nature Conservation Group (NGO)",
+      "value": 5
+    },
+    {
+      "key": "Umeå University",
+      "value": 61
+    },
+    {
+      "key": "UMR 5602 Géographie de l’environnement (CNRS/Université Toulouse 2)",
+      "value": 1
+    },
+    {
+      "key": "UMS PatriNat (AFB-CNRS-MNHN), Paris",
+      "value": 2
+    },
+    {
+      "key": "UMS PatriNat (OFB-CNRS-MNHN), Paris",
+      "value": 1
+    },
+    {
+      "key": "UN Environment Programme World Conservation Monitoring Centre (UNEP-WCMC)",
+      "value": 1
+    },
+    {
+      "key": "UNAVCO, Inc.",
+      "value": 22
+    },
+    {
+      "key": "UNB",
+      "value": 1
+    },
+    {
+      "key": "UNC Dataverse",
+      "value": 20
+    },
+    {
+      "key": "UNIMI Dataverse",
+      "value": 1
+    },
+    {
+      "key": "UniParc",
+      "value": 99
+    },
+    {
+      "key": "UniProt",
+      "value": 159306
+    },
+    {
+      "key": "Unisanté, University Center for Primary Care and Public Health",
+      "value": 1
+    },
+    {
+      "key": "UNITE Community",
+      "value": 39
+    },
+    {
+      "key": "United Nations Environment Programme World Conservation Monitoring Centre (UNEP-WCMC)",
+      "value": 16
+    },
+    {
+      "key": "United States. Federal Election Commission",
+      "value": 1
+    },
+    {
+      "key": "Univ. of Georgia, Athens, GA (United States)",
+      "value": 27
+    },
+    {
+      "key": "Universidad del Rosario",
+      "value": 1
+    },
+    {
+      "key": "Universidad Nacional de Colombia",
+      "value": 1
+    },
+    {
+      "key": "Universidade dos Açores",
+      "value": 4
+    },
+    {
+      "key": "Universidade Estadual Paulista",
+      "value": 1
+    },
+    {
+      "key": "Universidade Federal do Rio Grande",
+      "value": 1
+    },
+    {
+      "key": "Universitat de les Illes Balears",
+      "value": 1
+    },
+    {
+      "key": "Universität Hamburg",
+      "value": 158
+    },
+    {
+      "key": "Universität Kassel",
+      "value": 6
+    },
+    {
+      "key": "Universität Konstanz",
+      "value": 1
+    },
+    {
+      "key": "Universitat Politecnica de Catalunya",
+      "value": 1
+    },
+    {
+      "key": "Universitätsbibliothek Braunschweig",
+      "value": 6
+    },
+    {
+      "key": "Universitätsbibliothek der Ludwig-Maximilians-Universität München",
+      "value": 3
+    },
+    {
+      "key": "Universitätsbibliothek Gießen",
+      "value": 1
+    },
+    {
+      "key": "Université de Genève, Yareta",
+      "value": 1
+    },
+    {
+      "key": "University Centre in Svalbard",
+      "value": 5
+    },
+    {
+      "key": "University College London",
+      "value": 74
+    },
+    {
+      "key": "University Libraries, Virginia Tech",
+      "value": 59
+    },
+    {
+      "key": "University Library Heidelberg",
+      "value": 17
+    },
+    {
+      "key": "University Medical Centre Utrecht",
+      "value": 1
+    },
+    {
+      "key": "University of\nSurrey",
+      "value": 2
+    },
+    {
+      "key": "University of Agder",
+      "value": 1
+    },
+    {
+      "key": "University of Alaska Museum of the North",
+      "value": 2
+    },
+    {
+      "key": "University of Alberta Libraries",
+      "value": 1
+    },
+    {
+      "key": "University of Alberta Museums",
+      "value": 1
+    },
+    {
+      "key": "University of Amsterdam / Amsterdam University of Applied Sciences",
+      "value": 82
+    },
+    {
+      "key": "University of Arizona Research Data Repository",
+      "value": 57
+    },
+    {
+      "key": "University of Basilicata",
+      "value": 1
+    },
+    {
+      "key": "University of Bath",
+      "value": 453
+    },
+    {
+      "key": "University of Bayreuth",
+      "value": 1
+    },
+    {
+      "key": "University of Bergen",
+      "value": 5
+    },
+    {
+      "key": "University of Birmingham",
+      "value": 28
+    },
+    {
+      "key": "University of Brighton",
+      "value": 1
+    },
+    {
+      "key": "University of Bristol",
+      "value": 58
+    },
+    {
+      "key": "University of California, San Francisco",
+      "value": 1
+    },
+    {
+      "key": "University of Cambridge",
+      "value": 1
+    },
+    {
+      "key": "University of Cape Town",
+      "value": 37
+    },
+    {
+      "key": "University of Chicago",
+      "value": 1
+    },
+    {
+      "key": "University of Colorado Boulder",
+      "value": 7
+    },
+    {
+      "key": "University of Connecticut, Storrs, Connecticut, USA",
+      "value": 7
+    },
+    {
+      "key": "University of Copenhagen",
+      "value": 8
+    },
+    {
+      "key": "University of Debrecen",
+      "value": 1
+    },
+    {
+      "key": "University of Dundee",
+      "value": 17
+    },
+    {
+      "key": "University of Edinburgh",
+      "value": 66
+    },
+    {
+      "key": "University of Edinburgh (School of Engineering and Queen's Medical Research Institute) and Heriot-Watt University",
+      "value": 1
+    },
+    {
+      "key": "University of Edinburgh (UK) and Washington University (St Louis, Missouri)",
+      "value": 1
+    },
+    {
+      "key": "University of Edinburgh & Edinburgh Clinical Trials Unit",
+      "value": 6
+    },
+    {
+      "key": "University of Edinburgh on behalf of ISARIC4C consortium",
+      "value": 1
+    },
+    {
+      "key": "University of Edinburgh on behalf of Software Sustainability Institute",
+      "value": 1
+    },
+    {
+      "key": "University of Edinburgh School of Chemistry",
+      "value": 1
+    },
+    {
+      "key": "University of Edinburgh, Centre for Clinical Brain Sciences",
+      "value": 1
+    },
+    {
+      "key": "University of Edinburgh, Centre for Language Evolution",
+      "value": 1
+    },
+    {
+      "key": "University of Edinburgh, EaStCHEM School of Chemistry",
+      "value": 1
+    },
+    {
+      "key": "University of Edinburgh, Edinburgh Medical School",
+      "value": 1
+    },
+    {
+      "key": "University of Edinburgh, MRC Human Genetics Unit",
+      "value": 2
+    },
+    {
+      "key": "University of Edinburgh, School of Biological Sciences",
+      "value": 2
+    },
+    {
+      "key": "University of Edinburgh, School of Biological Sciences and SynthSys",
+      "value": 1
+    },
+    {
+      "key": "University of Edinburgh, School of Chemistry",
+      "value": 9
+    },
+    {
+      "key": "University of Edinburgh, School of Chemistry; Newcastle University, Chemistry - School of Natural and Environmental Sciences",
+      "value": 1
+    },
+    {
+      "key": "University of Edinburgh, School of Chemisty",
+      "value": 1
+    },
+    {
+      "key": "University of Edinburgh, School of Philosophy, Psychology and Language Sciences",
+      "value": 1
+    },
+    {
+      "key": "University of Edinburgh, School of Physics and Astronomy",
+      "value": 1
+    },
+    {
+      "key": "University of Edinburgh, School of Physics and Astronomy, Institute of Condensed Matter and Complex Systems",
+      "value": 1
+    },
+    {
+      "key": "University of Edinburgh, Usher Institute, Center for Global Health",
+      "value": 1
+    },
+    {
+      "key": "University of Edinburgh; BHF Centre for Cardiovascular Science",
+      "value": 2
+    },
+    {
+      "key": "University of Edinburgh; School of Philosophy, Psychology and Language Sciences; Linguistics & English Language",
+      "value": 1
+    },
+    {
+      "key": "University of Edinburgh. Brain Research Imaging Centre. Centre for Clinical Brain Sciences",
+      "value": 8
+    },
+    {
+      "key": "University of Edinburgh. Centre for Cardiovascular Science",
+      "value": 1
+    },
+    {
+      "key": "University of Edinburgh. Centre for Clinical Brain Sciences",
+      "value": 9
+    },
+    {
+      "key": "University of Edinburgh. Centre for Clinical Brain Sciences.",
+      "value": 2
+    },
+    {
+      "key": "University of Edinburgh. Centre for Cognitive Ageing and Cognitive Epidemiology",
+      "value": 10
+    },
+    {
+      "key": "University of Edinburgh. Centre for Discovery Brain Sciences",
+      "value": 1
+    },
+    {
+      "key": "University of Edinburgh. Centre for Synthetic and Systems Biology",
+      "value": 4
+    },
+    {
+      "key": "University of Edinburgh. Centre of Inflammation Research",
+      "value": 1
+    },
+    {
+      "key": "University of Edinburgh. College of Medicine & Veterinary Medicine",
+      "value": 2
+    },
+    {
+      "key": "University of Edinburgh. College of Medicine & Veterinary Medicine. Centre for Clinical Brain Sciences",
+      "value": 1
+    },
+    {
+      "key": "University of Edinburgh. College of Medicine & Veterinary Medicine. Clinical Sciences. Edinburgh Imaging",
+      "value": 1
+    },
+    {
+      "key": "University of Edinburgh. College of Medicine & Veterinary Medicine. Institute of Genetics and Cancer",
+      "value": 1
+    },
+    {
+      "key": "University of Edinburgh. College of Medicine & Veterinary Medicine. Royal (Dick) School of Veterinary Studies. The Roslin Institute",
+      "value": 1
+    },
+    {
+      "key": "University of Edinburgh. College of Medicine and Veterinary Medicine, Centre for Clinical Brain Sciences & Edinburgh Imaging",
+      "value": 1
+    },
+    {
+      "key": "University of Edinburgh. College of Medicine and Veterinary Medicine. Centre for Clinical Brain Sciences",
+      "value": 1
+    },
+    {
+      "key": "University of Edinburgh. College of Medicine and Veterinary Medicine. MRC Institute of Genetics and Molecular Medicine. MRC Human Genetics Unit",
+      "value": 1
+    },
+    {
+      "key": "University of Edinburgh. College of Medicine and Veterinary Medicine. School of Clinical Sciences. Centre for Clinical Brain Sciences",
+      "value": 1
+    },
+    {
+      "key": "University of Edinburgh. College of Medicine and Veterninary Medicine. Centre for Integrative Physiology",
+      "value": 1
+    },
+    {
+      "key": "University of Edinburgh. Deanery of Clinical Sciences. Centre for Clinical Brain Sciences",
+      "value": 4
+    },
+    {
+      "key": "University of Edinburgh. Department of Clinical Neurosciences",
+      "value": 1
+    },
+    {
+      "key": "University of Edinburgh. Department of Neuroimaging Sciences. Centre for Clinical Brain Sciences",
+      "value": 1
+    },
+    {
+      "key": "University of Edinburgh. EaStCHEM School of Chemistry",
+      "value": 2
+    },
+    {
+      "key": "University of Edinburgh. Edinburgh Clinical Trials Unit",
+      "value": 1
+    },
+    {
+      "key": "University of Edinburgh. Edinburgh College of Art",
+      "value": 1
+    },
+    {
+      "key": "University of Edinburgh. Edinburgh Law School",
+      "value": 1
+    },
+    {
+      "key": "University of Edinburgh. Edinburgh Medical School",
+      "value": 10
+    },
+    {
+      "key": "University of Edinburgh. Edinburgh Medical School. Biomedical Sciences",
+      "value": 6
+    },
+    {
+      "key": "University of Edinburgh. Edinburgh Medical School. Centre for Cardiovascular Science",
+      "value": 1
+    },
+    {
+      "key": "University of Edinburgh. Edinburgh Medical School. Centre for Discovery Brain Sciences",
+      "value": 2
+    },
+    {
+      "key": "University of Edinburgh. Edinburgh Medical School. Deanery of Molecular, Genetic and Population Health Sciences. Usher Institute",
+      "value": 1
+    },
+    {
+      "key": "University of Edinburgh. Edinburgh Medical School. Infection Medicine",
+      "value": 1
+    },
+    {
+      "key": "University of Edinburgh. Edinburgh Medical School. Usher Institute",
+      "value": 1
+    },
+    {
+      "key": "University of Edinburgh. EPCC",
+      "value": 1
+    },
+    {
+      "key": "University of Edinburgh. IGMM. MRC Human Genetics Unit",
+      "value": 1
+    },
+    {
+      "key": "University of Edinburgh. IGMM. MRC Human Genetics Unit.",
+      "value": 1
+    },
+    {
+      "key": "University of Edinburgh. Institute for Energy Systems",
+      "value": 5
+    },
+    {
+      "key": "University of Edinburgh. Institute of Genetics & Molecular Medicine (IGMM)",
+      "value": 1
+    },
+    {
+      "key": "University of Edinburgh. Institute of Genetics and Cancer",
+      "value": 1
+    },
+    {
+      "key": "University of Edinburgh. Institute of Genetics and Cancer. Marie Curie Hospice Edinburgh",
+      "value": 1
+    },
+    {
+      "key": "University of Edinburgh. Institute of Genetics and Cancer. MRC Human Genetics Unit",
+      "value": 2
+    },
+    {
+      "key": "University of Edinburgh. Institute of Genetics and Molecular Medicine",
+      "value": 1
+    },
+    {
+      "key": "University of Edinburgh. Institute of Genetics and Molecular Medicine.",
+      "value": 1
+    },
+    {
+      "key": "University of Edinburgh. Medical School. Centre for Discovery Brain Sciences",
+      "value": 1
+    },
+    {
+      "key": "University of Edinburgh. Medical School. Division of Infection and Pathway Medicine",
+      "value": 1
+    },
+    {
+      "key": "University of Edinburgh. MRC IGC. MRC Human Genetics Unit",
+      "value": 1
+    },
+    {
+      "key": "University of Edinburgh. MRC Institute of Genetics and Molecular Medicine. MRC Human Genetics Unit",
+      "value": 1
+    },
+    {
+      "key": "University of Edinburgh. Quantitative Biology, Biochemistry and Biotechnology",
+      "value": 2
+    },
+    {
+      "key": "University of Edinburgh. Queen's Medical Research Institute",
+      "value": 1
+    },
+    {
+      "key": "University of Edinburgh. Roslin Institute",
+      "value": 3
+    },
+    {
+      "key": "University of Edinburgh. Roslin Institute and Royal (Dick) School of Veterinary Studies",
+      "value": 1
+    },
+    {
+      "key": "University of Edinburgh. Royal (Dick) School of Veterinary Studies",
+      "value": 1
+    },
+    {
+      "key": "University of Edinburgh. Royal (Dick) School of Veterinary Studies. The Roslin Institute",
+      "value": 2
+    },
+    {
+      "key": "University of Edinburgh. School of Biological Sciences",
+      "value": 14
+    },
+    {
+      "key": "University of Edinburgh. School of Biological Sciences and SynthSys",
+      "value": 2
+    },
+    {
+      "key": "University of Edinburgh. School of Biological Sciences. Centre for Synthetic and Systems Biology",
+      "value": 4
+    },
+    {
+      "key": "University of Edinburgh. School of Biological Sciences. Institute of Ecology and Evolution",
+      "value": 1
+    },
+    {
+      "key": "University of Edinburgh. School of Biological Sciences. Institute of Evolutionary Biology",
+      "value": 5
+    },
+    {
+      "key": "University of Edinburgh. School of Biological Sciences. Institute of Immunology and Infection Research",
+      "value": 2
+    },
+    {
+      "key": "University of Edinburgh. School of Biological Sciences. Institute of Molecular Plant Sciences",
+      "value": 2
+    },
+    {
+      "key": "University of Edinburgh. School of Biological Sciences. Institute of Quantitative Biology, Biochemistry and Biotechnology",
+      "value": 1
+    },
+    {
+      "key": "University of Edinburgh. School of Biological Sciences. Intitute of Cell Biology",
+      "value": 1
+    },
+    {
+      "key": "University of Edinburgh. School of Biological Sciences. Synthsys-Synthetic and Systems Biology.",
+      "value": 1
+    },
+    {
+      "key": "University of Edinburgh. School of Biomedical Sciences",
+      "value": 2
+    },
+    {
+      "key": "University of Edinburgh. School of Chemistry",
+      "value": 45
+    },
+    {
+      "key": "University of Edinburgh. School of Chemistry, Attfield Research Group",
+      "value": 1
+    },
+    {
+      "key": "University of Edinburgh. School of Chemistry.",
+      "value": 3
+    },
+    {
+      "key": "University of Edinburgh. School of Chemistry. Attfield Research Group",
+      "value": 1
+    },
+    {
+      "key": "University of Edinburgh. School of Chemistry. Attfield research group.",
+      "value": 1
+    },
+    {
+      "key": "University of Edinburgh. School of Chemistry. JP Attfield group",
+      "value": 1
+    },
+    {
+      "key": "University of Edinburgh. School of Chemistry. School of Engineering",
+      "value": 2
+    },
+    {
+      "key": "University of Edinburgh. School of Engineering",
+      "value": 17
+    },
+    {
+      "key": "University of Edinburgh. School of Engineering. FloWave Ocean Energy Research Facility",
+      "value": 1
+    },
+    {
+      "key": "University of Edinburgh. School of Engineering. Infrastructure and Environment",
+      "value": 1
+    },
+    {
+      "key": "University of Edinburgh. School of Engineering. Insitute of Multiscale Thermofluids",
+      "value": 1
+    },
+    {
+      "key": "University of Edinburgh. School of Engineering. Institute for Digital Communications",
+      "value": 4
+    },
+    {
+      "key": "University of Edinburgh. School of Engineering. Institute for Digital Communications (IDCOM)",
+      "value": 1
+    },
+    {
+      "key": "University of Edinburgh. School of Engineering. Institute for Energy Systems",
+      "value": 6
+    },
+    {
+      "key": "University of Edinburgh. School of Engineering. Institute for Energy Systems. FloWave Ocean Energy Research Facility",
+      "value": 2
+    },
+    {
+      "key": "University of Edinburgh. School of Engineering. Institute for Infrastructure & Environment",
+      "value": 1
+    },
+    {
+      "key": "University of Edinburgh. School of Engineering. Institute for Integrated Micro and Nano Systems",
+      "value": 1
+    },
+    {
+      "key": "University of Edinburgh. School of Engineering. Institute for Integrated Micro and Nano Systems.",
+      "value": 1
+    },
+    {
+      "key": "University of Edinburgh. School of Engineering. Institute of Digital Communication",
+      "value": 1
+    },
+    {
+      "key": "University of Edinburgh. School of Engineering. Institute of Digital Communications",
+      "value": 1
+    },
+    {
+      "key": "University of Edinburgh. School of Engineering. Institute of Energy Systems",
+      "value": 4
+    },
+    {
+      "key": "University of Edinburgh. School of Engineering. Institute of Materials and Processes",
+      "value": 2
+    },
+    {
+      "key": "University of Edinburgh. School of Engineering. Institute of Micro and Nano Systems",
+      "value": 1
+    },
+    {
+      "key": "University of Edinburgh. School of Engineering. Institute of Micro and Nanosystems",
+      "value": 1
+    },
+    {
+      "key": "University of Edinburgh. School of Engineering. Institute of Multiscale Thermofluids",
+      "value": 4
+    },
+    {
+      "key": "University of Edinburgh. School of Engineering. School of Chemistry",
+      "value": 1
+    },
+    {
+      "key": "University of Edinburgh. School of Geosciences",
+      "value": 8
+    },
+    {
+      "key": "University of Edinburgh. School of GeoSciences",
+      "value": 22
+    },
+    {
+      "key": "University of Edinburgh. School of GeoSciences / European Space Agency",
+      "value": 5
+    },
+    {
+      "key": "University of Edinburgh. School of GeoSciences. Global Change Ecology Lab",
+      "value": 1
+    },
+    {
+      "key": "University of Edinburgh. School of GeoSciences. Institute of Earth and Planetary Sciences",
+      "value": 1
+    },
+    {
+      "key": "University of Edinburgh. School of GeoSciences. Institute of Geography",
+      "value": 4
+    },
+    {
+      "key": "University of Edinburgh. School of Informatics",
+      "value": 3
+    },
+    {
+      "key": "University of Edinburgh. School of Informatics. Centre for Speech Technology Research",
+      "value": 1
+    },
+    {
+      "key": "University of Edinburgh. School of Informatics. Institute for Adaptive and Neural Computation",
+      "value": 1
+    },
+    {
+      "key": "University of Edinburgh. School of Informatics. Institute of Perception Action and Behaviour",
+      "value": 1
+    },
+    {
+      "key": "University of Edinburgh. School of Informatics. Systems Neuroscience group",
+      "value": 1
+    },
+    {
+      "key": "University of Edinburgh. School of Informatics. The Centre for Speech Technology Research",
+      "value": 1
+    },
+    {
+      "key": "University of Edinburgh. School of Mathematics",
+      "value": 4
+    },
+    {
+      "key": "University of Edinburgh. School of Molecular, Genetic and Population Health Sciences. Institute of Genetics and Molecular Medicine",
+      "value": 3
+    },
+    {
+      "key": "University of Edinburgh. School of Philosophy, Psychology and Language Sciences",
+      "value": 3
+    },
+    {
+      "key": "University of Edinburgh. School of Philosophy, Psychology and Language Sciences.",
+      "value": 1
+    },
+    {
+      "key": "University of Edinburgh. School of Philosophy, Psychology and Language Sciences. Department of Linguistics.",
+      "value": 1
+    },
+    {
+      "key": "University of Edinburgh. School of Philosophy, Psychology and Language Sciences. Linguistics and English Language",
+      "value": 2
+    },
+    {
+      "key": "University of Edinburgh. School of Philosophy, Psychology and Language Sciences. Linguistics and English Language.",
+      "value": 1
+    },
+    {
+      "key": "University of Edinburgh. School of Philosophy, Psychology, and Language Sciences",
+      "value": 1
+    },
+    {
+      "key": "University of Edinburgh. School of Philosophy. Psychology and Language Sciences",
+      "value": 1
+    },
+    {
+      "key": "University of Edinburgh. School of Physics & Astronomy",
+      "value": 3
+    },
+    {
+      "key": "University of Edinburgh. School of Physics & Astronomy. Institute for Condensed Matter and Complex Systems",
+      "value": 1
+    },
+    {
+      "key": "University of Edinburgh. School of Physics & Astronomy. Institute of Condensed Matter and Complex Systems",
+      "value": 1
+    },
+    {
+      "key": "University of Edinburgh. School of Physics and Astronomy",
+      "value": 7
+    },
+    {
+      "key": "University of Edinburgh. School of Physics and Astronomy. Institute for Condensed Matter and Complex Systems",
+      "value": 8
+    },
+    {
+      "key": "University of Edinburgh. School of Physics and Astronomy. Institute of Condensed Matter and Complex Systems",
+      "value": 2
+    },
+    {
+      "key": "University of Edinburgh. School of Physics and Astronomy. Institute of Condensed Matter and Complex Systems.",
+      "value": 2
+    },
+    {
+      "key": "University of Edinburgh. School of Physics. Institute for Condensed Matter and Complex Systems",
+      "value": 2
+    },
+    {
+      "key": "University of Edinburgh. School of Social and Political Science. Politics & International Relations",
+      "value": 1
+    },
+    {
+      "key": "University of Edinburgh. SEOSAW",
+      "value": 1
+    },
+    {
+      "key": "University of Edinburgh. The Centre for Speech Technology Research (CSTR)",
+      "value": 1
+    },
+    {
+      "key": "University of Edinburgh. The Roslin Institute",
+      "value": 6
+    },
+    {
+      "key": "University of Edinburgh. The Roslin Institute and Royal (Dick) School of Veterinary Studies",
+      "value": 1
+    },
+    {
+      "key": "University of Edinburgh. Usher Institute",
+      "value": 4
+    },
+    {
+      "key": "University of Edinburgh. Usher Institute of Population Health Sciences and Informatics",
+      "value": 3
+    },
+    {
+      "key": "University of Edinburgh. Usher Institute, Centre for Global Health",
+      "value": 1
+    },
+    {
+      "key": "University of Edinburgh. Usher Institute. Centre for Biomedicine, Self and Society",
+      "value": 1
+    },
+    {
+      "key": "University of Edinburgh.The Royal (Dick) School of Veterinary Studies and Roslin Institute",
+      "value": 1
+    },
+    {
+      "key": "University of Edinurgh. Centre for Clinical Brain Sciences. Department of Psychiatry",
+      "value": 1
+    },
+    {
+      "key": "University of Essex, Institute for Social and Economic Research",
+      "value": 1
+    },
+    {
+      "key": "University of Exeter",
+      "value": 2
+    },
+    {
+      "key": "University of Ferrara, Italy",
+      "value": 6
+    },
+    {
+      "key": "University of Georgia, Athens, Georgia (United States); Oak Ridge National Lab. (ORNL), Oak Ridge, TN (United States); University of Oklahoma, Norman, Oklahoma (United States); Lawrence Berkeley National Lab. (LBNL), Berkeley, CA (United States); Univ. of Tennessee, Knoxville, TN (United States); Oak Ridge National Lab. (ORNL), Oak Ridge, TN (United States) Lawrence Berkeley National Laboratory (LBNL), Berkeley, CA (United States)",
+      "value": 7
+    },
+    {
+      "key": "University of Glasgow",
+      "value": 17
+    },
+    {
+      "key": "University of Gothenburg",
+      "value": 289
+    },
+    {
+      "key": "University of Gothenburg: The Quality of Government Institute",
+      "value": 9
+    },
+    {
+      "key": "University of Helsinki",
+      "value": 1
+    },
+    {
+      "key": "University of Hertfordshire",
+      "value": 1
+    },
+    {
+      "key": "University of Hong Kong",
+      "value": 1
+    },
+    {
+      "key": "University of Huddersfield",
+      "value": 1
+    },
+    {
+      "key": "University of Illinois at Chicago",
+      "value": 3
+    },
+    {
+      "key": "University of Illinois at Urbana-Champaign",
+      "value": 510
+    },
+    {
+      "key": "University of Iowa",
+      "value": 65
+    },
+    {
+      "key": "University of Iowa, Department of Earth and Environmental Sciences",
+      "value": 4
+    },
+    {
+      "key": "University of Johannesburg",
+      "value": 10
+    },
+    {
+      "key": "University of Jyväskylä",
+      "value": 1
+    },
+    {
+      "key": "University of Kentucky",
+      "value": 1
+    },
+    {
+      "key": "University of Kentucky Libraries",
+      "value": 4
+    },
+    {
+      "key": "University of Konstanz",
+      "value": 12
+    },
+    {
+      "key": "University of Leeds",
+      "value": 366
+    },
+    {
+      "key": "University Of Leeds",
+      "value": 2
+    },
+    {
+      "key": "University of Leicester",
+      "value": 10
+    },
+    {
+      "key": "University of Liverpool",
+      "value": 10
+    },
+    {
+      "key": "University of Ljubljana, Faculty of Social Sciences, Slovenian Social Science Data Archives (ADP)",
+      "value": 5
+    },
+    {
+      "key": "University of London, Institute of Education, Centre for Longitudinal Studies",
+      "value": 2
+    },
+    {
+      "key": "University of Malta",
+      "value": 8
+    },
+    {
+      "key": "University of Manchester",
+      "value": 45
+    },
+    {
+      "key": "University of Manitoba",
+      "value": 1
+    },
+    {
+      "key": "University of Maryland, Department of Geology and Earth Systems Interdisciplinary Center",
+      "value": 1
+    },
+    {
+      "key": "University of Melbourne",
+      "value": 23
+    },
+    {
+      "key": "University of Miami",
+      "value": 2
+    },
+    {
+      "key": "University of Miami Libraries",
+      "value": 6
+    },
+    {
+      "key": "University of Michigan",
+      "value": 288
+    },
+    {
+      "key": "University of Navarra ? Department of Environmental Biology",
+      "value": 1
+    },
+    {
+      "key": "University of Newcastle",
+      "value": 2
+    },
+    {
+      "key": "University of Oslo",
+      "value": 6
+    },
+    {
+      "key": "University of Oxford",
+      "value": 35
+    },
+    {
+      "key": "University of Potsdam (Germany)",
+      "value": 1
+    },
+    {
+      "key": "University of Pretoria",
+      "value": 29
+    },
+    {
+      "key": "University of Reading",
+      "value": 22
+    },
+    {
+      "key": "University of Rostock",
+      "value": 1
+    },
+    {
+      "key": "University of Salento",
+      "value": 124
+    },
+    {
+      "key": "University of Salford",
+      "value": 5
+    },
+    {
+      "key": "University of Skövde",
+      "value": 12
+    },
+    {
+      "key": "University of South Australia",
+      "value": 1
+    },
+    {
+      "key": "University of South-Eastern Norway",
+      "value": 48
+    },
+    {
+      "key": "University of Southampton",
+      "value": 408
+    },
+    {
+      "key": "University of Southampton Press",
+      "value": 1
+    },
+    {
+      "key": "University of Southampton, ISVR",
+      "value": 1
+    },
+    {
+      "key": "University of Southern California (USC), Information Sciences Institute (ISI)",
+      "value": 1
+    },
+    {
+      "key": "University of Southern California Digital Library (USC.DL)",
+      "value": 2
+    },
+    {
+      "key": "University of St Andrews",
+      "value": 1254
+    },
+    {
+      "key": "University of Strathclyde",
+      "value": 12
+    },
+    {
+      "key": "University of Surrey",
+      "value": 9
+    },
+    {
+      "key": "University of Sussex",
+      "value": 87
+    },
+    {
+      "key": "University of Sydney",
+      "value": 1
+    },
+    {
+      "key": "University of Tartu",
+      "value": 1
+    },
+    {
+      "key": "University of Tartu; Natural History Museum and Botanical Garden; Botanical and Mycological Museum",
+      "value": 1
+    },
+    {
+      "key": "University of Tasmania",
+      "value": 3
+    },
+    {
+      "key": "University of Technology Sydney",
+      "value": 3
+    },
+    {
+      "key": "University of the Arts London",
+      "value": 1
+    },
+    {
+      "key": "University of the Sunshine Coast",
+      "value": 28
+    },
+    {
+      "key": "University of Tromsø",
+      "value": 3
+    },
+    {
+      "key": "University of Twente",
+      "value": 2
+    },
+    {
+      "key": "University of Veterinary Medicine Vienna",
+      "value": 2
+    },
+    {
+      "key": "University of Washington",
+      "value": 1
+    },
+    {
+      "key": "University of Washington Burke Museum",
+      "value": 2
+    },
+    {
+      "key": "University of Washington Libraries",
+      "value": 1
+    },
+    {
+      "key": "University of Western Australia",
+      "value": 1
+    },
+    {
+      "key": "University of Wisconsin-Madison",
+      "value": 90
+    },
+    {
+      "key": "University of Wisconsin-Madison\nNanjing University",
+      "value": 1
+    },
+    {
+      "key": "University of Wisconsin-Madison\nUniversity of Chicago",
+      "value": 1
+    },
+    {
+      "key": "University of Wisconsin-Madison. Data and Information Services Center",
+      "value": 1
+    },
+    {
+      "key": "University of Wyoming",
+      "value": 10
+    },
+    {
+      "key": "University of York",
+      "value": 3
+    },
+    {
+      "key": "Universit� di Modena e Reggio Emilia",
+      "value": 12
+    },
+    {
+      "key": "Unknown",
+      "value": 1
+    },
+    {
+      "key": "Unpublished",
+      "value": 138
+    },
+    {
+      "key": "UNSW Sydney",
+      "value": 117
+    },
+    {
+      "key": "Unversity of Leeds",
+      "value": 1
+    },
+    {
+      "key": "Uppsala University",
+      "value": 88
+    },
+    {
+      "key": "US Lattice Quantum Chromodynamics Collaboration (USQCD)",
+      "value": 1
+    },
+    {
+      "key": "US Salinity Laboratory - ARS - USDA",
+      "value": 1
+    },
+    {
+      "key": "USC ISI Synapse Repository",
+      "value": 7
+    },
+    {
+      "key": "USDA Agricultural Research Service",
+      "value": 1
+    },
+    {
+      "key": "USDA, Natural Resources Conservation Service",
+      "value": 1
+    },
+    {
+      "key": "Utah State University",
+      "value": 2
+    },
+    {
+      "key": "UTM-CSIC",
+      "value": 1
+    },
+    {
+      "key": "Utrecht University",
+      "value": 29
+    },
+    {
+      "key": "V-Dem Institute",
+      "value": 4
+    },
+    {
+      "key": "V. N. Karazin Kharkiv National University",
+      "value": 1
+    },
+    {
+      "key": "Varieties of Democracy (V-Dem) Project",
+      "value": 42
+    },
+    {
+      "key": "Virginia Institute of Marine Science, William & Mary",
+      "value": 2
+    },
+    {
+      "key": "Virginia Tech Libraries",
+      "value": 1
+    },
+    {
+      "key": "Vivli",
+      "value": 1607
+    },
+    {
+      "key": "VLIZ",
+      "value": 145
+    },
+    {
+      "key": "Vogt, Thomas",
+      "value": 2
+    },
+    {
+      "key": "Vrije University Amsterdam",
+      "value": 1
+    },
+    {
+      "key": "VTTI",
+      "value": 1
+    },
+    {
+      "key": "VU",
+      "value": 11
+    },
+    {
+      "key": "Wageningen University",
+      "value": 1
+    },
+    {
+      "key": "Wageningen University & Research",
+      "value": 15
+    },
+    {
+      "key": "Wageningen University & Research (WUR)",
+      "value": 1
+    },
+    {
+      "key": "Warsaw University of Life Sciences WULS-SGGW",
+      "value": 3
+    },
+    {
+      "key": "Washington University in St. Louis",
+      "value": 5
+    },
+    {
+      "key": "Watershed Functionality Scientific Focus Area",
+      "value": 1
+    },
+    {
+      "key": "Weinacker, Jannis",
+      "value": 3
+    },
+    {
+      "key": "Wellcome Open Research",
+      "value": 16
+    },
+    {
+      "key": "Wellcome Trust",
+      "value": 6
+    },
+    {
+      "key": "Wesleyan University",
+      "value": 2
+    },
+    {
+      "key": "Westerdijk Fungal Biodiversity Institute",
+      "value": 1
+    },
+    {
+      "key": "Western Sydney University",
+      "value": 4
+    },
+    {
+      "key": "Wiley",
+      "value": 16
+    },
+    {
+      "key": "Wiley-VCH",
+      "value": 2
+    },
+    {
+      "key": "William & Mary",
+      "value": 1
+    },
+    {
+      "key": "Woods Hole Oceanographic Institution",
+      "value": 2
+    },
+    {
+      "key": "World Agroforestry - Research Data Repository",
+      "value": 2
+    },
+    {
+      "key": "World Bank, Development Data Group",
+      "value": 2
+    },
+    {
+      "key": "World Data Center for Climate (WDCC) at DKRZ",
+      "value": 494
+    },
+    {
+      "key": "World Glacier Monitoring Service (WGMS)",
+      "value": 24
+    },
+    {
+      "key": "World Values Survey Association",
+      "value": 20
+    },
+    {
+      "key": "WSL Institute for Snow and Avalanche Research SLF",
+      "value": 14
+    },
+    {
+      "key": "WSLintern No. 3 (2020)",
+      "value": 1
+    },
+    {
+      "key": "Wyoming Geographic Information Science Center; University of Wyoming",
+      "value": 1
+    },
+    {
+      "key": "Yoshino, Hajime",
+      "value": 1
+    },
+    {
+      "key": "Zenodo",
+      "value": 24484
+    },
+    {
+      "key": "Zenodo/The Authors",
+      "value": 1
+    },
+    {
+      "key": "ZfKD – German Center for Cancer Registry Data at the RKI",
+      "value": 12
+    },
+    {
+      "key": "Zoological Institute, Russian Academy of Sciences, St. Petersburg",
+      "value": 1
+    },
+    {
+      "key": "ZPID Leibniz Institute for Psychology",
+      "value": 3
+    },
+    {
+      "key": "Zuse Institute Berlin",
+      "value": 2
+    },
+    {
+      "key": "Zvagelsky, Roman",
+      "value": 2
+    },
+    {
+      "key": "คณะเทคโนโลยีการเกษตร สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง,",
+      "value": 1
+    },
+    {
+      "key": "มหาวิทยาลัยรังสิต",
+      "value": 1
+    }
+  ]
+  },
+  "transform": [
+    {
+      "window": [{
+        "op": "rank",
+        "as": "rank"
+      }],
+      "sort": [{ "field": "value", "order": "descending" }]
+    }, {
+      "filter": "datum.rank <= 20"
+    }
+  ],
+  "mark": "bar",
+  "encoding": {
+    "x": {
+        "field": "value",
+        "type": "quantitative"
+    },
+    "y": {
+        "field": "key",
+        "type": "nominal",
+        "sort": {"field": "value", "op": "average", "order":"descending"}
+    }
+  }
+}
+;
+      vegaEmbed('#vis', yourVlSpec);
+    </script>
+  </body>
+</html>

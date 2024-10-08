@@ -1,0 +1,1905 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Embedding Vega-Lite</title>
+    <script src="vega@5.js"></script>
+    <script src="vega-lite@5.js"></script>
+    <script src="vega-embed@6.js"></script>
+  </head>
+  <body>
+    <div id="vis"></div>
+
+    <script type="text/javascript">
+      var yourVlSpec = {
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "A bar graph showing the scores of the top 5 students. This shows an example of the window transform, for how the top K (5) can be filtered, and also how a rank can be computed for each student.",
+  "data": {
+
+  "values": [
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "A.N.Severtsov Institute of Ecology and Evolution RAS  - IEE RAS"
+      ],
+      "value": 4
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Academic Journals"
+      ],
+      "value": 2
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Academy of Science of South Africa"
+      ],
+      "value": 3
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "ACCEFYN - Academia Colombiana de Ciencias Exactas, Fisicas y Naturales"
+      ],
+      "value": 3
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "African Journals Online (AJOL)"
+      ],
+      "value": 1
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Agentschap Plantentuin Meise"
+      ],
+      "value": 2
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "AGH University Press"
+      ],
+      "value": 2
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "AkiNik Publications"
+      ],
+      "value": 1
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "al-Farabi Kazakh National University"
+      ],
+      "value": 1
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "ALOKI Ltd"
+      ],
+      "value": 1
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Altai State University"
+      ],
+      "value": 10
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "American Arachnological Society"
+      ],
+      "value": 4
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "American Association for the Advancement of Science (AAAS)"
+      ],
+      "value": 60
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "American Chemical Society (ACS)"
+      ],
+      "value": 3
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "American Entomological Society"
+      ],
+      "value": 1
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "American Fern Society"
+      ],
+      "value": 6
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "American Geophysical Union (AGU)"
+      ],
+      "value": 97
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "American Society of Ichthyologists and Herpetologists (ASIH)"
+      ],
+      "value": 57
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "American Society of Parasitologists"
+      ],
+      "value": 2
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "American Society of Plant Taxonomists"
+      ],
+      "value": 6
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Annual Reviews"
+      ],
+      "value": 4
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Arachnologische Mitteilungen"
+      ],
+      "value": 1
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Arachology"
+      ],
+      "value": 2
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Arts and Science Press Pte. Ltd."
+      ],
+      "value": 1
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "ASME International"
+      ],
+      "value": 21
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Asociacion Argentina de Ecologia"
+      ],
+      "value": 1
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Asociación Colombiana de Ornitología"
+      ],
+      "value": 2
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Asociacion Iberica de Limnologia"
+      ],
+      "value": 50
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Asociacion Mexicana de Mastozoologia"
+      ],
+      "value": 9
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Asociatia Romana de Pteridologie"
+      ],
+      "value": 7
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Asosiasi Peneliti dan Teknisi Kehutanan dan Lingkungan Hidup Indonesia"
+      ],
+      "value": 1
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Associacao Sergipana de Ciencia"
+      ],
+      "value": 1
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Association for Computing Machinery (ACM)"
+      ],
+      "value": 2
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Association For Science (Publications)"
+      ],
+      "value": 1
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Atlantis Press SARL"
+      ],
+      "value": 1
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Authorea, Inc."
+      ],
+      "value": 168
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Biodiversity Science"
+      ],
+      "value": 4
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Biology Centre, AS CR"
+      ],
+      "value": 1
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Bogucki Wydawnictwo Naukowe"
+      ],
+      "value": 2
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Boletin de la Sociedad Zoologica del Uruguay"
+      ],
+      "value": 1
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Botanic Garden and Botanical Museum Berlin, Freie Universitaet Berlin"
+      ],
+      "value": 9
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Botanical Garden - Institute of the Far Eastern Branch of the RAS"
+      ],
+      "value": 10
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Botanical Research Institute of Texas"
+      ],
+      "value": 5
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Botanical Sciences, Sociedad Botanica de Mexico, AC"
+      ],
+      "value": 4
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Botanical Society of Britain and Ireland"
+      ],
+      "value": 4
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Brill"
+      ],
+      "value": 89
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "British Herpetological Society"
+      ],
+      "value": 1
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "British Ornithologists' Club"
+      ],
+      "value": 3
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "CABI Publishing"
+      ],
+      "value": 9
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Cactus and Succulent Society of America"
+      ],
+      "value": 1
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "California Botanical Society"
+      ],
+      "value": 2
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "California Digital Library (CDL)"
+      ],
+      "value": 133
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Cambridge University Press (CUP)"
+      ],
+      "value": 54
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Canadian Science Publishing"
+      ],
+      "value": 2
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Castanea"
+      ],
+      "value": 2
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Center for Open Science"
+      ],
+      "value": 13
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Centre for Evaluation in Education and Science (CEON/CEES)"
+      ],
+      "value": 2
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Centro Interdisciplinario de Ciencias Marinas"
+      ],
+      "value": 1
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Coastal Education and Research Foundation"
+      ],
+      "value": 1
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Cold Spring Harbor Laboratory"
+      ],
+      "value": 2167
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Coleopterists Society"
+      ],
+      "value": 9
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "College of Graduate Studies, Walailak University"
+      ],
+      "value": 1
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Consorci del Museu de Ciencies Naturals de Barcelona"
+      ],
+      "value": 5
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Copernicus GmbH"
+      ],
+      "value": 69
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Coquina Press"
+      ],
+      "value": 1
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Croatian Academy of Sciences and Arts"
+      ],
+      "value": 1
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "CSIRO Publishing"
+      ],
+      "value": 5
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Current Science Association"
+      ],
+      "value": 2
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Czech Botanical Society"
+      ],
+      "value": 1
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Czech Scientific Society for Mycology"
+      ],
+      "value": 3
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Daugavpils University"
+      ],
+      "value": 5
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Diva Enterprises Private Limited"
+      ],
+      "value": 2
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Dutch Bryological and Lichenological Society and Nordic Bryological Society"
+      ],
+      "value": 1
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "East African Natural History Society"
+      ],
+      "value": 1
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Editora de Livros IABS"
+      ],
+      "value": 1
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Editorial CSIC"
+      ],
+      "value": 15
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "EDP Sciences"
+      ],
+      "value": 7
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "eLife Sciences Publications, Ltd"
+      ],
+      "value": 14
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Elsevier BV"
+      ],
+      "value": 4754
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Entomological Society of Washington"
+      ],
+      "value": 2
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Entomologistas do Brasil"
+      ],
+      "value": 1
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "European Centre for Disease Control and Prevention (ECDC)"
+      ],
+      "value": 42
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "F1000 Research Ltd"
+      ],
+      "value": 8
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Facultad de Ciencias Exactas y Naturales, Universidad Nacional de Asuncion"
+      ],
+      "value": 1
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "FapUNIFESP (SciELO)"
+      ],
+      "value": 67
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Finnish Society of Forest Science"
+      ],
+      "value": 4
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Finnish Zoological and Botanical Publishing Board"
+      ],
+      "value": 1
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Firenze University Press"
+      ],
+      "value": 5
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Fondazione Pro Herbario Mediterraneo"
+      ],
+      "value": 2
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Front Matter"
+      ],
+      "value": 2
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Frontiers Media SA"
+      ],
+      "value": 184
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "FSBSI FRC N.I. Vavilov All-Russian Institute of Plant Genetic Resources"
+      ],
+      "value": 1
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Fund for Support and Development of Protected Areas"
+      ],
+      "value": 3
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Fundacion Miguel Lillo"
+      ],
+      "value": 1
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Galoa Events Proceedings"
+      ],
+      "value": 5
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Geological Society of America"
+      ],
+      "value": 9
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Georgia Entomological Society"
+      ],
+      "value": 2
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "GigaScience Press"
+      ],
+      "value": 1
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "H. S. Skovoroda Kharkiv National Pedagogical University"
+      ],
+      "value": 2
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "HARD Publishing Company"
+      ],
+      "value": 5
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Herpetological Society of Japan"
+      ],
+      "value": 2
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Herpetologists League"
+      ],
+      "value": 1
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Herzogia"
+      ],
+      "value": 2
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Humboldt Field Research Institute"
+      ],
+      "value": 1
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Informa UK Limited"
+      ],
+      "value": 763
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Institute for Biodiversity and Ecology"
+      ],
+      "value": 1
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Institute of Electrical and Electronics Engineers (IEEE)"
+      ],
+      "value": 10
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Institute of Malacology"
+      ],
+      "value": 1
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Institute of Systematics and Evolution of Animals, Polish Academy of Sciences"
+      ],
+      "value": 1
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Institute of Vertebrate Biology, Academy of Sciences of the Czech Republic"
+      ],
+      "value": 28
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Instituto de Botanica Darwinion (IBODA)"
+      ],
+      "value": 3
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Instituto de Ecologia, A.C."
+      ],
+      "value": 17
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Instituto de Investigacion de Recursos Biologicos Alexander von Humboldt (IAVH)"
+      ],
+      "value": 5
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Instituto Nacional de Investigaciones Forestales Agricolas y Pecuarias"
+      ],
+      "value": 1
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Instituto Nacional de Salud (Colombia)"
+      ],
+      "value": 1
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Instituut voor Natuur- en Bosonderzoek (INBO)"
+      ],
+      "value": 8
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Instytut Oceanologii PAN"
+      ],
+      "value": 2
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "IntechOpen"
+      ],
+      "value": 3
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Inter-Research Science Center"
+      ],
+      "value": 19
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "International Mountain Society (IMS) and United Nations University"
+      ],
+      "value": 2
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "IOP Publishing"
+      ],
+      "value": 18
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Iraq Natural History Research Center and Museum"
+      ],
+      "value": 1
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Iskenderun Technical University"
+      ],
+      "value": 1
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Italian Society of Sivilculture and Forest Ecology (SISEF)"
+      ],
+      "value": 3
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Journal of Lake Sciences"
+      ],
+      "value": 1
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Journal of Natural Resources"
+      ],
+      "value": 1
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Kansas Entomological Society"
+      ],
+      "value": 2
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Kasetsart University Research and Development Institute"
+      ],
+      "value": 2
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Kherson State University"
+      ],
+      "value": 1
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "KMK Scientific Press"
+      ],
+      "value": 1
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Komarov Botanical Institute of the Russian Academy of Sciences"
+      ],
+      "value": 5
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Lembaga Penelitian dan Pengabdian kepada Masyarakat Universitas Lampung"
+      ],
+      "value": 6
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Lepidopterists' Society"
+      ],
+      "value": 1
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Maad Rayan Publishing Company"
+      ],
+      "value": 1
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Magnolia Press"
+      ],
+      "value": 87
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Malaga University"
+      ],
+      "value": 1
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Mammalogical Society of Japan"
+      ],
+      "value": 1
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Marine and Coastal Research Institute INVEMAR"
+      ],
+      "value": 3
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Mary Ann Liebert Inc"
+      ],
+      "value": 3
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "MDPI AG"
+      ],
+      "value": 893
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Medwin Publishers"
+      ],
+      "value": 5
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Missouri Botanical Garden Press"
+      ],
+      "value": 1
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Museo Argentino de Ciencia Naturales"
+      ],
+      "value": 1
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Museum and Institute of Zoology at the Polish Academy of Sciences"
+      ],
+      "value": 4
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Museum National D'Histoire Naturelle"
+      ],
+      "value": 1
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Museum National d'Histoire Naturelle, Paris, France"
+      ],
+      "value": 3
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Mushroom Research Foundation"
+      ],
+      "value": 4
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "National Academy of Sciences of Ukraine (Co. LTD Ukrinformnauka) (Publications)"
+      ],
+      "value": 19
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "National Documentation Centre (EKT)"
+      ],
+      "value": 1
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "National Inquiry Services Center (NISC)"
+      ],
+      "value": 7
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "National Library of Serbia"
+      ],
+      "value": 1
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "National Museum of Natural History, BAS"
+      ],
+      "value": 4
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "National Museum, Czech Republic"
+      ],
+      "value": 33
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "National Parks Board"
+      ],
+      "value": 5
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "National Speleological Society"
+      ],
+      "value": 1
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "National University of Life and Environmental Sciences of Ukraine"
+      ],
+      "value": 1
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Natural Resources and Sustainable Development Journal - NRSDJ"
+      ],
+      "value": 1
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Naturalis Biodiversity Center"
+      ],
+      "value": 2
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Nature Research Centre -NRC"
+      ],
+      "value": 5
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "New Zealand Ecological Society"
+      ],
+      "value": 1
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Northwestern Naturalist"
+      ],
+      "value": 2
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "O-Kratkoe Ltd"
+      ],
+      "value": 1
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Oecologia Australis"
+      ],
+      "value": 1
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Oregon State University"
+      ],
+      "value": 1
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Ornithological Society of Japan"
+      ],
+      "value": 1
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Ottawa Field-Naturalists' Club"
+      ],
+      "value": 2
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Oxford University Press (OUP)"
+      ],
+      "value": 936
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Pacific Coast Entomological Society"
+      ],
+      "value": 4
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Pacific Science"
+      ],
+      "value": 1
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "PAGEPress Publications"
+      ],
+      "value": 2
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Pakistan Journal of Botany"
+      ],
+      "value": 2
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Pavol Jozef Safarik University in Kosice"
+      ],
+      "value": 2
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Peer Community In"
+      ],
+      "value": 2
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "PeerJ"
+      ],
+      "value": 129
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Peertechz Publications Private Limited"
+      ],
+      "value": 1
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Pensoft Publishers"
+      ],
+      "value": 9088
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Penza State University"
+      ],
+      "value": 2
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Pleiades Publishing Ltd"
+      ],
+      "value": 24
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Polish Pharmaceutical Society"
+      ],
+      "value": 1
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Pro-Reitoria de Pesquisa e Pos-Graduacai - UFV"
+      ],
+      "value": 1
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Proceedings of the National Academy of Sciences"
+      ],
+      "value": 210
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Public Library of Science (PLoS)"
+      ],
+      "value": 565
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Publishing House Sreda"
+      ],
+      "value": 1
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Qeios Ltd"
+      ],
+      "value": 1
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Regional Euro-Asian Biological Invasions Centre Oy (REABIC)"
+      ],
+      "value": 33
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Resilience Alliance, Inc."
+      ],
+      "value": 8
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Revista Brasileira de Geografia Fisica"
+      ],
+      "value": 1
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Revista Mexicana de Ciencias Forestales"
+      ],
+      "value": 1
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Rezekne Academy of Technologies"
+      ],
+      "value": 1
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Royal Belgian Institute of Natural Sciences (RBINS)"
+      ],
+      "value": 3
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Russian State Agrarian University - Moscow Timiryazev Agricultural Academy"
+      ],
+      "value": 2
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "SAGE Publications"
+      ],
+      "value": 201
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Schweizerbart"
+      ],
+      "value": 4
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "SciELO Agencia Nacional de Investigacion y Desarrollo (ANID)"
+      ],
+      "value": 4
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Sciencedomain International"
+      ],
+      "value": 1
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Scientific Research Publishing, Inc."
+      ],
+      "value": 1
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Sibeocenter LLC"
+      ],
+      "value": 1
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Sociedad Argentina para el Estudio de los Mamiferos"
+      ],
+      "value": 1
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Sociedad Chilena de Entomologia"
+      ],
+      "value": 1
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Sociedad Colombiana de Mastozoologia"
+      ],
+      "value": 2
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Sociedad Hispano-Luso-Americana de Lepidopterologia"
+      ],
+      "value": 1
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Sociedad Latinoamericana de Especialistas en Mamiferos Acuaticos (SOLAMAC)"
+      ],
+      "value": 1
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Sociedad para el Estudio y Conservacion de las Aves en Mexico A.C."
+      ],
+      "value": 1
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Société des naturalistes luxembourgeois"
+      ],
+      "value": 3
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Society for Sedimentary Geology"
+      ],
+      "value": 1
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Society for the Study of Amphibians and Reptiles"
+      ],
+      "value": 6
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Society of Southwestern Entomologists"
+      ],
+      "value": 2
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Southwestern Association of Naturalists"
+      ],
+      "value": 1
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Springer Science and Business Media LLC"
+      ],
+      "value": 2857
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "State Institution National Antarctic Scientific Center, Ministry of Education and Science of Ukraine"
+      ],
+      "value": 1
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "SvedbergOpen"
+      ],
+      "value": 1
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "The Company of Biologists"
+      ],
+      "value": 12
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "The Japan Society of Tropical Ecology"
+      ],
+      "value": 1
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "The Korean Society of Plant Taxonomists"
+      ],
+      "value": 1
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "The Mycological Society of Japan"
+      ],
+      "value": 3
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "The Plankton Society of Japan/The Japanese Association of Benthology"
+      ],
+      "value": 2
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "The Raptor Research Foundation, Inc."
+      ],
+      "value": 1
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "The Royal Society"
+      ],
+      "value": 216
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "The Russian Academy of Sciences"
+      ],
+      "value": 3
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "The Scientific and Technological Research Council of Turkey (TUBITAK-ULAKBIM) - DIGITAL COMMONS JOURNALS"
+      ],
+      "value": 2
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "The University of Kansas"
+      ],
+      "value": 4
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Tomsk State University"
+      ],
+      "value": 1
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Torrey Botanical Society"
+      ],
+      "value": 1
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Uluslararasi Insan Bilimleri Dergisi"
+      ],
+      "value": 1
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Universidad Complutense de Madrid (UCM)"
+      ],
+      "value": 4
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Universidad de Antioquia"
+      ],
+      "value": 1
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Universidad de Caldas"
+      ],
+      "value": 8
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Universidad de Costa Rica"
+      ],
+      "value": 6
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Universidad Nacional Autonoma de Mexico"
+      ],
+      "value": 94
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Universidad Nacional de Colombia"
+      ],
+      "value": 4
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Universidad Nacional de Cordoba"
+      ],
+      "value": 2
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Universidad Nacional de Costa Rica"
+      ],
+      "value": 1
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Universidad Nacional del Nordeste"
+      ],
+      "value": 1
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Universidad Nacional Mayor de San Marcos, Vicerectorado de Investigacion"
+      ],
+      "value": 10
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Universidade de São Paulo. Agência de Bibliotecas e Coleções Digitais"
+      ],
+      "value": 5
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Universidade Estadual de Feira de Santana"
+      ],
+      "value": 6
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Universitas Gadjah Mada"
+      ],
+      "value": 1
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "University Goettingen Repository"
+      ],
+      "value": 2
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "University Library/University of Twente"
+      ],
+      "value": 8
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "University of California Press"
+      ],
+      "value": 11
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "University of Chicago Press"
+      ],
+      "value": 41
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "University of Craiova"
+      ],
+      "value": 2
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "University of Liege"
+      ],
+      "value": 1
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "University of Notre Dame"
+      ],
+      "value": 1
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "University of Puerto Rico at Mayaguez"
+      ],
+      "value": 2
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "University of Santo Tomas Research Center for the Natural and Applied Sciences"
+      ],
+      "value": 2
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "University of Tartu"
+      ],
+      "value": 2
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "University of Wisconsin Press"
+      ],
+      "value": 1
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "University of Zagreb, Faculty of Science, Department of Biology"
+      ],
+      "value": 1
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "UNS Solo"
+      ],
+      "value": 16
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Update Publishing House"
+      ],
+      "value": 1
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "US Geological Survey"
+      ],
+      "value": 2
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Valparaiso University"
+      ],
+      "value": 2
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "W. Szafer Institute of Botany Polish Academy of Sciences"
+      ],
+      "value": 1
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Walter de Gruyter GmbH"
+      ],
+      "value": 17
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Waterbird Society"
+      ],
+      "value": 1
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Western Field Ornithologists"
+      ],
+      "value": 2
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Western North American Naturalist"
+      ],
+      "value": 5
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Wildlife Information Liaison Development Society"
+      ],
+      "value": 8
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Wiley"
+      ],
+      "value": 6571
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Wilson Ornithological Society"
+      ],
+      "value": 1
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "World Resources Institute"
+      ],
+      "value": 3
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Worldwide Dragonfly Association"
+      ],
+      "value": 1
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Zoological Institute of the Russian Academy of Sciences"
+      ],
+      "value": 1
+    },
+    {
+      "key": [
+        "The Global Biodiversity Information Facility",
+        "Zoological Research"
+      ],
+      "value": 3
+    }
+  ]
+
+  },
+  "transform": [
+    {
+      "window": [{
+        "op": "rank",
+        "as": "rank"
+      }],
+      "sort": [{ "field": "value", "order": "descending" }]
+    }, {
+      "filter": "datum.rank <= 20"
+    }
+  ],
+  "mark": "bar",
+  "encoding": {
+    "x": {
+        "field": "value",
+        "type": "quantitative"
+    },
+    "y": {
+        "field": "key[1]",
+        "type": "nominal",
+        "sort": {"field": "value", "op": "average", "order":"descending"}
+    }
+  }
+}
+;
+      vegaEmbed('#vis', yourVlSpec);
+    </script>
+  </body>
+</html>

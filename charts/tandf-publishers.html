@@ -1,0 +1,183 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Embedding Vega-Lite</title>
+    <script src="vega@5.js"></script>
+    <script src="vega-lite@5.js"></script>
+    <script src="vega-embed@6.js"></script>
+  </head>
+  <body>
+    <div id="vis"></div>
+
+    <script type="text/javascript">
+      var yourVlSpec = {
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "A bar graph showing the scores of the top 5 students. This shows an example of the window transform, for how the top K (5) can be filtered, and also how a rank can be computed for each student.",
+  "data": {
+
+  "values": [
+    {
+      "key": [
+        "Taylor & Francis",
+        "American Association for the Advancement of Science (AAAS)"
+      ],
+      "value": 13
+    },
+    {
+      "key": [
+        "Taylor & Francis",
+        "AVES YAYINCILIK A.Ş."
+      ],
+      "value": 2
+    },
+    {
+      "key": [
+        "Taylor & Francis",
+        "British Veterinary Nursing Association"
+      ],
+      "value": 7
+    },
+    {
+      "key": [
+        "Taylor & Francis",
+        "Elsevier BV"
+      ],
+      "value": 83
+    },
+    {
+      "key": [
+        "Taylor & Francis",
+        "Emerald"
+      ],
+      "value": 1
+    },
+    {
+      "key": [
+        "Taylor & Francis",
+        "Firenze University Press"
+      ],
+      "value": 6
+    },
+    {
+      "key": [
+        "Taylor & Francis",
+        "Geological Society of London"
+      ],
+      "value": 1
+    },
+    {
+      "key": [
+        "Taylor & Francis",
+        "Informa UK Limited"
+      ],
+      "value": 33675
+    },
+    {
+      "key": [
+        "Taylor & Francis",
+        "Medical Journals Sweden AB"
+      ],
+      "value": 45
+    },
+    {
+      "key": [
+        "Taylor & Francis",
+        "Michigan State University Press"
+      ],
+      "value": 16
+    },
+    {
+      "key": [
+        "Taylor & Francis",
+        "MJS Publishing, Medical Journals Sweden AB"
+      ],
+      "value": 118
+    },
+    {
+      "key": [
+        "Taylor & Francis",
+        "National Inquiry Services Center (NISC)"
+      ],
+      "value": 37
+    },
+    {
+      "key": [
+        "Taylor & Francis",
+        "NCSL International"
+      ],
+      "value": 2
+    },
+    {
+      "key": [
+        "Taylor & Francis",
+        "Oxford University Press (OUP)"
+      ],
+      "value": 98
+    },
+    {
+      "key": [
+        "Taylor & Francis",
+        "SAGE Publications"
+      ],
+      "value": 16
+    },
+    {
+      "key": [
+        "Taylor & Francis",
+        "Springer Science and Business Media LLC"
+      ],
+      "value": 1
+    },
+    {
+      "key": [
+        "Taylor & Francis",
+        "Uppsala Medical Society"
+      ],
+      "value": 13
+    },
+    {
+      "key": [
+        "Taylor & Francis",
+        "Wiley"
+      ],
+      "value": 13
+    },
+    {
+      "key": [
+        "Taylor & Francis",
+        "Worldwide Dragonfly Association"
+      ],
+      "value": 5
+    }
+  ]
+
+  },
+  "transform": [
+    {
+      "window": [{
+        "op": "rank",
+        "as": "rank"
+      }],
+      "sort": [{ "field": "value", "order": "descending" }]
+    }, {
+      "filter": "datum.rank <= 20"
+    }
+  ],
+  "mark": "bar",
+  "encoding": {
+    "x": {
+        "field": "value",
+        "type": "quantitative"
+    },
+    "y": {
+        "field": "key[1]",
+        "type": "nominal",
+        "sort": {"field": "value", "op": "average", "order":"descending"}
+    }
+  }
+}
+;
+      vegaEmbed('#vis', yourVlSpec);
+    </script>
+  </body>
+</html>

@@ -4,7 +4,7 @@ Exploring the [Data Citation Corpus](https://makedatacount.org/data-citation).
 
 > A trusted central aggregate of all data citations to further our understanding of data usage and advance meaningful data metrics.
 
-The data is available [by request](https://makedatacount.org/data-citation/#first-release), this repository documents my explorations of the data. 
+The data is available [by request](https://makedatacount.org/data-citation/#first-release), this repository documents my explorations of the data. (The data has subsequently been made freely available on Zenodo [doi:10.5281/zenodo.11196859](https://doi.org/10.5281/zenodo.11196859). )
 
 Release announcement [DataCite launches first release of the Data Citation Corpus](https://makedatacount.org/first-release-of-the-open-global-data-citation-corpus/) doi:10.60804/r14z-mw10.
 
@@ -33,6 +33,9 @@ Version 2.0 was released August 23, 2024 by Datacite [doi:10.5281/zenodo.1337677
 > The data file includes 5,256,114 data citation records in JSON and CSV formats. The JSON file is the version of record.
 
 ## CouchDB (version 2)
+
+Version two loaded into CouchDB using bulk upload, which is reasonably quick. The indexes take a while to build, and the JSON has a few issues, such as `title` field being present but empty.
+
 
 
 ## SQL version (first release of the data)
@@ -208,6 +211,45 @@ The citation 10.1038/s42255-020-0213-x, SAMN11157311 seemed problematic as a sim
 #### Specimen codes become accession numbers, figure captions become PDB records
 
 See https://doi.org/10.3897%2FBDJ.4.e8032 for 126 citations that are all incorrect.
+
+### Example citations
+
+#### 127aac89-4568-4fab-83b0-ee03a4da7a16
+
+http://127.0.0.1:5984/_utils/#database/data-citation-corpus-v2/127aac89-4568-4fab-83b0-ee03a4da7a16
+
+```
+{
+  "_id": "127aac89-4568-4fab-83b0-ee03a4da7a16",
+  "_rev": "1-0ed2a54e243ffbce5ebbf868f250d27b",
+  "id": "127aac89-4568-4fab-83b0-ee03a4da7a16",
+  "created": "2023-06-06T21:29:11.105+00:00",
+  "updated": "2023-06-06T21:29:11.105+00:00",
+  "repository": {
+    "title": "© Georg Thieme Verlag",
+    "external_id": null
+  },
+  "publisher": {
+    "title": "Georg Thieme Verlag KG",
+    "external_id": null
+  },
+  "journal": {
+    "title": "Synlett",
+    "external_id": null
+  },
+  "title": "Synthesis of (+)-Methyl Dihydropalustramate and of the Pyrido[1,2-a]azepine Core of Stemona Alkaloids",
+  "dataset": "https://doi.org/10.4125/pd0066th",
+  "publication": "https://doi.org/10.1055/s-0034-1380685",
+  "publishedDate": "2015-04-30T00:00:00+00:00",
+  "source": "datacite",
+  "affiliations": [],
+  "funders": [],
+  "subjects": []
+}
+```
+
+The repository and publisher are the same, in this case the cited data https://doi.org/10.4125/pd0066th (DataCite DOI) is the supplementary data for the article https://doi.org/10.1055/s-0034-1380685 (CrossRef), and both DOIs resolve to the same page. Not sure if this counts as “citation”.
+
 
 
 
