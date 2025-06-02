@@ -6794,18 +6794,20 @@
       }],
       "sort": [{ "field": "value", "order": "descending" }]
     }, {
-      "filter": "datum.rank <= 20"
+      "filter": "datum.rank <= 10"
     }
   ],
   "mark": "bar",
   "encoding": {
     "x": {
         "field": "value",
-        "type": "quantitative"
+        "type": "quantitative",
+        "title": "Number of datasets"
     },
     "y": {
         "field": "key",
         "type": "nominal",
+        "title": "Repository",
         "sort": {"field": "value", "op": "average", "order":"descending"}
     }
   }

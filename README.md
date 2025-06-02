@@ -17,7 +17,7 @@ I wrote about the problems with the first release on iPhylo:
 ### Update(s)
 
 
-#### Verison 1.1
+#### Version 1.1
 There is a simplified version (v1.1) of the data available on Zenodo, see [Data Citation Corpus first release Documentation](https://makedatacount.org/data-citation-corpus-documentation/#appendix).
 
 I’m exploring adding this to CouchDB.
@@ -35,7 +35,6 @@ Version 2.0 was released August 23, 2024 by Datacite [doi:10.5281/zenodo.1337677
 ## CouchDB (version 2)
 
 Version two loaded into CouchDB using bulk upload, which is reasonably quick. The indexes take a while to build, and the JSON has a few issues, such as `title` field being present but empty.
-
 
 
 ## SQL version (first release of the data)
@@ -249,6 +248,28 @@ http://127.0.0.1:5984/_utils/#database/data-citation-corpus-v2/127aac89-4568-4fa
 ```
 
 The repository and publisher are the same, in this case the cited data https://doi.org/10.4125/pd0066th (DataCite DOI) is the supplementary data for the article https://doi.org/10.1055/s-0034-1380685 (CrossRef), and both DOIs resolve to the same page. Not sure if this counts as “citation”.
+
+#### fbd693f9-6278-4e39-9518-d06ab14072e7
+
+http://127.0.0.1:5984/_utils/#database/data-citation-corpus-v2/fbd693f9-6278-4e39-9518-d06ab14072e7
+
+```
+  "title": "Binary black-hole simulation SXS:BBH:0229",
+  "dataset": "https://doi.org/10.5281/zenodo.3274579",
+  "publication": "https://doi.org/10.1088/0264-9381/33/16/165001",
+```
+
+Zenodo https://zenodo.org/records/3274579 describes this as:
+
+```
+Is supplement to
+https://arxiv.org/abs/1904.04831 (URL)
+10.1088/0264-9381/33/16/165001 (DOI)
+```
+
+and records no citations to the dataset. Again, this is not “citation”.
+
+
 
 
 
